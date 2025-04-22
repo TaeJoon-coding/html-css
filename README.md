@@ -1,1 +1,1 @@
-# htmlとcssの学習記録
+# htmlとcssの練習記録
