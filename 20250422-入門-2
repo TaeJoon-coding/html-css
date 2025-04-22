@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タブのタイトル</title>
+</head>
+<body>
+    <h1>h1タイトルです。</h1><!-- ここから -->
+    <h2>h2タイトルです。</h2>
+    <h3>h3タイトルです。</h3>
+    <h4>h4タイトルです。</h4>
+    <h5>h5タイトルです。</h5>
+    <h6>h6タイトルです。</h6><!-- ここまでの、hnは太文字のタイトルとして機能する。 -->
+    <!-- しかし、h7やh8など、h7以上の数字は正常的に反映されない。 -->
+    <p>&alpha;本文の内容</p>
+    <p><font color="red">赤い本文</font></p>
+    <p><font color="blue">青い本文</font></p>
+    <p><font color="#648857">#648857色の本文</font></p>
+    <p>本文全角　　　　スペース</p><!-- 全角スペースは全部反映される。 -->
+    <p>本文半角     スペース</p><!-- 半角スペースは一つしか反映されない -->
+    <p>本文nbsp&nbsp;&nbsp;&nbsp;&nbsp;スペース</p><!-- &nbsp;で生成される半角スペースで複数の半角スペースを表現できる -->
+    <!-- preの用例 -->
+    <p>本文のpre<pre></pre>機能</p><!-- preが改行として機能する。 -->
+    <p><font color="blue">本文のpre<pre>
+    </pre>機能</font></p><!-- 中に空いた一行を持つ改行 -->
+    <p><font color="red">本文のpre<pre>
+
+    </pre>機能</font></p><!-- 中に空いた二行を持つ改行 -->
+
+    <p><font color="#64b8d7">終わり&ohm;</font></p>
+
+</body>
+
+</html>
