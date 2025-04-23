@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style-type: "\1D120";
+        }/*リストのデフォルトを「𝄠」に指定する*/
+        table, th, td{  
+            border: 2px solid #33dd88; 
+            border-collapse: collapse;
+        }/*表の辺の太さを2pxに、辺を実線に、辺の色を#33dd88に設定*/
+        th, td{ padding: 6px 10px;}/*表でテキストと辺の間隔、上下6px、左右10px*/
+    </style>
+</head>
+
+    <header>
+
+        <div id="名称">
+            <a href="https://free-images.com/"><font color = #33dd88>カボチャ鍋</font></a><!-- ハイパーリンク付きのページのタイトル -->
+        </div>
+
+        <nav>
+            <li><a href="https://github.com/TaeJoon-coding/html-css"><font color = #33dd88><i>github</i></font></a></li>
+            <li><font color = #9933aa><i>リンク無し</i></font></li>
+            <li><u>ただの下線（アンダーライン）</u></li>
+        </nav>
+
+    </header>
+
+    <hr>    <!-- ただの線 -->
+<body><!-- ここから本文 -->
+    <p>番号付きの本文、料理の手順</p>
+    <ol type = "I">
+        <font color = #cc1144><li>材料</li></font>  <!-- これで番号まで色を指定できる。 -->
+        <li><font color = #66dd33>下準備</font></li>    <!-- これは番号までは色指定しない方法 -->
+        <li><font color = #2211ff>調理</font>の過程</li>    <!-- このように文字の一部だけを色指定するのも可能 -->
+        <font color = #dddd44><li></font>後工程</li>    <!-- しかし、これでここの番号だけの色指定は出来ない -->
+        <font color = #dd22cc><li><font color = #0000dd>ただのテスト用のテキスト</font></li></font>    <!-- このように一回全体を色指定して又番号以外を色指定する -->
+        <!-- この場合、RGBコード「#0000dd」を利用したが、「#000000」などを利用して黒色にするのも可能-->
+        <font color = #dd22cc><li><font color = #00ccaa>ただの</font><font color = #0000dd>テスト</font><font color = #000000>用のテキスト</font></li></font> 
+        <!-- このように又、部分的、複数な色指定も可能-->
+    </ol>
+    <p>マーク付きの本文、料理の手順</p>
+    <ul>
+        <font color = #cc1144><li>材料</li></font>
+        <li><font color = #66dd33>下準備</font></li>
+        <li><font color = #2211ff>調理</font>の過程</li>
+        <font color = #dddd44><li></font>後工程</li>
+    </ul>
+
+    <hr>    <!-- 又ただの線 -->
+    
+    <table>
+
+        <caption><font color = #33ff44><i><b><u>カボチャ鍋の材料</u></b></i></font></caption>
+        <!-- 表のためのタイトル、「<i></i>」でイタリック体、「<b></b>」で太文字「<u></u>」でアンダーライン -->
+    
+        <tr>        <!-- 表の第一行目の始まりを 宣言、一行目だから、中のテキスト全部太文字の中央揃えにする-->
+            <td><div align="center"><b>材料</b></div></td>    <!-- <td></td>で表のこの行の一列目の始まりと終わりを宣言、「div align="center"」で中央揃え、「<b>」で太文字 -->
+            <th>単位</th>   <!-- thで中央揃え、太字にする -->
+            <td style="text-align: center;"><strong>量</strong></td><!-- 表でいえば、A3 --> <!-- 「style」を利用した中央揃え、<strong>も太字として機能する --> 
+        </tr><!-- 表の第一行目の終わりを 宣言-->
+
+        <tr>
+            <td><font color = #888800>カボチャ</font></td>
+            <td>個</td>
+            <td>1</td>
+        </tr>
+
+        <tr>
+            <td>豚肉</td>
+            <td>g</td>
+            <td>200</td>
+        </tr>
+
+        <tr>
+            <td>トマト</td>
+            <td>個</td>
+            <td>1~2</td>
+        </tr>
+
+        <tr>
+            <td>チーズ</td>
+            <td colspan="2"><div align="center">肉と同じ体積</div></td>   <!-- 「colspan="2"」で右のセル一つ、合わせて二つのセルを併合 -->
+            <!-- セル併合を行ったので、続きのセルの記入はしない -->
+        </tr>
+
+        <tr>
+            <td>香辛料</td>
+            <td colspan="2"><div align="center">若干量</div></td> 
+        </tr>
+
+    </table>
+
+</body>
+</html>
