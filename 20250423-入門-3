@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="#">python</a>
+    &lt;a&gt;&lt;/a&gt; <!-- MIME : text/html 未満、超過の記号に変換して表現--><br>
+    &amp;lt;a&amp;gt;&amp;lt;/a&amp;gt; <!-- 上のコードから、&を除去して、&特殊文字を一般テキストに変換し、「&amp;」で&特殊文字の「&」をしゅつりょくすると、一般文字のように出力できる。 -->
+    <!-- テキストモード(CMDなど、console)での改行(line-feed(break)), text/plain (MINE) -->
+    <!-- ウェブブラウザー : グラフィックモード、text/html (MIME) -->
+    html/css\n
+</body>
+</html>
