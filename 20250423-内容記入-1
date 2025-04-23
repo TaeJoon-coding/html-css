@@ -21,7 +21,7 @@
 
 <header>
     <div id="logo">
-        <a href="https://taejooncoding.tistory.com/"><font color = "#dd99cc"><h1>ワカメスープ</h1></font></a>   <!-- 「font color = ""」で文字色の指定 --><!-- ハイパーリンク -->
+        <a href="https://github.com/TaeJoon-coding/html-css"><font color = "#dd99cc"><h1>ワカメスープ</h1></font></a>   <!-- 「font color = ""」で文字色の指定 --><!-- ハイパーリンク -->
     </div>
 
     <nav>
