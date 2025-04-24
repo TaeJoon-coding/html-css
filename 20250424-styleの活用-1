@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*<style>を利用することで、当文献全体において多種多様な要素の基本形を指定する。*/
+        p{
+            color: #554499;
+            font-size: 24px;
+            font-family: "Brush Script MT", cursive;
+        }
+        /*ここでは<p>に記入されて出力される文字の色、サイズ、フォントを指定した。*/
+        
+        table, th, td{  
+        border: 3px solid #22aa33;
+        border-collapse: collapse;
+        }
+        th, td{ padding: 8px 12px;}
+        /*表の作成にはほぼ必須の辺の設定*/
+
+        h3{
+            color: #aa7733;
+            font-style: italic;
+            font-weight: lighter;
+        }
+        /*h3の設定*/
+    </style>
+</head>
+<body>
+    
+    <h3>ゴールド・エクスペリエンス</h3>
+    
+    <p>Earth<i>Wind</i>Fire</p>
+
+
+    <table>
+        <caption><font color = "#ff6600" size = "24"><b>ポケモン</b></font></caption>
+        
+        <tr style="background-color: #aa7733; overflow: auto;">
+            <th>ポケモン</th>
+            <th>分類</th>
+            <th>強さ</th>
+            <th>コスト</th>
+            <th>評価</th>
+        </tr>
+
+        <tr>
+            <td><div align="center"><img src="https://img.gamewith.jp/article_tools/pokemon-sv/gacha/197.png" width="35%"></div></td>
+            <td>壁役</td>
+            <td>かなり</td>
+            <td>普通</td>
+            <td>A+</td>
+        </tr>
+
+        <tr>
+            <td><div align="center"><img src="https://img.gamewith.jp/article_tools/pokemon-sv/gacha/983.png" width="35%"></div></td>
+            <td>高速アタッカー</td>
+            <td>カンスト</td>
+            <td>やや高い</td>
+            <td>EX</td>
+        </tr>
+
+        <tr>
+            <td><div align="center"><img src="https://img.gamewith.jp/article_tools/pokemon-sv/gacha/382.png" width="35%"></div></td>
+            <td>フレフレ坊主<br>雨アタッカー</td>
+            <td>強い</td>
+            <td>限定的</td>
+            <td>A++</td>
+        </tr>
+        
+    </table>
+
+</body>
+</html>
