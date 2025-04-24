@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食器屋さん</title>
+
+    <style>
+        table, th, td{
+            border: 3px solid #22aa33;
+            border-collapse: collapse;
+        }
+        th, td{
+            padding: 6px 10px;
+        }
+
+    </style>
+
+</head>
+
+    <header>
+        <div id="logo">
+            <font color = "#dd99cc"><h1>アンティークなフライパン</h1></font>
+        </div>
+
+        <p>
+            <a href="#表"><img src="../../../download/GrassNew.png" alt="土" width="25%"></a>
+            <!-- 相対経路、経路の前に「../」で本htmlファイルの位置から上位フォルダーに移動する -->
+            <!-- 当然、作成時のPCや相対経路が同じPCなどでないと、機能しない。 -->
+            <!-- 「width="25%"」イメージの幅を親要素(ここでは追加で指定されてないので、そのままビューポート)の25％に調整 -->
+            <!-- 「height=""」がない場合、高さは幅に連動して本来の幅・高さの比率を維持する -->
+
+            <!-- 「href="#表"」で当文献内の「id="表"」と指定されている所に移動 -->
+        </p>
+
+        <p>
+            <img src="E:\student\SEONG\download\A7BAD297-AC21-4B08-8551-10BAEBEFA15C.jpeg" alt="ガラスのフライパン" width="300">
+            <!-- windowsの絶対経路 -->  <!-- ライブサーバーでは機能しない -->
+            <!-- 「width="300"」イメージの幅を300pxに固定、ページの大きさを調整してもイメージの大きさは変わらない -->
+            <!-- 「height=""」がない場合、高さは幅に連動して本来の幅・高さの比率を維持する -->
+        </p>
+
+        <!-- フォルダーからブラウザーにローカルローディング -->
+        <p>
+            <img src="file:///E:/student/SEONG/download/A7BAD297-AC21-4B08-8551-10BAEBEFA15C.jpeg" alt="ガラスのフライパン" style="width: 50vw;">
+            <!-- ネットワーク経路 -->   <!-- ライブサーバーでは機能しない -->
+            <!-- 「style="width: 50vw;"」イメージの幅をビューポートの50%にする -->
+        </p>
+
+        <a href="https://youtu.be/ponnhJo7vRg?si=8_usWlgDwZQACXdR">
+            <img src="https://free-images.com/lg/5f4e/pots_pot_brass_kitchen.jpg" alt="フライパン" width="50%">
+        </a>
+        <!-- 現場では「public...(root flder)/images/」みたいなweb独自の相対経路を利用する -->
+        <!-- jpeg=jpg, jfifなど -->
+
+    </header>
+    
+    <hr>
+
+<body>
+
+    <div style="width: 600px;">
+
+        <img src="../../../download/GrassNew.png" alt="土" width="25%">
+        <!-- 親要素「<div style="width: 600px;">」により、「width="25%"」がビューポートではなく600pxの25%の150pxを意味するようになる -->
+        <!-- よって、ビューポートの大きさを調整してもイメージの大きさは変わらない -->
+
+    </div>
+    
+    <p><a href="../html_20250423/ex_3.html" target="_blank">LLLLL</a></p>
+    <!-- 「target="_blank"」で新しいタブ -->
+
+    <hr>
+    
+    <table>
+        <caption id="表"><font color = "#6600aa"><b>ポケモン</b></font></caption>
+        <!-- 「id="表"」と指定 -->
+
+        <tr style="background-color: #aa7733; overflow: auto;">
+            <th>ポケモン</th>
+            <th>分類</th>
+            <th>強さ</th>
+            <th>コスト</th>
+            <th>評価</th>
+        </tr>
+
+        <tr>
+            <td><a href="https://taejooncoding.tistory.com/" target="_blank"><img src="https://img.gamewith.jp/article_tools/pokemon-sv/gacha/197.png" width="35%"></a></td>
+            <td>壁役</td>
+            <td>かなり</td>
+            <td>普通</td>
+            <td>A+</td>
+        </tr>
+
+        <tr>
+            <td><img src="https://img.gamewith.jp/article_tools/pokemon-sv/gacha/983.png" width="35%"></td>
+            <td>高速アタッカー</td>
+            <td>カンスト</td>
+            <td>やや高い</td>
+            <td>EX</td>
+        </tr>
+
+        <tr>
+            <td><img src="https://img.gamewith.jp/article_tools/pokemon-sv/gacha/382.png" width="35%"></td>
+            <td>
+                <p>フレフレ坊主</p>
+                <p>雨アタッカー</p>
+            </td>
+            <td>強い</td>
+            <td>限定的</td>
+            <td>A++</td>
+        </tr>
+        
+    </table>
+
+    <hr>
+
+    <p><a href="#">Go to top</a></p>
+    <!-- 「href="#"」はページのトップへの移動 -->
+
+</body>
+
+</html>
