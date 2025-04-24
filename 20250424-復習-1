@@ -1,0 +1,39 @@
+テキストのタグ（要素）
+    <b><strong>太字
+    <s><strike>打ち消し線
+    <i><em><cite>イタリック体
+    <blockquote>引用文献を示す、「cite」を利用して出力はされないが、検索エンジンなどからは確認され、引用元を表記するのも可能
+    <hr>一本の横線
+    <table> 表を作ることを宣言、「style」を利用して表のボーダーラインを作成して上げないと表としては成立すると言いずらい
+        <tr>表の行を作る
+        <td><th>行の各セルを作る
+            <thead><tbody><ftoot>   表のヘッダー、本体（内容部分）、フッター    けどあんまり意味ない。
+        <caption>   表のタイトル
+            <colgroup>  複数の<col>をグループ化する
+                <col>   表の列
+        <colspan = "2"> 横のセルと併合
+        <rowspan = "2"> 下のセルと併合
+        <td style = "background = background-color:#cc2288">当セルだけのバックグラウンド色を指定（#cc2288）
+    
+    CSS => CSS refs
+    <style>文献全体に適用される。
+        border : formal syntax(文法) 一気に3つの要素を指定。
+        border-color
+        border-width
+        このように別々の指定も可能
+    color
+        16color（基本色）、140color（色の名前で記入可能）
+            rgb式
+                #16進数式
+                rgb(10進数)式
+                rgba(10進数)式、aは透明度の調整
+    イメージ
+    raster(bitmap)イメージ⇔ベクターイメージ：~.SVG
+
+    src : sorce(加工される前のすべての要素の位置)
+    path : windows
+    デバイス(保存用装置:device)   CD/DVD/BD/USBなど
+    C:\abcd\java : 経路(path)、絶対経路(absolute path) 
+    URLなども絶対経路
+
+    相対経路もある
