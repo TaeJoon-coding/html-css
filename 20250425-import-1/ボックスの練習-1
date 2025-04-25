@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        @import url(css/bow.css);
+            
+    </style>
+
+</head>
+<body>
+    <p id = "box1">UP1</p>
+    <p id = "box2">DOWN2</p>
+    <p id = "box3"><span class="tttr">NY3</span></p>
+    <p id = "box4">LA4</p>
+</body>
+</html>
