@@ -22,7 +22,7 @@
             }
             /* 「Zen Antique」をインポート */
 
-            .naf{
+            .zen{
                 font-family: 'Zen Antique';
                 /*１）フォント：Zen Antique*/
                 font-size: 1em;
@@ -58,7 +58,7 @@
 </head>
 <body>
     
-        <p class="naf">
+        <p class="zen">
             ぼくらはみんな生きている。
             生きているから歌うんだ。
             ぼくらはみんな生きている。
