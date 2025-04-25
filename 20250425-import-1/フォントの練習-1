@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* zen-antique-regular - latin */
+        @font-face {
+                font-display: swap; 
+                font-family: 'Zen Antique';
+                font-style: normal;
+                font-weight: 400;
+                src: url('fonts/zen-antique-v13-latin-regular.woff2') format('woff2'); 
+            }
+            /* 「Zen Antique」をインポート */
+        
+        /* アイコンフォントというのもあって、特殊文字で記入できるのもあるとはいえ、ないのもあり、形状が特集なのもあるので、*/
+        /* アイコンをフォントとして作ったものもある外付けCSSライブラリー「https://getbootstrap.com/」にもある */
+
+        .zen{
+            font-family: 'Zen Antique';
+            font-size: 14px;
+            color: #667744
+        }
+
+        .btn{
+            text-decoration: none;
+            
+        }
+        /* !-- ハイパーリンク入りのテキストのアンダーラインを除去 */
+        /* text-shadowも自習時に使用すること */
+        
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- bootstrapのアイコンフォントのリンク -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <!-- Material Symbols and Iconsのライブラリーのリンク -->
+    <a href="#" class="btn">ボタン</a>    
+
+</head>
+<body>
+    
+    <p><span class="zen">Zen Antiqueというフォント、いいね</span></p>
+    <!-- 「span」はなんの意味もないが、そこだけにスタイル入れる時などに利用するからの要素 -->
+
+    <!-- アイコンフォントの記入例 -->
+    <i class="bi-alarm" style="font-size: 48px; color: cornflowerblue;"></i>
+    <i class="bi bi-wrench" style="font-size: 48px; color: cornflowerblue;"></i>
+    <!-- この二つは単独のフォントなので何も記入しなくても -->
+    <i class="material-symbols-outlined" style="font-size: 48px; color: cornflowerblue;">emoji_transportation</i>
+    <!-- 時計とレンチのアイコンが作られた。 -->
+    <span style="font-size:48px; color: blue;" class="material-symbols-outlined">emoji_transportation</span>
+    <span style="font-size:48px; color: blue;" class="bi-alarm"></span>
+    
+    <br>
+    <s>Zen Antique</s><br>
+    <del>Zen Antique</del><br>
+    <span style="text-decoration: line-through;">Zen Antique</span><br>
+    <!-- この三つは取り消し線 -->
+
+    <u>Zen Antique</u><br>
+    <!-- アンダーライン -->
+
+</body>
+</html>
