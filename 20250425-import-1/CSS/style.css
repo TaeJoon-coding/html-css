@@ -1,0 +1,42 @@
+/*1) フォント : Zen Antique*/
+/* zen-antique-regular - latin */
+@font-face {
+    font-display: swap; 
+    font-family: 'Zen Antique';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/zen-antique-v13-latin-regular.woff2') format('woff2'); 
+}
+ /* 「Zen Antique」をインポート */
+
+ .naf{
+    font-family: 'Zen Antique';
+    /*１）フォント：Zen Antique*/
+    font-size: 1em;
+    /*２）文字の大きさ：1em*/
+    color:crimson;
+    /*３）文字の色：crimson*/
+    word-spacing: 0.5em;
+    /*４）単語間の間隔：0.5em */
+    letter-spacing: 2px;
+    /*５）文字間の間隔：2px*/
+    line-height: 1.8em;
+    /*６）行の間隔：1.8em*/
+}
+/* 「Zen Antique」を実際使用するための新規style */
+
+p {
+    text-indent: 3em;
+    /*７）最初の段落の字下げ ：3em*/
+    border: 4px double coral;
+    /*８）段落の枠線の太さ：4px*/
+    /*９）段落の枠線の色：coral*/
+    /*１０）段落の枠線の種類：二重線(double)*/
+    background-color:lightblue ;
+    /*１１）段落の背景色：lightblue*/
+    padding: 15px 20px;
+    /*１２）段落の内部余白（枠線との間隔、）上下/左右：15px 20px*/ 
+    width: 800px; 
+    height: 200px; 
+    /*１３）段落の大きさ（幅 * 高さ）800px * 200px*/
+}
