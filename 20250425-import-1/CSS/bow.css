@@ -1,0 +1,76 @@
+table, th, td {
+    border: 3px solid #22aa33;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px 12px;
+}
+
+h2 {
+    color: #88ff88;
+    font-family: fantasy;
+    font-size: 16px;
+}
+
+p{
+    color: #554499;
+    font-size: 24px;
+    font-weight: lighter;
+    font-family: "Brush Script MT", cursive;
+    padding: 6px;
+    border: groove;
+}
+
+#box1 {
+    border: 2px double #5500ff;
+    border-radius: 15% 15% 25% 25%;
+    background:#5fec82;
+    box-shadow: 25px 25px 15px #150749;
+    position: static;
+        width: 250;
+        height: 600;
+}
+
+#box2 {
+    border: 3px solid aquamarine;
+    background: cornsilk;
+    box-shadow: 25px 25px 15px #150749;;
+    position: relative;
+        left: 100;
+        top: 500;
+        width: 300;
+        height: 300; 
+}
+
+
+#box3 {
+    border: 3px groove palevioletred;
+    background:yellow;
+    box-shadow: 10x 10px 5px #150749;
+    position:absolute;
+        left:500px;
+        top:100px;
+        width:650px;
+        height:500px;
+}
+
+
+
+#box4 {
+    border: 3px solid aquamarine;
+    background: cornsilk;
+    box-shadow: inset;
+    position: fixed;
+        left: 10;
+        top: 10;
+        width: 300;
+        height: 300;
+}
+
+.tttr {
+    padding: 15% 15% 15% 15%;
+    font-family:monospace;
+            font-size: 14px;
+            color: #667744
+}
