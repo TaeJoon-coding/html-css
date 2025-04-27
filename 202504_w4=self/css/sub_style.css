@@ -1,0 +1,29 @@
+@font-face {
+    font-display: swap; 
+    font-family: 'Zen Maru Gothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/zen-maru-gothic-v17-japanese_latin-regular.woff2') format('woff2'); 
+}
+h2 {
+    color: crimson;
+    font-family: 'Zen Maru Gothic';   
+}
+
+table, th, td {
+    font-family: 'Zen Maru Gothic';
+    border: 3px solid #050505;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 8px 12px;
+    white-space: nowrap;
+} 
+table {
+    width: auto; 
+    table-layout: auto; 
+  }
+
+#pokemon {
+    width: 175px;
+}
