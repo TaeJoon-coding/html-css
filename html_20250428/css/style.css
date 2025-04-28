@@ -1,0 +1,60 @@
+    /*
+    background-clip:
+    border-box → ボーダーラインまで、全部
+    padding-box → ボーダーライン以外の pidding範囲まで
+    content-box → boxの内容部分が基準
+    */
+    /*
+    background-repeat:
+    repeat → ビューポート全部においてrepeat
+    repeat-x → 
+    repeat-y → 
+    no-repeat → 
+    */
+    /*
+    background-attachment:
+    scroll → 
+    fixed → 
+    */
+    /*
+    background: linear-Gradient(45deg(角度), 開始色, 終了色);
+    background: linear-Gradient(45deg(角度), 開始色, 中間色 位置(n%), 終了色);
+    これらを「repeat」を利用して
+    */
+
+@font-face {
+    font-display: swap; 
+    font-family: 'Zen Maru Gothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/zen-maru-gothic-v17-japanese_latin-regular.woff2') format('woff2'); 
+}
+
+#article_box {
+    font-family: "Zen Maru Gothic";
+    font-size: 1em;
+    color: azure;
+    /*フォント：「Zen Maru Gothic」、フォントサイズ「1em」、文字色「azure」*/
+    text-shadow: 0 0 3px #000;
+    /*影を応用した文字の外郭線*/
+    line-height: 2em;
+    /*行間：「2em」*/
+    border: 10px solid #CCCCCC;
+    /*ボーダーライン10px、実線、色：#CCCCCC*/
+    border-radius: 20px;
+    /*ボーダーラインの丸み：20px*/
+    box-shadow: 5px 5px 10px 5px #444444;
+    /*ボックスの影、水平距離：5px、垂直距離：5px、ぼかしの半径：10px、ぼやかしの距離：5px*/
+    background-image: url(../img/Richard_Stallman.jpg);
+    /*背景画像*/
+    background-repeat: no-repeat;
+    /*リピートなし*/
+    background-size:contain;
+    /*背景の大きさがボックス内にピッタリに*/
+    background-clip:padding-box;
+    /*背景ボックスモデルをボーダーライン以外の内部を基準に*/
+    background-attachment: fixed;
+    /*スクロールしても背景は固定*/
+    width:700px;
+    height:1000px;
+}

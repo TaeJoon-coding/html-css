@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <style>
+        @font-face {
+            font-display: swap; 
+            font-family: 'Zen Maru Gothic';
+            font-style: normal;
+            font-weight: 400;
+            src: url('fonts/zen-maru-gothic-v17-japanese_latin-regular.woff2') format('woff2'); 
+        }        
+        /* 商品ページのレイアウト*/		
+        div#product_box {
+            /* 横幅：320px */
+            /* 高さ：470 px */	
+            width: 320px;	
+            height: 470px;
+        }
+        
+        /* 商品の画像 */
+        div#product_image {
+            /* 横幅：280px */
+            /* 高さ：280 px */
+            /* 内部間隔：20px */	
+            width: 280px;
+            height: 280px;
+            padding: 20px;
+        }
+        
+        /* 商品の詳細およびログインページへの移動 */
+        div#product_detail_login_move {
+            /* 横幅：280px */
+            /* 高さ：80 px */
+            /* 内部間隔：上下0px、左右20px */
+            width: 280px;
+            height: 80px;
+            padding: 0px 20px;
+        }
+        
+        /* 商品の詳細 */
+        div#product_detail {
+            /* フロート：左 */
+            /* 横幅：230px */
+            /* 高さ：80 px */
+            float: left;
+            width: 230px;
+            height: 80px;
+        }
+        
+        /* ログインページへの移動 */
+        div#login_move {
+            /* フロート：左 */
+            /* 横幅：50px */
+            /* 高さ：80 px */
+            float: left;
+            width: 50px;
+            height: 80px;
+        }
+        
+        /* 商品の価格 */
+        div#product_price {
+            /* 横幅：280px */
+            /* 高さ：30 px */		
+            /* 内部間隔：上下0px、左右20px */
+            /* フォント：Zen Maru Gothic */
+            /* フォントサイズ：1.2em */
+            width: 280px;
+            height: 30px;
+            padding: 0px 20px;
+            font: 1.2em 'Zen Maru Gothic';
+        }
+        
+        /* 送料 */
+        div#shipping_price {
+            /* 横幅：280px */
+            /* 高さ：30 px */		
+            /* 内部間隔：上下0px、左右20px */	
+            /* フォントサイズ：9pt */
+            width: 280px;
+            height: 30px;
+            padding: 0px 20px;
+            font-size: 9pt;
+        }
+        
+        /* 販売状況およびカート */
+        div#purchase_state_cart_move {
+            /* 横幅：280px */
+            /* 高さ：40 px */		
+            /* 内部間隔：上下0px、左右20px */	
+            width: 280px;		
+            height: 40px;
+            padding: 0px 20px;
+        }
+        
+        /* 販売状況 */
+        div#purchase_state {
+            /* フロート：左 */
+            /* 横幅：230px */
+            /* 高さ：40 px */	
+            /*フォントサイズ：9pt */
+            float: left;
+            width: 230px;
+            height: 40px;
+            font-size: 9pt;
+        }
+        
+        /* カート */
+        div#cart_move {
+            /* フロート：左 */
+            /* 横幅：50px */
+            /* 高さ：40 px */		
+            float: left;
+            width: 50px;
+            height: 40px;		
+        }
+        </style>
+
+    </head>
+    <body>
+    
+        <!-- 商品ページのレイアウト -->
+        <div id="product_box">          
+            <!-- 商品の画像 -->
+            <div id="product_image">
+                <img style="width: 100%" src="img/pro1.jpg" >
+            </div>
+            <!--//商品の画像 -->
+            
+            <!-- 商品の詳細およびログインページへの移動 -->
+            <div id="product_detail_login_move">
+                <!-- 商品の詳細 -->
+                <div id="product_detail">
+                    <tr>ブラウン シリーズ5 52-A1200s [アズールブルー]</tr>
+                </div>
+                <!--//商品の詳細 -->	
+                
+                <!-- ログインページへの移動 -->	
+                <div id="login_move">
+                    <a href="#"><img src="img/login_btn.png" alt="login_btn"></a>
+                    <!-- 未実装 -->
+                </div>		
+                <!--//ログインページへの移動 -->
+            </div> 
+            <!--//商品の詳細およびログインページへの移動 -->	
+                    
+            <!-- 商品の価格 -->
+            <div id="product_price">
+                <b>3,600</b>円
+            </div>
+            <!--//商品の価格 -->
+            
+            <!-- 送料 -->
+            <div id="shipping_price">
+                送料無料
+            </div>
+            <!--//送料 -->
+            
+            <!-- 販売状況およびカート -->
+            <div id="purchase_state_cart_move">
+    
+                <!-- 販売状況 -->
+                 <div id="purchase_state">
+                    販売量 : 2,154
+                 </div>
+                <!--//販売状況 -->
+                
+                <!-- カート -->
+                <div id="cart_move">
+                    <a href="#"><img src="img/cart_btn.png" alt="cart_btn"></a>
+                    <!-- 未実装 -->
+                </div>
+                <!--//カート -->
+                
+            </div>
+            <!--//販売状況およびカート -->
+            
+        </div>
+        <!--//商品ページのレイアウト -->
+        
+    </body>
+    </html>

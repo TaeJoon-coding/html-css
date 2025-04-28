@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>商品解説</title>
+    <style>
+        @font-face {
+            font-display: swap; 
+            font-family: 'Zen Maru Gothic';
+            font-style: normal;
+            font-weight: 400;
+            src: url('fonts/zen-maru-gothic-v17-japanese_latin-regular.woff2') format('woff2'); 
+        }
+        /* 
+		ページ全体において 
+	    1) フォント：Zen Maru Gothic
+	    */
+        * {
+            font-family:'Zen Maru Gothic';
+        }
+        /* 
+        상품 전체 패널 section
+        1) 너비 : 700px
+        2) 높이 : 400px
+        3) 외곽선 스타일 : 실선
+        4) 외곽선 색 : #c9ddf8
+        5) 외곽선 굵기 : 2px
+        */
+        #child_wear {
+            width: 700px;
+            height: 400px;
+            border: 2px solid #c9ddf8;
+        }
+
+        /* 
+        상품 이미지 section
+        1) 정렬(플로팅) : 왼쪽
+        2) 너비 : 350px
+        3) 높이 : 100%
+        4) 배경색 : #fff
+        5) 외곽선 : 10px 
+		6) 내부 정렬 : 가운데
+        7) 배경색 : #dcdeea
+        */
+        #product_pic {
+            float: left;
+            width: 350px;
+            height: 100%;
+            background-color: #ffffff;
+            border-width: 10px;
+            align-items:center;
+            display:flex;
+            justify-content: center;
+            /*
+            divにおいて、完全中央揃えにする方法、全部入れる
+            */
+            text-align: center;
+            vertical-align: center;
+            background-color: #dcdeaa;
+            
+        }
+
+        /*
+        상품 설명 section
+        1) 플로팅 방향 : 왼쪽
+        2) 너비 : 350px
+        3) 높이 : 400px
+        4) 배경색 : #c9ddf8
+         */
+        #product_detail {
+            float: left;
+            width: 350px;
+            height: 400px;
+            background-color: #c9ddf8;
+        }
+        /*
+        상품 설명 내부 테이블 section
+        1) 정렬 및 외부와의 간격 : 15px 중앙정렬 : 순서에 유의할 것
+        2) 글꼴 크기 : 10pt (선택적 적용)
+        3) 문단내 줄간격 : 26pt (선택적 적용)
+        4) 글꼴 종류 : 나눔고딕
+        5) 글꼴색 : #333
+        6) 테이블 너비 : 320px
+        7) 외곽선 스타일 : 이중선
+        8) 외곽선 굵기 : 4x
+        9) 외곽선 색 : #fff
+        10) 내부간격 : 13px(상하) 15px(좌우) 
+        11) 배경색 : #c3dcf8    
+        */
+        #product_tbl1 {
+            margin: 15px auto;
+            /* 순서에 유의할 것 ! */
+            font-size: 10pt;
+            line-height: 32px;
+            font-family: "Zen Maru Gothic";
+            color: #333333;
+            width: 320px;
+            border: 4px double #FFF;
+            padding: 10px 15px;
+            background-color: #c3dcf8;
+        }
+        /* 
+        상품 타이틀 
+        1) 너비 : 70px;
+        2) 글꼴 형태 : 굵게
+        */
+        .product_title {
+            width: 70px;
+            font-weight: bold;
+        }
+
+        /* 상품 가격 */
+        .product_spec_price {
+            color: red;
+            font-size: 12pt;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 상품 전체 section 시작 -->
+    <div id="child_wear">
+
+        <!-- 상품 이미지 -->
+        <div id="product_pic">
+            <img src="img/small_suite.jpg" >
+        </div>
+
+        <!-- 상품 설명 시작 -->
+        <div id="product_detail">
+            <table id="product_tbl1">
+                <tr>
+                    <td class="product_title">品名</td>
+                    <td>
+                        キッズ、女児、<br>
+                        チェック柄ワンピース
+                    </td>
+                </tr>
+                <tr>
+                    <td class="product_title">色</td>
+                    <td>赤、黒、チェック状</td>
+                </tr>
+                <tr>
+                    <td class="product_title" colspan="2">
+                        詳細
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        子供の皮膚に優しく、<br>
+                        快適な天然素材<br>
+                        COTTON USA 認証取得<br>
+                        <b>身長</b> : 110~140cm<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="product_title">定価</td>
+                    <td><s>5,500円</s></td>
+                </tr>
+                <tr>
+                    <td class="product_title">割引価</td>
+                    <td class="product_spec_price">4,680円</td>
+                </tr>
+            </table>
+        </div>
+        <!-- 상품 설명 끝 -->
+
+    </div>
+    <!-- 상품 전체 section 끝 -->
+
+</body>
+
+</html>

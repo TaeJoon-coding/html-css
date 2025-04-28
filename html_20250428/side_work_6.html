@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="green">
+    <meta name="Author" content="student">
+    <meta name="Keywords" content="html">
+    <meta name="Description" content="mall product-list panel layout">
+
+    <title>商品購入履歴</title>
+
+    <link rel="stylesheet" href="css/side_work_6_style.css" type="text/css">
+
+</head>
+
+<body>
+      
+    <!-- 1. 商品購入履歴の開始 -->
+    <div class="product_buy_list">
+          
+        <!-- 2. 左：商品購入日、取引番号、支払情報、領収書開始 -->
+        <div class="product_pay_list"> 
+            <!-- 2－1. 左上：商品の購入日、注文番号。開始（テキストボタンはイメージで） -->
+            <div class="product_pay_date_no">
+                <b>2015年2月13日</b>&nbsp;
+                <a href="pay_no_btn">(88302841)</a>
+            </div>
+            <!-- 2－1. 左上：商品の購入日、注文番号。終了  -->
+                  
+            <!-- 2-2. 左下：支払い情報、注文内容、領収書開始 -->
+            <div class="product_pay_detail">
+                支払い金額 
+                <b>
+                <span class="money_stl">1,620</span>円
+                </b><br>
+                <a href="#" class="order_misc_btn">注文内容</a>
+                <a href="#" class="order_misc_btn2">▶</a>
+                <a href="#">
+                    <img style="width: 100px;" src="img/領収書.png">
+                </a>				
+            </div>	
+            <!-- 2-2. 左下：支払い情報、注文内容、領収書終了 -->
+        </div>
+        <!-- 2. 左：商品購入日、取引番号、支払情報、領収書終わり -->
+              
+        <!-- 3. 右：商品のサムネイメージ、商品履歴、販売者、注文の処理など開始 -->
+        <div class="product_contents_order_list">
+                  
+            <!-- 3-1. 右上：商品のサムネ、販売者、注文の処理開始 -->
+            <div class="product_contents_order_proc">
+                  
+                <!-- 3-1-1. 商品のサムネ開始 -->
+                <div class="product_small_img">
+                    <img width="100%" src="img/small-book.jpg">
+                </div>
+                <!-- 3-1-1. 商品のサムネ開始終了 -->
+                      
+                <!-- 3-1-2. 商品説明開始 -->
+                <div class="product_content_detail">
+                    <a href="#" class="product_content_btn">
+                    金色のガッシュ！！の続編。100名の魔物の子が戦い合う
+                    魔界の王を決める戦いが終わったその後・・・
+                    </a>
+                    <br><br>
+                    <span class="order_no">
+                    オーダー番号 &nbsp;|&nbsp;&nbsp;88302841
+                    </span>
+                </div>
+                <!-- 3-1-2. 商品説明終了 -->
+                      
+                <!-- 3-1-3. 商品の販売者開始 -->
+                <div class="product_seller">
+                    雷句誠
+                    <a href="#">
+                        <img src="img/btn_barrow02.gif">
+                    </a>
+                </div>
+                <!-- 3-1-3. 商品の販売者終了 -->
+                      
+                <!-- 3-1-4. 注文の処理開始 -->
+                <div class="order_proc">
+                    <span class="shipping_proc">購入完了</span><br>
+                    購入日<br>
+                    (2月13日)
+                </div>
+                <!-- 3-1-4. 注文の処理開始終了 -->
+                          
+            </div>
+            
+            <!-- 3-1. 右上：商品のサムネ、販売者、注文の処理終了 -->
+
+            <!-- 3-2. 右下：領収書の印刷、お問い合わせ、注文履歴の削除、商品のレビュー開始 -->
+            <div class="order_misc_list">
+                  
+                <!-- 3-2-1. 右下（左）：領収書の印刷、お問い合わせ、注文履歴の削除開始  -->
+                <div class="order_misc_btns">
+                    <a href="#" class="order_misc_btn">領収書の印刷</a>
+                    <a href="#" class="order_misc_btn2">▶</a>&nbsp;
+                    <a href="#" class="order_misc_btn">お問い合わせ</a>
+                    <a href="#" class="order_misc_btn2">▶</a>&nbsp;
+                    <a href="#" class="order_misc_btn">注文履歴の削除</a>
+                    <a href="#" class="order_misc_btn2">▶</a>&nbsp;
+                </div>
+                <!-- 3-2-1. 右下（左）：領収書の印刷、お問い合わせ、注文履歴の削除終了  -->
+                      
+                <!-- 3-2-2. 右下（右）：商品のレビュー開始  -->
+                <div class="order_eval_btn">
+                    <a href="#"><img style="width: 104px;" src="img/商品のレビュー.png"></a>
+                </div>
+                <!-- 3-2-2. 右下（右）：商品のレビュー終了  -->
+            </div>
+			<!-- 3-2. 右下：領収書の印刷、お問い合わせ、注文履歴の削除、商品のレビュー終了 -->
+
+        </div>
+        <!-- 3. 右：商品のサムネイメージ、商品履歴、販売者、注文の処理など終了 -->
+          
+    </div>
+    <!-- 1. 商品購入履歴の終了 -->
+</body>
+</html>

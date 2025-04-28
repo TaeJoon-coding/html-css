@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <style>
+@font-face {
+    font-display: swap; 
+    font-family: 'Zen Maru Gothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/zen-maru-gothic-v17-japanese_latin-regular.woff2') format('woff2'); 
+}
+
+div{font-family: "Zen Maru Gothic";
+    font-size: 1em;
+    color: azure;
+    /*フォント：「Zen Maru Gothic」、フォントサイズ「1em」、文字色「azure」*/
+    text-shadow: 0 0 3px #000;
+    /*影を応用した文字の外郭線*/
+    line-height: 2em;
+    /*行間：「2em」*/
+    border: 10px solid #CCCCCC;
+    /*ボーダーライン10px、実線、色：#CCCCCC*/
+    border-radius: 20px;
+    /*ボーダーラインの丸み：20px*/
+    box-shadow: 5px 5px 10px 5px #444444;
+    /*ボックスの影、水平距離：5px、垂直距離：5px、ぼかしの半径：10px、ぼやかしの距離：5px*/
+    width:700px;
+    height:1000px; 
+}
+
+#article_box {
+    background-image: url(img/Richard_Stallman.jpg);
+    /*背景画像*/
+    background-repeat: no-repeat;
+    /*リピートなし*/
+    background-size: 700px 1000px;
+    /*背景の大きさがボックス内にピッタリに*/
+    /*機能しなくなった*/
+    background-clip:padding-box;
+    /*背景ボックスモデルをボーダーライン以外の内部を基準に*/
+    background-attachment: fixed;
+    /*スクロールしても背景は固定*/
+    box-sizing:border-box;
+}
+        
+    </style>   
+</head>
+<body>
+   
+    <div id="article_box">
+        1970年代の後半から1980年代の初めにかけて、MITのハッカー文化は徐々に解体していったが、ストールマンはこの衰退に対する熱烈な批判者として活躍した。
+
+        1977年、MIT CS研はパスワード制を導入し、これまで自由であった匿名アクセスを禁止する。これに対しストールマンはパスワードを解読する方法を見つけた上で、
+        パスワードを空白文字に変更するよう促す（実質的に旧来通りの匿名アクセスを可能にできる）メッセージを付け、パスワードの入ったメッセージを各人に送りつける
+        という反対運動を行う。パスワード制を覆すまでには至らなかったものの、これにより全体の20%がストールマンに賛同し、パスワードを変更する。
+        
+        同時期に、ソースコードを配布するという文化が廃れ、著作権を用いてコピーや再配布を制限するのが一般化した。その代表とも言えるのがScribe（英語版）であり、
+        1979年にはこのソフトウェアに一種の「時限装置（英語版）」が組み込まれ、ライセンス無しのアクセスが強力に禁止されるに至る。この制約に対して、ストールマンは
+        「（ユーザーの自由を制限することは）人道に対する罪（英: crime against humanity）である」[9] と痛烈に批判する。
+    </div>
+   
+</body>
+</html>

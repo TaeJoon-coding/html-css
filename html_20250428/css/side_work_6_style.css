@@ -1,0 +1,273 @@
+@CHARSET "UTF-8";
+
+@font-face {
+    font-display: swap; 
+    font-family: 'Zen Maru Gothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/zen-maru-gothic-v17-japanese_latin-regular.woff2') format('woff2'); 
+}
+
+/* 全体 */
+/*   
+	外部間隔：0
+    フォント：システムフォント
+    フォントサイズ
+*/
+*{
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
+    'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+}
+
+/* 1. 1. 商品購入履歴BOX */
+/*
+	横幅：720px
+	高さ：170px
+    ボーダーラインの種類：実線
+    ボーダーラインの色：灰色
+    ボーダーラインの太さ：上下1px左右0
+*/
+.product_buy_list {
+    width: 720px;
+    height: 170px;
+    border-style: solid;
+    border-width: 1px 0px;
+}
+
+/* 2. 左：商品購入日、取引番号、支払情報、領収書 */
+/*
+	フロート：左
+	横幅：170px
+	高さ：170px
+    ボーダーラインの種類：実線
+    ボーダーラインの色：lightgray
+    ボーダーラインの太さ：上右下左 = 0 1px 0 0
+*/
+.product_pay_list {
+    float: left;
+    width: 170px;
+    height: 170px;
+    border-style : solid;
+	border-color : lightgray; 
+	border-width : 0 1px 0 0;
+}
+
+/* 2－1. 左上：商品の購入日、注文番号 */
+/*
+	横幅：170px
+	高さ：30px
+    ボーダーラインの種類：実線
+    ボーダーラインの色：lightgray
+    テキストの水平方向の配置：中央揃え
+    内部間隔：上右下左= 20px 0 0 0
+*/
+.product_pay_date_no {
+    width: 170px;
+    height: 30px;
+    border-style : solid;
+	border-color : lightgray;
+	border-width : 0 0 1px 0;
+    text-align: center;
+    padding: 20px 0 0 0;
+}
+
+/* イメージの外郭線を除去 */
+img { 
+    border: 0;
+}
+
+/* 2-1. オーダー番号ボタン */
+/*
+    文字色：#777777
+    文字の装飾：なし
+*/
+a.pay_no_btn {
+	color: #777777;
+    text-decoration: none;
+}
+
+/*
+  共通、文字の装飾：アンダーライン 
+*/
+a.pay_no_btn:hover {
+    text-decoration: underline;
+}
+
+/* 2-2. 支払金額 */
+.money_stl {
+    font-size : 18px;
+}
+
+/* 2-2. 注文内容、領収書の印刷、お問い合わせ、注文履歴の削除ボタン */
+a.order_misc_btn {
+	font-size : 11px;
+	font-family : 'Zen Maru Gothic';
+	color : #3366ff;
+}
+
+/* 2-2. ▶  ボタン */
+a.order_misc_btn2 {
+    font-size : 7px;
+    color : #3366ff;
+    text-decoration : none;
+}
+
+/* 2-2. 左下：支払い情報、注文内容、領収書 */
+/*
+    横幅：155px
+    高さ：105px
+    内部間隔：上右下左 15px 0 0 15px
+    行間隔：27px
+*/
+.product_pay_detail{
+    width: 155px;
+    height: 105px;
+    padding: 15px 0 0 15px;
+    line-height: 27px;
+}
+
+/* 3. 右：商品のサムネイメージ、商品履歴、販売者、注文の処理など */
+.product_contents_order_list {
+    float : left;
+    width : 548px;
+    min-height : 170px;
+    clear: both;
+}
+
+/* 3-1. 右上：商品のサムネ、販売者、注文の処理 */
+.product_contents_order_proc {
+    width : 548px;
+    height : 110px;
+    border-style : solid;
+    border-color : lightgray;
+    border-width : 0 0 1px 0;
+}
+
+/* 3-1-1. 商品のサムネ */
+.product_small_img {
+    float: left;
+    width: 98px;
+    height: 95px;
+    text-align: center;
+    padding: 15px 0 0 0;
+}
+
+
+/* 3-1-2. 商品説明 */
+.product_content_detail {
+    float : left;
+    width : 220px;
+    height : 85px; 
+    padding : 25px 20px 0 0;
+    color : #333;
+}
+
+/* 3-1-2. 商品説明ボタン */
+a.product_content_btn {
+	color : #333;
+	text-decoration : none;			
+}
+
+/* 3-1-2. 商品説明ボタン：hover */
+a.product_content_btn:hover {
+    text-decoration : underline;
+}
+
+/* 3-1-2. オーダー番号 */
+.order_no {
+    font-size : 11px;
+    color : gray;
+}
+
+/* 3-1-3. 商品の販売者 */
+/*
+    フロート：左
+    横幅：110px
+    高さ：85px
+    内部間隔：上右下左 25px 0 0 0
+    文字色：#333333
+*/
+.product_seller{
+    float: left;
+    width: 110px;
+    height: 85px;
+    padding: 25px 0 0 0;
+    color: #333333;
+}
+
+/* 3-1-4. 注文の処理 */
+/*
+    フロート：左
+    横幅：100px
+    高さ：90px
+    内部間隔：20px 0 0 0
+    文字色：#333333
+    フォントサイズ：11px
+    テキストの水平方向の配置：中央揃え
+*/
+.order_proc {
+    float: left;
+    width: 100px;
+    height: 90px;
+    padding: 20px 0 0 0;
+    font: 11px normal #333333;
+    text-align: center;
+}
+
+/* 3-1-4. 注文の配達、処理の通知ラベル */
+/*
+    文字色：アカ
+    フォントの太さ：太字
+    行間隔：24px
+*/
+.shipping_proc {
+    color: red;
+    font-weight: bold;
+    line-height: 24px;
+} 
+
+/* 3-2. 우측 하단 : 영수증 출력/문의/주문내역삭제/상품평 쓰기 */
+/*
+    横幅：548px
+    高さ：60px
+    フォントサイズ：11px
+    文字色：#333333
+*/
+.order_misc_list {
+    width: 548px;
+    height: 60px;
+    font: 11px normal #333333;
+}
+
+/* 3-2-1. 右下（左）：領収書の印刷、お問い合わせ、注文履歴の削除 */
+/*
+    フロート：左
+    横幅：420px
+    高さ：40px
+    内部間隔：20px 0 0 0
+    字下げ：20px
+*/
+.order_misc_btns {
+    float: left;
+    width: 420px;
+    height: 40px;
+    padding: 20px 0 0 0;
+    text-indent: 20px;
+}
+
+/* 3-2-2. 右下（右）：商品のレビュー */
+/*
+    フロート：左
+    横幅：128px
+    高さ：45px
+    内部間隔：15px 0 0 0
+*/
+.order_eval_btn {
+    float: left;
+    width: 128px;
+    height: 45px;
+    padding: 15px 0 0 0;
+}
