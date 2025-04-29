@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
+
+    <style>
+        /*
+        input[type="text"]{
+            font-size: 1em;
+            padding: 0.5em;
+            width: 200px;
+            border: 2px solid lightslategray;
+            border-radius: 5px;
+            background: palegoldenrod;
+        }
+            */
+        
+        #wrap {
+            width: 500px;
+            height: 300px;
+            background: yellow;
+        }
+        .bt-custom-len {
+          /* width : 200px; */
+          background : orange;
+       }
+        
+
+    </style>
+    
+</head>
+<body>
+    <form method="post" action="#" > 
+        <!-- novalidate : 폼 유효성 점검 기능 정지-->
+        <!-- form 입력 : regex(백단 점검)(보안, 자바스크립트임)
+            입력-> 완성(이벤트)-> 백단전송(form validation : java, node.js)-> 프론트 메시징(y/n) -> 프론트 메시징 처리(팝업, 여백 메시지 출력) 
+        -->
+
+        <fieldset>
+            <div id="wrap">
+
+                <input type="hidden" name="underwater" value="8000">
+
+                <input type="text" id="member_id"
+                name="member_id" placeholder="記入しなさい"
+                size="10" maxlength="7" 
+                required 
+                pattern="[가-힣]{2,4}"
+                title="한글만 입력하시오"
+                value="거머리"
+                readonly/>
+
+                <!-- form validation(폼 데이터 유효성 점검) 
+               required : 필수입력 항목 
+               pattern : 정규식(regex) 입력 제한(제약)사항 등록 -->
+                <br><br>
+
+                <input type="text" name="name" 
+                 class="bt-custom-len" 
+                 required
+                 pattern="\d{4}-\d{1,2}-\d{1,2}" 
+                 placeholder="2025-4-29 형식으로 입력해주세요"
+                 title="2025-4-29 형식으로 입력해주세요" /> 
+
+                <br>
+
+                <label for="email">Enter your example.com email:</label>
+                <br>
+                <input type="email" name="email" placeholder="abc123@gmail.com"
+                required
+                pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" size="40"/>
+
+                <button type="submit">제출</button>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
