@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>select box sample</title>
+
+  <script src="https://raw.githubusercontent.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+
+  <style>
+	select 
+	{ 
+		width:300px;
+		height:100px;
+
+		font-size:3em;
+		font-family:굴림;
+
+		/* 네이티브(native) 외형 감추기 */ 
+		appearance: none; 
+		
+		background: url('wave_bg.png') no-repeat; 
+
+		/* iOS 라운드 외곽 제거 */
+		border-radius: 0px; 
+
+		/* 
+			알파(객체 투명도) 조정
+			은닉(숨기기) : opacity: 0
+		*/
+		opacity: 0.5; 
+		filter:alpha(opacity=0.5); /* IE8 */
+
+	} 
+
+	/* IE 10, 11의 네이티브(native) 화살표 숨기기 */ 
+	select::-ms-expand { display: none; }
+  </style>
+ </head>
+ <body>
+  
+  <select id="select_box">
+	<option>서울</option>
+  	<option>인천</option>
+	<option>부산</option>
+	<option>대구</option>
+	<option>광주</option>
+	<option>울산</option>
+  </select>
+
+ </body>
+</html>
