@@ -4,6 +4,7 @@
 	}
 
 	div#wrap{
+		/* 背景の作成 */
         width: 880px;
         height: 470px;
         background-image: url(../../img/monet/gallery-blank.png);
@@ -11,16 +12,10 @@
         display: flex;
         flex-direction: row;
         z-index: 1;
-  
 	}
-	/* 모네의 그림 : 생타드레스(La terrasse à Sainte-Adresse)의 테라스 (1866년작) */
+	/* La terrasse à Sainte-Adresse */
 	/* 
-	   우측 갤러리 벽면 그림 패널 작성 
-	   참고) 좌표 성분은 "픽픽에디터" 등의 프로그램을 활용하여 확인할 수 있습니다. 
-	   화면의 절대 좌표를 쉽게 구하려면 F11을 클릭하여 크기 측정시 타이틀바/메뉴바 등의 
-	   세로 사이즈를 쉽게 배제할 수 있도록 측정하는 것이 바람직합니다.
-	   
-	   hint) perspective 변환을 활용합니다.
+	   背景の額縁のパネル作成
 	*/
 	#pnl1 {
         position: absolute;
@@ -30,13 +25,12 @@
 		flex-direction: row;
 		width:45px;
 		height:100px;
-		z-index:2; /* 갤러리 그림간 겹침 방지 : 레이어 계층화 사용 */
+		z-index:2; 
         perspective: 500px;
 	}
-
-	/* 그림 패널로써 Y축으로 적당한 각도로 회전하는 변환 효과를 적용하고
-	   너비,높이,투명도 변환 효과도 동시에 발생할 수 있도록 적용합니다.
-     */
+	/* 
+		額縁に合わせて絵を変形、おまけに透明度も調整
+    */
 	#pic1 {
         transform: rotateY(-60deg);
         transition-property: width, height, opacity;
@@ -55,13 +49,8 @@
 	}
 
 	/*
-		우측 갤러리 벽면 그림(썸네일)에 롤오버하였을 때
-		화면 중앙에 원화가 나타날 수 있도록 조치하는 부분입니다.
-		
-		각도/크기 변환(transform)/투명도(opacity) 변환 및 
-		박스음영(shadow) 효과를 적용하십시오.
-
-		참고) 절대좌표를 마이너스(-) 성분을 사용하여 출력하도록 합니다.
+		モネの絵にカーソルを置く時、画面中央に絵がポップアップされるようにする。
+		角度、サイズ、透明度変換に加えておまけの影
 	*/
 	#pic1:hover {	
         /* カーソルを置く時に表示（変化）されるもの */	
@@ -71,36 +60,35 @@
 		width:680px;
 		height:420px;
         transform:rotateY(0deg);
-        /* */
+        /* 回転変形を戻す。 */
 		opacity:1.0;
-        
         border:10px solid #ccc;
         /* ボーダーライン、ここでは疑似的な額縁、移動座標を修正 */
 		border-image-source:url('../../img/monet/monet-1.png');
 		border-image-slice:10;
 		border-image-width:auto;
-
         box-shadow:#333 10px 10px 10px;
 		z-index:2;
     }
 
-	/* 벽면 갤러리 이미지(썸네일) 
-	   : 캡처 프로그램 혹은 픽픽에디터 등의 프로그램을 최대한 활용하여 
-	     썸네일 이미지의 크기를 측정하여 적용합니다.*/
+	/* 
+		額縁のサムネ
+	*/
 	img#monet1 {
 		width:70px;
 		height:135px;
     }
 
-	/* 롤오버시 출력 이미지(큰이미지) : 680*420(px) */
+	/* 
+		拡大された絵：680*420px
+	*/
 	img#monet1:hover {
 		width:680px;
 		height:420px;
 	}
 	
-	/* 고흐의 그림 : 해바라기(sunflowers) (1888년작) */
-	#pnl2
-	{
+	/* sunflowers */
+	#pnl2 {
 		position:absolute;
 		left:407px;
 		top:213px;		
@@ -111,8 +99,7 @@
 		z-index: 1;
 	}
 
-	#pic2
-	{		
+	#pic2 {		
 		transition-property:width, height, opacity;
 		transition-duration:0.4s;            
 		transition-timing-function:steps(4, start);
@@ -124,18 +111,14 @@
 		position:absolute;
 		left:-160px;
 		top:-190px;
-
 		width:300px;
 		height:410px;
-
 		box-shadow:#333 10px 10px 10px;
 		opacity:1.0;
-			
         border:10px solid #ccc;
 		border-image-source:url('../../img/monet/Vincent_van_Gogh_Sunflowers.jpg');
 		border-image-slice:10;
 		border-image-width:auto;
-
 	}
 
 	img#gogh1 {
@@ -143,8 +126,7 @@
 		height:66px;
 	}
 	
-	img#gogh1:hover
-	{
+	img#gogh1:hover	{
 		width:300px;
 		height:410px;
 	} 
