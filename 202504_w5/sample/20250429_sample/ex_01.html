@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" 
+	  content="width=device-width, 
+			   initial-scale=1, 
+			   minimum-scale=1, 
+			   maximum-scale=1, 
+			   user-scalable=no">
+<title>가변 그리드 예시</title>
+<style>
+*{
+	margin:0; 
+	padding:0;
+}
+
+#wrap
+{
+	width:90%;	/* 960px */
+	height:500px;
+	margin:0 auto;
+	border:4px solid #000;
+}
+
+#wrap div
+{
+	display:inline-block;
+	width:31.25%;	/* 300px ÷ 960px */
+	height:100%;
+}
+
+#wrap div:first-child
+{
+	margin-right:37.5%;	/* 360px ÷ 960px */
+	background:green;
+}
+
+#wrap div:first-child + div
+{
+	background:orange;
+}
+</style>
+</head>
+<body>
+	
+	<!-- 가변 그리드 -->
+	<div id="wrap">
+		<div></div><div></div>
+	</div>
+
+</body>
+</html>
