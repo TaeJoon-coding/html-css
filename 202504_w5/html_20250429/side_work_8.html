@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>フィンセント・ファン・ゴッホ展</title>
+
+  <style>
+
+    @font-face {
+      font-display: swap;
+      font-family: 'Zen Maru Gothic';
+      font-style: normal;
+      font-weight: 400;
+      src: url('../fonts/zen-maru-gothic-v17-japanese_latin-regular.woff2') format('woff2'); 
+    }
+    /*
+    １．共通条件
+    １）フォントサイズ：9ポイント（場合によって調整すること）
+    ２）フォント：Zen Maru Gothic
+    ３）行間隔：15ポイント（場合によって調整すること）
+    */
+    /*
+    ２．全体レイアウト（id : wrap_layout）
+    １）横幅：1200px
+    ２）高さ：1200px
+    ３）背景イメージ：ゴッホの自画像
+    ４）（内部）アイテムレイヤー配置：「行」方向、複数行-逆方向
+    */
+    /*
+    ３．各パネル（id:layer1 ~ layer4）
+    １）サイズ：350*300px
+    ２）外部間隔：10px
+    ３）内部間隔：10px
+    ４）背景色：lightgray
+    ５）透明度：0.7
+    */
+    /*
+    ４．タイトルパネル（id:layer5）
+    １）サイズ（横縦）：740px*350px
+    ２）外部間隔：10px
+    ３）内部間隔：10px
+    ４）背景色：lightgray
+    ５）透明度：0.4
+    ６）揃え：中央揃え
+    ７）フォントサイズ：100px
+    ８）文字色：青
+    ９）文字の間隔：-10px
+    １０）フォント：Zen Maru Gothic
+    */
+    /*
+    ５．各アイテムレイヤー内部イメージパネルレイヤー（class : imgbox）
+    １）サイズ：350*300px
+    ２）揃え：中央揃え
+    ３）内部間隔（下段）：10px
+    */
+ 
+    *{
+      font-size: 14pt;
+      font-family: 'Zen Maru Gothic';
+      line-height: 15pt;
+    }
+    div#wrap_layout {
+      width: 1200px;
+      height: 1200px;
+      background-image: url(../img/gogh/portrait.jpg);
+      display:flex;
+      flex-flow:row wrap-reverse;
+      /* flex-flow は CSS の一括指定プロパティで、フレックスコンテナーの向きと折り返しの動作を同時に指定します。 */
+      /* 先に出る rowが正方向、wrapで親要素の各方向の終わりで改行を実施。 -reverseは改行の方向を逆にする。*/
+      /* この場合、1行目は正方向、2行目は下でなく上の列に改行*/
+      background-repeat: no-repeat;
+      background-position:right;
+      background-size: 100%;
+    }
+    
+    img {
+      height: 300px;
+    }
+    /* img全体へのサイズ指定。*/
+    
+    img[id^=img] {
+      width: 100%;
+    }
+    /* [id^=img]：idの属性値がimgで始まるすべてに共有される。例：id="img_small"、id="img_profile_photo"など*/
+    /* 外のimg：[id^=img]が<img>タグ限定で機能するようにする。 */
+    /* 例：<div id="img2">…</div>には反映されず <img id="img2" src="img2.jpg">には反映される。*/
+
+    div.imgbox {
+      width: 350px;
+      display: flex;
+      /* ちゃんと横並びになるように */
+      align-items: center;
+      /* 交差軸（cross axis）方向：画像を垂直方向の中央に配置 */
+      justify-content:center;
+      /* 主軸（main axis）方向：画像を水平方向の中央に配置 */
+      padding-bottom:10px;
+    }
+
+    div[id^=layer] {
+    /* [id^=layer]：idの属性値がlayerで始まるすべてに共有される。 */
+    /* 外のdiv：[id^=layer]が<div>タグ限定で機能するようにする。 */
+      width:350px;
+      height:550px;
+      margin:10px;
+      background-color:lightgray;
+      padding:10px;
+      opacity:0.7;
+      
+      transition-property: opacity;
+      transition-duration:0.2s;
+      transition-timing-function:steps(1, start);
+      transition-delay : 0.1s;
+      /* 「div[id^=layer]:hover」が機能する対象 */
+    }
+
+    div[id^=layer]:hover {
+      /* div[id^=layer] の上にマウスカーソルが乗った時。*/
+      opacity:1.0;
+    }
+
+    div#layer5
+	{
+		width:740px;
+		height:550px;
+		margin:10px;
+		background-color:lightgray;
+		padding:10px;
+		opacity:0.4;
+		
+		font-family:'Zen Maru Gothic';
+		font-size:100px;
+		color:blue;
+		letter-spacing:-10px;
+
+		display:flex;
+		align-items:center;
+		justify-content:center;
+
+     	/* text-shadow : white 30px 30px 2px; */
+	}
+    
+  </style>
+</head>
+
+<body>
+
+  <!-- 전체 레이아웃 시작 -->
+  <div id="wrap_layout">
+
+    <div id="layer1">
+      <div class="imgbox">
+        <img src="../img/gogh/starry_night_ballance1.jpg" id="img1"> 
+      </div>
+      星月夜（ほしづきよ、フランス語: La nuit étoilée、オランダ語: De sterrennacht、英語: The starry night）は、
+      オランダの画家・ゴッホの代表作のひとつ。1889年6月、フランスサン＝レミ＝ド＝プロヴァンスのサン＝ポール・ド・モゾール
+      修道院の精神病院で療養中に描かれた。1941年、リリー・P・ブリス遺贈。ニューヨーク近代美術館の永久コレクションである。
+    </div>
+
+    <div id="layer2">
+      <div class="imgbox">
+        <img src="../img/gogh/sunflower.jpg" id="img2">
+      </div>
+      『ひまわり』（フランス語: Les Tournesols、オランダ語: Zonnebloemen、英語: Sunflowers）は、1888年8月から1890年
+      1月にかけてフィンセント・ファン・ゴッホによって描かれた、花瓶に活けられたヒマワリをモチーフとする複数の絵画の名称
+      である。
+
+    </div>
+
+    <div id="layer3">
+      <div class="imgbox">
+        <img src="../img/gogh/cafe-terrace-arles.jpg" id="img3">
+      </div>
+      『夜のカフェテラス』 （よるのカフェテラス、フランス語: Terrasse du café le soir）は、1888年9月に
+      フィンセント・ファン・ゴッホによって描かれた絵画。油彩。クレラー・ミュラー美術館蔵。
+    </div>
+
+    <div id="layer4">
+      <div class="imgbox">
+        <img src="../img/gogh/room.jpg" id="img4">
+      </div>
+      ファン・ゴッホの寝室（ファンゴッホのしんしつ、フランス語: La Chambre à Arles、オランダ語: Slaapkamer te Arles）
+      とは、1888年から1889年にかけてフィンセント・ファン・ゴッホによって描かれた絵画。油彩。同名の作品が3点あることが
+      認められている。「ゴッホの寝室」、「アルルの寝室」「ファンゴッホの部屋」、「アルルの部屋」と表記されることもある。
+    </div>
+
+    <div id="layer5">
+      Vincent van Gogh
+    </div>
+
+  </div>
+
+</body>
+
+</html>

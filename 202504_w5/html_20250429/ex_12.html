@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p {
+            font-size: 1em;
+        }
+        .content {
+            font-size: 1.5em;
+        }
+        .top {
+            max-width: 100%;
+            height: auto;
+        }
+
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 5px;
+        }
+        
+        .container {
+            width: 200px;
+            height: 400px;
+            border: 1px solid #000;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .fill {
+            object-fit: fill;
+        }
+        .contain {
+            object-fit: contain;
+        }
+        .cover {
+            object-fit: cover;
+        }
+        .none {
+            object-fit: none;
+        }
+        .scale-down {
+            object-fit: scale-down;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="../img/google_maps_wide.PNG" alt="map" class="top">
+    <!-- ビューポート連動で画像の大きさが変動される。 -->
+
+    <div class="container">
+        <img src="../img/cat.png" alt="cat" class="fill">
+        <h3>object-fit: fill</h3>
+      </div>
+      <div class="container">
+        <img src="../img/cat.png" alt="cat" class="contain">
+        <h3>object-fit: contain</h3>
+      </div>
+      <div class="container">
+        <img src="../img/cat.png" alt="cat" class="cover">
+        <h3>object-fit: cover</h3>
+      </div>
+      <div class="container">
+        <img src="../img/cat.png" alt="cat" class="none">
+        <h3>object-fit: none</h3>
+      </div>
+      <div class="container">
+        <img src="../img/cat.png" alt="cat" class="scale-down">
+        <h3>object-fit: scale-down</h3>
+      </div>
+    
+
+</body>
+</html>
