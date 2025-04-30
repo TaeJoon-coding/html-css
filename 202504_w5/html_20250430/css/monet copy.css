@@ -1,10 +1,8 @@
-	/*  화면의 좌측/상단 여백이 0이 되도록 설정한다 */
 	body{
 		margin-top: 0;
 		margin-left: 0;
 	}
 
-    /* 갤러리 배경(gallery-blank.png) 불러오기 */
 	div#wrap{
         width: 880px;
         height: 470px;
