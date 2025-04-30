@@ -1,24 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script src="https://raw.githubusercontent.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+
     <style>
     /*
     CP５．
     form validation
     式通りでも機能しなかったり、いたりする。
     WEBブラウザーによっては問題ない式でも問題ありと認識したりする。
-    patternを利用した
-
-    
-    
+    patternを利用するよりはJAVAscriptを利用する。
     */
+    select { 
+        width:150px;
+		height:50px;
+		font-size: 16px;
+        padding-left: 8px;
+		/* iOS 라운드 외곽 제거 */
+		border-radius: 0px; 
+		/* 
+			알파(객체 투명도) 조정
+			은닉(숨기기) : opacity: 0
+		*/
+		opacity: 0.8; 
+		filter:alpha(opacity=0.5); /* IE8 */
+	}
     </style>
 </head>
 
 <body>
-    
+
+    <form>
+        <select id="古典" name="古典">
+            <!-- multiplefを記入することでスクロール式に -->
+            <option value="1">猪</option>
+            <option value="2">鹿</option>
+            <option value="3">蝶</option>
+            <option value="4" selected>雪</option>
+            <option value="5">月</option>
+            <option value="6">花</option>
+        </select>
+        <hr>
+        <textarea id="txt123" name="txt" cols="20" rows="10" style="resize: none;">サイズ変更不可</textarea>
+        <!-- nameは被ってもいいが、被らない方がいい。 -->
+        <!-- colsは行の長さ -->
+        <!-- rowsは列の長さ -->
+        <!-- サイズ変更不可 -->
+        <textarea cols="20" rows="10" style="resize:vertical">縦軸サイズ変更可能</textarea>
+        <!-- 縦軸サイズ変更可能 -->
+        <textarea cols="20" rows="10" style="resize:horizontal">横軸サイズ変更可能</textarea>
+        <!-- 横軸サイズ変更可能 -->
+        <textarea cols="20" rows="10">サイズ変更可能</textarea>
+        <!-- <textarea></textarea>の場合、この間に入力する内容が初期値にあたる。 -->
+
+        <hr>
+        
+        <input type="submit" value="提出">
+
+        </textarea>
+        <hr>
+
+        <div id="txt2" contenteditable="true"
+        style="width: 300px; height: 300px; overflow: auto; background: coral;">
+        </div>
+        <!-- このようにdivを利用したテキスト入力エリアを作るのも可能 -->
+        <!-- が、提出には不向き -->
+
+    </form>
+
 </body>
 </html>

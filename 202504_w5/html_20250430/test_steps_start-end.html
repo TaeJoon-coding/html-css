@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>steps(start) vs steps(end)</title>
+<style>
+.container {
+  display: flex;
+  gap: 50px;
+}
+
+.counter {
+  width: 100px;
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  transition: transform 1s; /* transformプロパティを1秒かけて変化 */
+}
+
+.counter:hover {
+  transform: translateX(100px); /* ホバーで右に移動 */
+}
+
+.start {
+  transition-timing-function: steps(5, start); /* 5段階で即座に変化 */
+}
+
+.end {
+  transition-timing-function: steps(5, end); /* 5段階で終了時に変化 */
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="counter start" data-count="0">0</div>
+    <div class="counter end" data-count="0">0</div>
+  </div>
+
+  <script>
+    const counters = document.querySelectorAll('.counter');
+
+    counters.forEach(counter => {
+      counter.addEventListener('mouseover', () => {
+        let count = 0;
+        const interval = setInterval(() => {
+          count++;
+          counter.textContent = count;
+          if (count >= 5) {
+            clearInterval(interval);
+            // アニメーション終了後の状態をリセット (必要に応じて)
+            setTimeout(() => {
+              counter.textContent = 0;
+              counter.style.transform = 'translateX(0)';
+            }, 1000);
+          }
+        }, 200); // 各ステップの間隔 (1秒 / 5ステップ = 0.2秒 = 200ms)
+      });
+    });
+  </script>
+</body>
+</html>

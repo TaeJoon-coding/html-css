@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        section p::first-letter {
+            color: coral;
+        }
+        section > p {
+            color: blue;
+        }
+        .sin {
+            color: chartreuse;
+        }
+        .sin > p {
+            font-style: italic;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width:400px;
+            height: 360px;
+            padding: 20px;
+            text-align:left;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: relative;
+        }
+        p::first-letter {
+            font-family:'Gill Sans';
+            font-size: 3em;
+            font-weight: bold; 
+            color: blueviolet;
+        }
+        .bolt {
+            color: darkcyan;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <section class="container">
+        <h1>Test_mode_01</h1>
+        <p>1st_one</p>
+        <p>2nd_one</p>
+            <div class="sin">
+                <!-- 文字色「chartreuse」 -->
+                <p>3rd_one</p>
+                <!-- sinの子供要素のpなので、sin > p {font-style: italic;}が適用される。 -->
+                <span class="bolt">4th_one<p>5th_one</p></span>
+                <!-- クラス：boltにより、<span>の文字色は基本「darkcyan」 -->
+                <!-- <p>でないので、「p::first-letter」は反映されない。 -->
+                <!-- <span>の中の<p>はsinの直接の子でないので、「sin > p」は反映されない。 -->
+                <p>6th_one</p>
+                <!-- <span>から出たので、又「sin > p」が反映され、イタリック体になる。 -->
+                <div>
+                    <!-- 「div class="sin"」が内部にも反映される。（chartreuse色） -->
+                    <p>7th_one</p>
+                    <!-- 「p::first-letter」も反映される。 -->
+                </div>
+
+            </div>
+    </section>
+    
+    <div class="container">
+        <h1>Test_Mode_02</h1>
+        <p>THE_pistol</p>
+        <p>THE_rifle</p>
+    </div>
+
+    <div>
+        <h1>Test_Mode_03</h1>
+        <p>TEA</p>
+        <p>COLA</p>
+        <p>COFFEE</p>
+    </div>
+
+
+</body>
+</html>

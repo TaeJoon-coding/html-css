@@ -1,0 +1,152 @@
+	/*  화면의 좌측/상단 여백이 0이 되도록 설정한다 */
+	body{
+		margin-top: 0;
+		margin-left: 0;
+	}
+
+    /* 갤러리 배경(gallery-blank.png) 불러오기 */
+	div#wrap{
+        width: 880px;
+        height: 470px;
+        background-image: url(../../img/monet/gallery-blank.png);
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: row;
+        z-index: 1;
+  
+	}
+	/* 모네의 그림 : 생타드레스(La terrasse à Sainte-Adresse)의 테라스 (1866년작) */
+	/* 
+	   우측 갤러리 벽면 그림 패널 작성 
+	   참고) 좌표 성분은 "픽픽에디터" 등의 프로그램을 활용하여 확인할 수 있습니다. 
+	   화면의 절대 좌표를 쉽게 구하려면 F11을 클릭하여 크기 측정시 타이틀바/메뉴바 등의 
+	   세로 사이즈를 쉽게 배제할 수 있도록 측정하는 것이 바람직합니다.
+	   
+	   hint) perspective 변환을 활용합니다.
+	*/
+	#pnl1 {
+        position: absolute;
+        left:705px;
+		top:185px;
+		display:flex;
+		flex-direction: row;
+		width:45px;
+		height:100px;
+		z-index:2; /* 갤러리 그림간 겹침 방지 : 레이어 계층화 사용 */
+        perspective: 500px;
+	}
+
+	/* 그림 패널로써 Y축으로 적당한 각도로 회전하는 변환 효과를 적용하고
+	   너비,높이,투명도 변환 효과도 동시에 발생할 수 있도록 적용합니다.
+     */
+	#pic1 {
+        transform: rotateY(-60deg);
+        transition-property: width, height, opacity;
+        /* アニメーション要素を指定 */
+        transition-duration: 0.35s;
+        /* アニメーションにかかる時間 */
+        /* sで秒、msでミリ秒 */
+        transition-timing-function:steps(16, start);
+        /* 中間状態の値を算出する方法、stepsは段階的に、5は5段階とのこと */
+        /* start各アニメーション段階の開始部分が表示される */
+        /* end各アニメーション段階の終了部分が表示される */
+        transition-delay : 125ms;
+        /* 遅延 */
+		opacity:0.5;
+        /* 透明度 */
+	}
+
+	/*
+		우측 갤러리 벽면 그림(썸네일)에 롤오버하였을 때
+		화면 중앙에 원화가 나타날 수 있도록 조치하는 부분입니다.
+		
+		각도/크기 변환(transform)/투명도(opacity) 변환 및 
+		박스음영(shadow) 효과를 적용하십시오.
+
+		참고) 절대좌표를 마이너스(-) 성분을 사용하여 출력하도록 합니다.
+	*/
+	#pic1:hover {	
+        /* カーソルを置く時に表示（変化）されるもの */	
+		position:absolute;
+		left:-600px;
+		top:-170px;
+		width:680px;
+		height:420px;
+        transform:rotateY(0deg);
+        /* */
+		opacity:1.0;
+        
+        border:10px solid #ccc;
+        /* ボーダーライン、ここでは疑似的な額縁、移動座標を修正 */
+		border-image-source:url('../../img/monet/monet-1.png');
+		border-image-slice:10;
+		border-image-width:auto;
+
+        box-shadow:#333 10px 10px 10px;
+		z-index:2;
+    }
+
+	/* 벽면 갤러리 이미지(썸네일) 
+	   : 캡처 프로그램 혹은 픽픽에디터 등의 프로그램을 최대한 활용하여 
+	     썸네일 이미지의 크기를 측정하여 적용합니다.*/
+	img#monet1 {
+		width:70px;
+		height:135px;
+    }
+
+	/* 롤오버시 출력 이미지(큰이미지) : 680*420(px) */
+	img#monet1:hover {
+		width:680px;
+		height:420px;
+	}
+	
+	/* 고흐의 그림 : 해바라기(sunflowers) (1888년작) */
+	#pnl2
+	{
+		position:absolute;
+		left:407px;
+		top:213px;		
+		display:flex;
+		flex-direction: row;		
+		width:47x;
+		height:66px;
+		z-index: 1;
+	}
+
+	#pic2
+	{		
+		transition-property:width, height, opacity;
+		transition-duration:0.4s;            
+		transition-timing-function:steps(4, start);
+		transition-delay : 0.2s;
+		opacity:0.5;
+	}
+    
+	#pic2:hover	{				
+		position:absolute;
+		left:-160px;
+		top:-190px;
+
+		width:300px;
+		height:410px;
+
+		box-shadow:#333 10px 10px 10px;
+		opacity:1.0;
+			
+        border:10px solid #ccc;
+		border-image-source:url('../../img/monet/Vincent_van_Gogh_Sunflowers.jpg');
+		border-image-slice:10;
+		border-image-width:auto;
+
+	}
+
+	img#gogh1 {
+		width:47px;
+		height:66px;
+	}
+	
+	img#gogh1:hover
+	{
+		width:300px;
+		height:410px;
+	} 
