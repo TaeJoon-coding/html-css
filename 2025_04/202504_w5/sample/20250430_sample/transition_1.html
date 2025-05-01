@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>transition demo</title>
+
+	<script src="https://raw.githubusercontent.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+
+	<style>
+		div {
+			padding: 2em;
+			background-color: blue;
+			text-align: center;
+			width: 100px;
+			height: 100px;
+			
+			opacity: 1.0;
+
+			/*
+				transition-property:none; 변화할 속성이 없음.
+
+				transition-property:all;
+				트랜지션 효과를 적용할 수 있는 모든 속성을 변화시킴.
+
+				transition-property:속성, 속성,.....
+				주어진 속성을 변화시킴.
+
+				transition-duration:진행할 시간
+
+				ease : 처음에는 천천히 변화 중간에 빨라지다가 끝나면서 감속.
+				       cubic-bezier(0.25, 0.1, 0.25, 1)과 동일함.
+
+				linear : 일정 속도로 변화함.
+						 cubic-bezier(0, 0, 1, 1)과 동일함.
+
+				ease-in : 처음에는 천천히 시작하다가 그 후에 빨라짐.
+						  cubic-bezier(0.42, 0, 1, 1)과 동일함.
+
+				ease-out : 처음에는 빨리 시작하다가 그 후에 천천리 마무리.
+						   cubic-bezier(0, 0, 0.58, 1)과 동일함.
+
+				ease-in-out : 천천히 시작해서 서서히 빨라지다가 감속하면서 마무리.
+							  cubic-bezier(0.42, 0, 0.58, 1)과 동일함.  
+				
+				step-start : steps(1, start)와 동일.
+
+				step-end : steps(1, end)와 동일.
+
+				steps(스텝수, start 또는 end)
+				: 지정한 횟수 만큰 등간격으로 분할하여 변화.
+				첫번째 값은 몇단계로 변화할 것인지를 1이상의 수로 기입.
+				- start : 시작시 맨 처음 스텝이 일어남.
+				- end : 완료시 맨 마지막 스템일 일어남.
+				두번째 인자 생략시 end로 간주.
+
+				cubic-bezier(x1, y1, x2, y2)
+				: 변화의 양상을 3차원 베지어 곡선을 사용하여 지정함.
+
+				transition-delay : 지연시간
+
+
+			*/
+			transition-property: background-color, width, height, opacity;
+			transition-duration: 2s;
+			transition-timing-function: steps(4, start);
+			transition-delay: 1s;
+
+			/*
+			-webkit-transition-property: background-color, width, height, opacity;
+			-webkit-transition-duration: 3s;
+			-webkit-transition-timing-function: steps(3, start);
+			-webkit-transition-delay: 3s;
+			*/	
+		}
+
+		div:hover {
+			background-color: yellow;
+			width: 400px;
+			height: 400px;
+			opacity: 0.0;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>박스에 롤오버(rollover)하여 변화되는 것을 확인합니다.</h1>
+	<div>transition demo</div>
+</body>
+
+</html>

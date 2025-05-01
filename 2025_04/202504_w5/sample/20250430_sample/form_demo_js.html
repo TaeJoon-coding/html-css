@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form demo</title>
+    <script>
+    window.onload = function() {
+
+        // 참고) javascript regex test site(정규식 점검 사이트) : https://regexr.com/3e48o
+        // 점검 기준 메일 예시) test@gmail.com
+        // 참고로 javascript의 경우는 정규식 구문 시작과 끝을 / ...(정규식 구문)... / 으로 구문하며 RegExp 클래스 생성자를 사용시에는
+        // 아래와 같이 따옴표 처리할 수 있습니다.
+        /* 
+        출처 : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp
+
+        ex)
+        const re = /ab+c/i; // 리터럴 표기법
+        // 혹은
+        const re = new RegExp("ab+c", "i"); // 첫 번째 인수로 문자열 패턴과 함께 생성자 사용
+        // 혹은
+        const re = new RegExp(/ab+c/, "i"); // 첫 번째 인수로 정규 표현식 리터럴과 함께 생성자 사용
+        */
+
+        // regex 테스트 유효성) 
+        // ^[a-zA-Z0-9_+.-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z0-9]{2,4}$ : 유효 (O)        
+        // [a-zA-Z0-9]+[@][a-zA-Z0-9]+[.]+[a-zA-Z]+[.]*[a-zA-Z]* : 유효(O) => tcpschool 출처
+
+        // 이메일(email) 태그 인식
+        let email_fld = document.getElementById("email"); // 태그 아이디(id) 적용
+
+        
+        //email_fld.addEventListener('blur', function(e) {
+
+        //    console.log("폼점검 시작")
+            
+            // 강사 제안 email regex) 
+            // let regex = /^[a-zA-Z0-9_+.-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z0-9]{2,4}$/;
+            // let regex = new RegExp("/^[a-zA-Z0-9_+.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z0-9]{2,4}$/g");
+            // RegExp 생성자에서 "" 사용시에는 \ 를 \\으로 이중으로 작성함
+
+            // tcpschool 예문 email regex) 
+            // 출처 : https://tcpschool.com/examples/tryit/tryhtml.php?filename=html5_element_inputattr_14#google_vignette
+            // let regex = /[a-zA-Z0-9]+[@][a-zA-Z0-9]+[.]+[a-zA-Z]+[.]*[a-zA-Z]*/;
+            
+            //alert("이메일 폼점검 유효성 여부 : " + regex.test(email_fld.value));
+        //});
+        
+        // 폼(form) 태그 인식
+        let form = document.getElementById("frm");
+
+        // 전송시 최종 점검
+        form.addEventListener("submit", function(event) {
+
+            console.log("전송전 점검");
+            // let regex = /[a-zA-Z0-9]+[@][a-zA-Z0-9]+[.]+[a-zA-Z]+[.]*[a-zA-Z]*/;
+            let regex = /^[a-zA-Z0-9_+.-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z0-9]{2,4}$/;
+
+            alert("전송전 이메일 폼점검 유효성 여부 : " + regex.test(email_fld.value));
+
+            if (regex.test(email_fld.value) == false) {
+                alert("점검 실패");
+                event.preventDefault(); // 이벤트 동작 금지
+                // return false;                 
+            } else {
+                alert("전송");    
+            }
+
+        });  
+    }        
+    </script>
+</head>
+<body>
+
+    <!--
+    결론)
+    pattern속성
+    
+    -->
+
+    <form id="frm" method="get" action="#">
+
+        <label for="email">email : </label>
+        
+        <!-- js 폼점검에서 적용. html(pattern)에서는 미적용 -->
+        <input type="text" id="email" name="email" required  />
+        <!-- <input type="text" id="email" name="email" required pattern="[a-zA-Z0-9_+.-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z0-9]{2,4}" /> -->
+
+        <hr>
+
+        <!-- js/html(pattern) 폼점검에서 모두 적용 -->
+        <!-- tcpschool 예문 : https://tcpschool.com/examples/tryit/tryhtml.php?filename=html5_element_inputattr_14#google_vignette -->
+
+        <!--
+        <label for="email2">email2 : </label>
+        <input type="text" id="email2" name="email2" pattern="[a-zA-Z0-9]+[@][a-zA-Z0-9]+[.]+[a-zA-Z]+[.]*[a-zA-Z]*" />
+
+        <hr>
+        -->
+
+        <!-- js 폼점검에서 적용. html(pattern)에서는 미적용  -->
+        <!-- https://regexr.com/3e48o 사이트 예문 email regex : ^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$ -->
+        <!--
+        <label for="email3">email3 : </label>
+        <input type="text" id="email3" name="email3" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" />
+        -->
+
+        <input type="submit" value="전송" />
+
+    </form>
+    
+</body>
+</html>
