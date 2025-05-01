@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://raw.githubusercontent.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+    
+    <style>
+    /* 
+       https://uigradients.com/#Predawn
+       を参照して抽出
+    */    
+    body {        
+        /*background: #1E9600; */
+        /* fallback for old browsers */
+        /* 今の時代においては意味ない。 */
+
+        /* background: -webkit-linear-gradient(to right, #FF0000, #FFF200, #1E9600);  */
+        /* Chrome 10-25, Safari 5.1-6 */
+        /* 「-webkit-」を消すには"https://raw.githubusercontent.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"このスクリプトをようする */
+
+        background: linear-gradient(to right, #FF0000, #FFF200, #1E9600); 
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background-repeat: no-repeat;
+        display: flex;
+    }          
+
+    /* 
+        인트로 타이포(글자)를 감싸는 컨테이너 레이어를 아래와 같이 등록합니다.
+        조건) 너비 및 높이 : 화면 전체 길이, 레이어 내부 컨텐츠에 대한 중앙정렬
+        
+    */
+    .wrap {
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    /* 
+        글자(타이포) 배경 처리
+    */
+    .typo-background {
+        
+        /* 글자색 투명 */ 
+        color: #00000000;
+        /* 글꼴 크기 : 9vw */
+        font-size: 9vw;
+        /* 글꼴 두께 : 700 */
+        font-weight: 700;
+        /* 자간(글자간 간격) : 0.3vw */
+        letter-spacing: 0.3vw;
+        /* 대상 글자를 모두 영문 대문자로 치환 */
+        text-transform: uppercase;
+        /* 글자 박스의 너비 : 글자 9자 분량 ex) calc 함수 활용 */
+        width: calc(9vw * 9) ;
+        /* 글자 문단 정렬 : 가운데 정렬 */
+        text-align: center;
+        /* 배경 처리 */
+        background-image: url(../img/background/developer_working.webp);
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position: center;
+        /* 글자 속(내부) 배경 그림 : developer_working.webp */
+        background-clip: text ;           
+        /* background-clip 대상을 "텍스트(글자)"로 지정 */
+        
+    }
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+    
+        <div class="typo-background">Web & App Developer</div>
+
+    </div>    
+
+</body>
+</html>
