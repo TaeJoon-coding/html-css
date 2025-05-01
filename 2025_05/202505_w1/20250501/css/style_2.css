@@ -29,7 +29,7 @@ ul#leaves {
    padding: 20px;
 }
 
-li[id^=layer]{
+li {
    break-inside: avoid; /* パネルボックス出力時、コンテンツ分割現象防止 */
    width: 175px;
    height: auto;
@@ -47,7 +47,7 @@ li[id^=layer]{
    transition-timing-function: steps(64, start);
    transition-delay : 0.1s;
 }
-li[id^=layer]:hover{
+li:hover {
    filter:none;
    box-shadow: 10px 5px 5px #00050D;
    background-color: lightgrey;
@@ -60,7 +60,4 @@ img {
    width: 100%;
    height: auto;
    border-radius: 10px;
-}
-img[id^=img] {
-   width: 100%;
 }
