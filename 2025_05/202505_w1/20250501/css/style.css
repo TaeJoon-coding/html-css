@@ -1,0 +1,42 @@
+/* UTF-8 인코딩 방식 */
+
+/* body 태그내 외부 간격 : 10 px */    
+
+/* ul 태그에 대해서 "4개의 열(컬럼)"로 패널 레이아웃 구성하되 
+   내부간격을 20픽셀로 지정하고 ul 리스트가 가지고 있는 스타일은 제거합니다. */
+body {
+   background-image: url(../../img/background/leaves-6629581_640.png);
+   background-repeat:repeat;
+   background-position:right;
+   background-size: 25%;
+}
+
+ul#leaves {
+   max-width: 1000px;
+   height: auto;
+   flex-flow: column;
+   column-count: 4;
+   column-gap: 30px;
+   column-width: 190px;
+   padding: 20px;
+}
+
+li {
+   break-inside: avoid; /* 패널 박스 출력시 컨텐츠 분할 현상 방지 */
+   width: 175px;
+   height: auto;
+   list-style: none;
+}
+ 
+img {
+   /* "블록" 단위의 디스플레이 설정 */
+   display: block;
+   /* 너비 100% */
+   width: 100%;
+   /* 높이 자동인식 설정 */
+   height: auto;
+   /* 외곽선 둥근 모서리 처리 : 30px */
+   border-radius: 30px;
+}
+
+/* p 문단 태그에 글꼴 크기는 1vmax 로 가변크기 글꼴로 처리하고, 문단내의 가로 정렬은 중앙 정렬 설정합니다. */
