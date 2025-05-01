@@ -1,0 +1,66 @@
+@font-face {
+   font-display: swap;
+   font-family: 'Zen Maru Gothic';
+   font-style: normal;
+   font-weight: 400;
+   src: url('../../fonts/zen-maru-gothic-v17-japanese_latin-regular.woff2') format('woff2'); 
+ }
+
+* {
+   font-family: 'Zen Maru Gothic';
+}
+
+
+body {
+   background-image: url(../../img/background/leaves-6629581_640.png);
+   background-repeat:repeat;
+   background-position:right;
+   background-size: 25%;
+   margin: 10px;
+}
+
+ul#leaves {
+   max-width: 1000px;
+   height: auto;
+   flex-flow: column;
+   column-count: 4;
+   column-gap: 30px;
+   column-width: 190px;
+   padding: 20px;
+}
+
+li[id^=layer]{
+   break-inside: avoid; /* パネルボックス出力時、コンテンツ分割現象防止 */
+   width: 175px;
+   height: auto;
+   list-style: none;
+   padding: 5px;
+   border-radius: 10px;
+   margin-bottom: 15px;
+
+   filter: grayscale(90%);
+   box-shadow:none;
+   background-color: none;
+
+   transition-property: filter, box-shadow, background-color;
+   transition-duration:0.3s;
+   transition-timing-function: steps(64, start);
+   transition-delay : 0.1s;
+}
+li[id^=layer]:hover{
+   filter:none;
+   box-shadow: 10px 5px 5px #00050D;
+   background-color: lightgrey;
+}
+li.imgbox {
+   width: 175px;
+} 
+img {
+   display: block;
+   width: 100%;
+   height: auto;
+   border-radius: 10px;
+}
+img[id^=img] {
+   width: 100%;
+}
