@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        #heading:hover {
+            color: crimson;
+        }*/
+        /* カーソルを乗せた間 */
+    </style>
+
+    <script>
+
+        //制御したい要素（タグ）より上に記入時のやり方
+    
+        window.onload = function() {
+            //イベント全体の処理
+            //html文書がブラウザー（window）に読み込まれたとき（onload）、
+            //function()のイベントを処理する。
+            var coll = document.querySelector("#coll");
+            coll.onmouseover = function() {
+                coll.style.color = "#33FF33";
+            }
+            coll.onmouseout = function() {
+                coll.style.color = "black";
+            }
+            coll.onclick = function() {
+                coll.style.color = "coral";
+            }
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <!--
+    <h1 id="heading">
+        JAVASCRIPT
+    </h1>
+        -->
+    <h1 id="heading" onmouseover = "heading.style.color = 'orange';" onmouseout = "heading.style.color = 'black';" onclick = "heading.style.color = 'blueviolet';">JAVASCRIPT</h1>
+        <!-- 
+            inline方式でイベント処理、
+            イベント属性（ここではonmouseover）=>大文字と小文字の区分なし、
+            javascript codeでのイベント処理時 =>大文字と小文字の区分あり、
+        -->
+    <h1 id="farm">JAVASCRIPT</h1>
+    <h1 id="coll">JAVASCRIPT</h1>
+
+    <script>
+        //本来は<script lan="javascript">のようにするべきだが、今はそんなことしなくてもほぼ全部jsだからいらない。
+
+        var heading = document.querySelector('#heading');
+        // id="heading"と指定されたタグ（要素）を制御するため、変数として登録
+        var farm = document.querySelector('#farm');
+        farm.onmouseover = function() {  
+            farm.style.color = "blue";
+        }
+        // カーソルを置くとその瞬間から青色に変わる。
+        farm.onmouseout = function() {
+            farm.style.color = "black";
+        }
+        // カーソルを置かないと、黒色に変わる。
+        farm.onclick = function() {
+            farm.style.color = "crimson";
+        }
+    </script>    
+</body>
+</html>
