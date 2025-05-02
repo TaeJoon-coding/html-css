@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style></style>
+
+    <script>
+
+        window.onload = function() {
+            /
+            //alert("ポップアップ");
+            var deleteCfm = confirm("本当に辞めるか？");
+            console.log("deleteCfm :" + deleteCfm);
+            //F12 -> devetools(開発者ツール) -> コンソール -> メッセージング
+            
+
+            /*
+            if (deleteCfm == true) {
+                alert("削除開始");
+            }
+            else {
+                alert("削除をキャンセル");
+            }
+            */
+            
+            if (confirm("本当に辞めるか？") == true) {
+                //alert("削除開始");
+                console.log("削除開始");
+            } else {
+                //alert("削除をキャンセル");
+                console.log("削除をキャンセル");
+            }
+            
+            
+            var str = prompt("記入", 1);
+            console.log("str : ", str);
+
+            //演算
+            var sum = parsrInt(str) + 2;
+            //資料形変換（形変換：casting）
+            //: string(定数の文字列) => 定数
+            console.log("合計 : ", sum)
+            
+        }
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+    <script>
+        window.onload = function() {
+            
+            //document.write("fire")
+            //おすすめできぬ
+            //https://developer.mozilla.org/en-US/docs/Web/API/Document/write
+
+            //従来のHTML内容
+            var oldContent = document.body.innerHTML;
+            //innerHTML属性：従来の値を持ってくる
+            console.log("oldContent : ", oldContent);
+            document.write(oldContent);
+            //上の二行の一方でもを削除すると「var content = "テスト";」が「undefined」になる。
+            var content = "テスト";
+
+            document.querySelector("body").innerHTML += content;
+            //「var content = "テスト";」より下に記入しないと「var content = "テスト";」が「undefined」になる。
+        }
+    </script>
+</head>
+<body>
+    home
+    <p>house</p>
+</body>
+</html>
