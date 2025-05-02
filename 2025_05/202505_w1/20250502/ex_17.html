@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        onload = function() {
+
+            //API doc 検索方法
+            //document
+            //MDN -> web API-> Interface -> Document
+            //https://developer.mozilla.org/ja/docs/Web/API/Document
+
+            //querySelector
+            //Documentに入って-> Ctrl + F 「querySelector」検索 -> 
+            //https://developer.mozilla.org/ja/docs/Web/API/Document/querySelector
+            //document.querySelector("");
+
+            alert("ポップアップ"); 
+            // 組み込み関数 : ポップアップを開く
+            // windowオブジェクト : Webブラウザ自身 => メソッド呼び出し時に所属オブジェクトの表記を省略可能 !
+            window.alert("ポップアップ2"); 
+            // windowオブジェクト所属のメソッド(関数)
+            // MDN -> WebAPI -> Interface -> Window -> 左側メニュー
+            // インスタンスメソッド
+            // Ctrl + F (高速検索)
+            // https://developer.mozilla.org/ja/docs/Web/API/Window/alert
+
+            //proto-type：メソッドの原型
+            //:https://developer.mozilla.org/ja/docs/Web/API/Document/querySelector
+            //からの、Specifications
+            //からの、
+
+            //Node（親） -> Document（子）：相続
+            
+            //매개변수(parameter, 형식인자, 가인자) 부(part)：(selectors：string)
+            //string(문자열) => 자료형
+            //매개변수(parameter, 형식인자, 가인자)：selectors
+            //실인자(argument, 인수)： "#coll" => 문자열(string)
+
+            //var coll = document.querySelector(1111);
+            //숫자(실인자) => 인자 자료형이 불일치 => 문법(X)： invalid
+            var coll = document.querySelector("#coll");
+            //문자열(실인자) => 인자 자료형 일치 => 문법(O)： valid
+
+            //반환(return) 자료형(Element, 태그) => 값
+            //var coll = document.querySelector 매서드 (함수)로 연산 한 후의 결과(반환) Element 자료형의 값이 coll 변수로 대입
+            //"=" 연산자 ： 대입 연산자(진행 방향 좌 <- 우)
+
+            //document.querySelector("#coll").onmouseoverfunction() {}
+            //매번 이렇게 사용도 가능하나, 문장이 길어짐-> 번거로움/휴먼에러 발생율高
+
+            //getElementById：
+            //var coll = document.getElementById(coll); //(O)
+            //var coll = document.getElementById("#coll"); //(X) Id의 형태야 하는대 Selector의 형태가 되어 있다.
+            //
+
+            coll.onmouseover = function() {
+                coll.style.color = "#33FF33";
+            }
+            coll.onmouseout = function() {
+                coll.style.color = "black";
+            }
+            coll.onclick = function() {
+                coll.style.color = "coral";
+            }
+
+        }
+    </script>
+
+</head>
+
+<!--
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript
+    と
+    https://developer.mozilla.org/en-US/docs/Web/API
+    を見ること
+-->
+
+<body>
+    <h1 id="coll">JAVASCRIPT</h1>
+
+</body>
+</html>
