@@ -1,0 +1,52 @@
+        nav {
+            height: auto;
+            display: flex;
+            justify-content: flex-end;
+            /* コンテンツを整列、終わりの方に */
+            padding-right: 30px;
+            /* 右の内部間隔 */
+            border: 2px solid greenyellow;
+        }
+
+        ul {
+            display:flex ;
+            /* メニューのflex-box */
+            justify-content: space-between;
+            /* コンテンツを整列、コンテンツとコンテンツの間隔を同じく */
+            width: 900px;
+            /* 横幅 */
+            list-style:none;
+            /* リストのスタイルを除去 */
+        }
+
+        ul li {         
+            font-size: 1em;
+            font-weight: 500;
+            padding: 10px 0;
+            /* 上下の内部間隔：10px */
+        }
+
+        li.txt-cmm-menu {
+            width: 100px;
+            /* メニュー内のテキストボタンの幅 */
+            text-align: center;
+            border: 2px solid coral;
+            outline: 3px solid darkred;
+            border-radius: 30px 15px / 30px 15px;
+        }
+
+        li.icon-cmm-menu {
+            width: 20px;
+            font-size: 1.2em;
+            /* メニュー内のアイコンボタンの幅とフォントサイズ */
+        }
+
+        li a {            
+            color:blueviolet;
+            text-decoration: none;            
+        }
+
+        li.txt-cmm-menu a:hover {
+            font-weight: 900;
+            /* カーソルをメニュー内のリストのボタンの上に置くと、フォントの太さが900になる。 */
+        }
