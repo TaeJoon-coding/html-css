@@ -1,0 +1,103 @@
+@font-face {
+    font-display: swap; 
+    font-family: 'Zen Maru Gothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/ZenMaruGothic-Regular.ttf') format('truetype'); 
+}
+/* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+
+@font-face {
+    font-display: swap;
+    font-family: 'Zen Maru Gothic';
+    font-style: normal;
+    font-weight: 700;  /* Boldのウェイト値 */
+    src: url('../fonts/ZenMaruGothic-Bold.ttf') format('truetype');
+}
+/* 
+原則としてはこのようにフォントのウェイト値によってファイルが分かれている場合、このようにその数に応じて「@font-face」を作成する必要がある。
+でないと、「font-weight」による文字の太さの変化は単に太さが変わるだけで、フォントによってはその最適化が充実しなくなる。
+又、ここで指定されてないfont-weight値を利用する場合、ブラウザーによって最も近い値のを適用する。
+*/
+
+@font-face {
+    font-display: swap;
+    font-family: 'Yomogi';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Yomogi-Regular.ttf') format('truetype'); 
+}  
+
+table, th, td {
+    border: 3px solid #050505;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 8px 12px;
+}
+table {
+    margin-top: 20px; 
+    width: auto; 
+    margin-left: auto;
+    margin-right: auto;
+}
+a {
+    text-decoration: none;
+  }
+p{
+    text-decoration:none;
+}
+#name {
+    font-family: 'Yomogi';
+    text-align: center;
+    color: white;
+    text-shadow:
+    1px 1px 2px red,
+    0 0 1em black,
+    0 0 0.2em black;
+    text-decoration: none;
+  }
+
+#ability {
+    color:coral;
+    font: 16px "Zen Maru Gothic";
+    text-shadow: 1px 1px 2.5px #339977;
+}
+
+#zen {
+    font: 36px "Zen Maru Gothic";
+    font-weight:450;
+    text-shadow: 3px 3px 15px #339977;
+    border: 3px solid aquamarine;
+    background: cornsilk;
+    box-shadow: inset;
+    position: static;
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    margin: 20px;
+    padding: 4px 4px;
+}
+
+#type_text {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 75px;
+    box-shadow: 1px 1px 2px red,
+    0 0 3px black;
+}
+
+img#samu {
+    width: 125px;
+    rotate: 0deg;
+
+    transition-property: rotate;
+    transition-duration:0.3s;
+    transition-timing-function: steps(64, start);
+    transition-delay: 0.05s;
+}
+
+img#samu:hover {
+    rotate: 360deg;
+}
+
