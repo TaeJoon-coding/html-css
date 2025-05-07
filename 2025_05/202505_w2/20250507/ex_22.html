@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            //arry：一つの変数に複数の値を入れる。
+            //同じデータ型多数：arry
+            //違うデータ型多数：構造体（構造的言語：Cなど）：所属変数
+            //=>OOP + 構造体 => クラス：所属変数 + メソッド
+
+
+            let seasons = ["春", "夏", "秋", "冬"];
+            //配列変数の定義（宣言）、宣言+初期値=初期化
+            /*
+            let spring = "春";
+            let summer = "夏";
+            let fall = "秋";
+            let winter = "冬"; 
+            */
+            //の代わりに
+            console.log(seasons);
+            //Array(4)、length:4（0~3）
+            console.log("季節[2]：", seasons[2]);
+            //季節[2]： 秋
+            console.log("季節：", seasons[1]);
+            //季節： 夏
+            console.log("arryの長さ：", seasons.length);
+            //arryの長さ： 4
+
+            //全体要素の出力(for loop)
+            
+            for (let i = 0; i < seasons.length; i++) {
+                console.log("seasonsの個別要素　", seasons[i]);
+                
+                //seasonsの個別要素　 春
+                //seasonsの個別要素　 夏
+                //seasonsの個別要素　 秋
+                //seasonsの個別要素　 冬
+                
+            }
+
+            //for in roop
+            for (let factor in seasons) {
+                console.log("seasons　", seasons[factor]);
+                //同じく出力される。
+            }
+            
+            //for of loop:foreach
+            for (let factor of seasons) {
+                console.log("個別要素　", factor);
+                //同じく出力される。
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

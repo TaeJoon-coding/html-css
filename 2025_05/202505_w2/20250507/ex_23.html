@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            let seasons = new Array();
+            //newオブジェクト生成オペレーター
+            //newは省略してもいいが、入れるのをおすすめ。
+            //Array() : Arrayクラスの構築子（constructor）
+
+            seasons.push("spring");
+            seasons.push("summer");
+            seasons.push("fall");
+            seasons.push("winter");
+
+            for (let i = 0; i < seasons.length; i++) {
+                console.log("seasonsの個別要素　", seasons[i]);
+                
+                //seasonsの個別要素　 spring
+                //seasonsの個別要素　 summer
+                //seasonsの個別要素　 fall
+                //seasonsの個別要素　 winter
+                
+            }
+
+            //コールバック関数：
+            seasons.forEach((elem) => {
+                //=>：矢印関数（arrow function）
+                //今の流行り
+                console.log("個別要素：", elem);
+            })
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

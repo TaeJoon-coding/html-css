@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+
+            //let num1 = 1;   //1)
+            //let num2 = 2;   //2)
+            //let num1 = 1, num2 = 2; //可能ではあるが、非推奨、1)と2)を合わせたもの。
+
+            //const num1; //(x)
+            const num1 = 1; //(o)定数の定義(constant variable)
+            //num1 = 2; //代入も不可能
+            //従来の値を保護（カプセル化、隠匿）
+            
+            //let a-b = 1;  //(x)よくない
+            let a_b = 1;
+
+            //let str = "I'm a student";    //(O)
+            //let str = 'I'm a student';    //(X)
+            //let str = 'I\'m a student';   //(O)   「\」を活用すればすぐ後の'などがただのテキストとして機能できる。
+            //let str = "ゴールデンウイークは\"爆睡\"の期間です。"    //応用例
+
+            let str = "<span class = \"abcd\">文字</span>";
+
+            let str2 = "<div id='wrap'><div id='box'>" + str + "</div></div>";  //テンプレートリテラル以前のやり方
+
+            let str3 = `<div id='wrap'><div id='box'>${str}</div></div>`;   //template literal方式
+
+            console.log(str3);
+            console.log(num1);
+            console.log(a_b);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+
+            var num;    //1)
+            num = 1;    //2)
+            num = "JS"; //3)
+            //変数宣言（variable declaration/definition）
+            //1)=>2)定義された変数にほかの値を代入
+            //2)=>3)も定義された変数にほかの値を代入
+            //どっちも変数の再定義じゃあない。
+
+            //var num = 1;
+            //var num = "JS";
+            //これらは変数の再定義（出力は同じ。）
+
+            //let num;    //4)
+            //devツールえお確認すると、「Uncaught SyntaxError: Identifier 'num' has already been declared」というエラーが表記される。
+            //letでは従来に定義された変数を再定義できない。
+            //変数の地域性保障ex)Javaのローカル変数のスコープ
+            //varとは違って、変数の再定義ができぬ=>明確なローカル変数。
+
+            //つまり、「let num;」のように定義された後、「num = 1;」のように代入するのは可能。
+            
+            //ちなみにnumは変数名であり、識別子（identifier）の一種
+            //キーワードとはまた別もの。
+
+            //=は代入オペレーター（operator）=>キーワード
+            //1、'JS'などは値（value）、リテラル（Literal：定数、値）
+            //https://developer.mozilla.org/ja/docs/Glossary/Literal
+
+            console.log("num : ", num);
+            //devツールのconsoleを確認すると、「num :  JS」と出力されている。
+            //1)、4)「undefined」になる。
+
+            //データ型の確認
+            console.log("numのデータ型", typeof num);
+            //「numのデータ型 string」と出力される。
+            //「var num;」にした場合は、「undefined」になる。
+            //console.log("numのデータ型", typeof (num));の場合も「undefined」になる。
+            //https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/typeof
+
+        }
+    </script>
+</head>
+
+<header>
+<!--
+Javascript
+
+document.writeはよく使わない。
+
+Hungarian notationも最近は使用しない。
+
+スタイルガイド、非推奨例
+n                   // Meaningless.
+nErr                // Ambiguous abbreviation.
+nCompConns          // Ambiguous abbreviation.
+wgcConnections      // Only your group knows what this stands for.
+pcReader            // Lots of things can be abbreviated "pc".
+cstmrId             // Deletes internal letters.
+kSecondsPerDay      // Do not use Hungarian notation.
+
+作成例の一つ
+
+// Constants
+const NUMBER = 5;
+/** @const */ exports.NAMES = goog.debug.freeze(['Ed', 'Ann']);
+/** @enum */ exports.SomeEnum = { ENUM_CONSTANT: 'value' };
+
+-->
+
+<!--
+
+変数（vary + able = variable）
+
+javaの場合、データ型 変数
+ex) int n;
+
+var n = 0; //メモリー（RAM）割り当てはできているが、その正確な住所は知る必要はない。
+
+とにかく、変数は再利用が可能。
+又、可読性・視認性に優れている。
+
+JavaScript には変数を宣言する方法は3種類。
+var 変数を宣言し、ある値に初期化することもできる。（最近は使わない）
+
+let ブロックスコープのローカル変数を宣言し、ある値に初期化することもできる。
+
+const ブロックスコープで読み取り専用の名前付き定数を宣言する。
+
+-->
+</header>
+
+
+
+<body>
+    
+</body>
+</html>
