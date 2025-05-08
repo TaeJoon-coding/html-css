@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/script_1.js" charset="UTF-8">
+            /*
+            =   オペレーターの右の値を左の変数に割り当てる
+            +=  y = y + x という意味
+            -=  y = y - x という意味
+            *=  y = v * x という意味
+            /=  y = y / x という意味
+            %=  y = y % x という意味
+            */
+
+    </script>
+
+    <script>
+            window.onload = function() {
+
+                let a = 10;
+                
+                let b = a++ + 5;    
+                console.log("b：", b);
+                //b： 15
+                
+                let c = 10;
+                let d = ++c + 5;
+                console.log("d：", d);
+                //d： 16
+
+                /*
+                比較演算子（オペレーター）
+
+                ==
+                ===
+                !=
+                !==
+                <
+                <=
+                >
+                >=
+
+                論理オペレーター
+
+                ||  OR演算子
+                &&  AND演算子
+                !   NOT演算子
+
+                */
+
+                console.log('3 == "3"', 3 == "3");
+                //3 == "3" true
+                console.log('3 === "3"', 3 === "3");
+                //3 === "3" false
+                console.log('3 != "3"', 3 != "3");
+                //3 != "3" false
+                console.log('3 !== "3"', 3 !== "3");
+                //3 !== "3" true
+
+                console.log('"A" > "B"', "A" > "B");
+                //"A" > "B" false
+                //ASCIIコードの数字変換により、65 > 66 false
+                console.log('"A" < "B"', "A" < "B");
+                //"A" < "B" true
+            }
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            //オペレーターの種類
+
+            let result = 5 - 8;
+            console.log("result：", result);
+            //result： -3
+            let result2 = 5 + 8;
+            console.log("result2：", result2);
+            //result2： 13
+            let result3 = 5 * 8;
+            console.log("result3：", result3);
+            //result3： 40
+            let result4 = 5 / 8;
+            console.log("result4：", result4);
+            //result： 0.625
+            let result5 = 5 % 8;
+            console.log("result5：", result5);
+            //result5： 5、割り算のあまり、8が5より大きいので値は0、あまりは5
+
+            let num1 = 1, num2 = 1;
+            num1++;
+            ++num2;
+            console.log("num1 :", num1); 
+            //num1 : 2
+            console.log("num2 :", num2); 
+            //num2 : 2
+
+            let num3 = 1, num4 = 1;
+            console.log("num3 :", num3++);
+            //num3 : 1
+            console.log("num4 :", ++num4);
+            //num4 : 2
+            //上の二件がると、
+            console.log("num3 :", num3);
+            //num3 : 2
+            console.log("num4 :", num4); 
+            //num4 : 2
+            //この二件の出力が2になってします。
+            
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

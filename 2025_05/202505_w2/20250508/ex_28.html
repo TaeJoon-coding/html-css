@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script>
+            window.onload = function() {
+
+                /*
+                10進数：55を2進数に変換してみよう
+                128 64 32 16 8 4 2 1 
+                55 - 32 = 23 => 6桁は1
+                23 - 16 = 7 => 5桁は1
+                7 - 8 = -1 => 4桁は0
+                7 - 4 = 3 => 3桁は1
+                3 - 2 = 1 => 2桁は1
+                最後の1桁のあまりは1なので、
+                10進数55を2進数に変換すると、110111になる。                
+                */
+                
+                let num1 = 55;
+                let num2 = 0b110111; //2進数で記入、「0B110111」のように大文字でも機能する。
+                let num3 = 0X37;     //16進数で記入
+                let num4 = 0o67;     //8進数で記入
+
+                console.log("num1：", num1);
+                //num1： 55
+                console.log("num2：", num2);
+                //num2： 55
+                //10進数に変換される。
+                console.log("num3：", num3);
+                //num3： 55
+                console.log("num4：", num4);
+                //num4： 55
+
+            }
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

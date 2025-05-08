@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+
+            let num = prompt ("入力：");
+            console.log("numデータ型：", typeof num);
+            //勝手に数字を記入すればいい
+
+            /*
+            let result = num * 10;  
+            //num => 数字（number）に自動変換
+            console.log("result：", result);
+            */
+
+            //let result = "10" + 20;
+            //"1020"というように連結される。
+
+            let result = 1 + 2 + "3" + 4 + 5;
+            console.log("result：", result);
+            //「result： 3345」と出力される。構造はいうまでもない。
+
+            //データ型変換関数。
+            //Number()：数字に変換
+            //parseInt()：整数に変換
+            //parseFloat()：実数に変換
+            //String()：文字列に変換
+            //Boolean()：論理型に変換する
+            //JAVAでは、非推奨になっているが、JavaScriptではまだまだ使える。
+
+            let str = "123";  //変換対象
+            //let str = "abcd";   //変換対象ではない
+            //let str = "123.5";    //この場合、
+            /*
+            let num2 = parseInt(str);   //変換（casting）
+            let result2 = num2 + 1;
+            console.log("result2：", result2);
+            //「result2： 124」と出力される。
+            */
+
+            let num2 = Number.parseInt(str);   //変換（casting）
+            let result2 = num2 + 1;
+            console.log("result2：", result2);
+            //「result2： 124」と出力される。
+
+
+            let str2 = "abcd";
+            let num3 = Number.parseInt(str2);   //変換（casting）（されない）
+            let result3 = num3 + 1;
+            console.log("result3：", result3);
+            //「result3： NaN」と出力される。
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

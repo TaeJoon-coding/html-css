@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let score = parseInt(prompt('点数を入力しなさい'));
+        //let credit = 'F';
+        //このように初期値を指定するのもあり。
+        /*
+        if (score >= 60) {
+            alert("合格");
+        } else {
+            alert("不合格");
+        }
+        */
+
+        if (score >= 90 && score <= 100) {
+            credit = 'A';
+        } else if (score >= 80 && score < 90){
+            credit = 'B';
+        } else if (score >= 70 && score < 80){
+            credit = 'C';
+        } else if (score >= 60 && score < 70){
+            credit = 'D';
+        } else if (score <= 0 && score < 60) {
+            credit = 'F';
+        } else{
+            alert("点数は0~100で入力して下さい。")
+        }
+        alert('ランク：' + credit);
+
+    </script>
+
+</body>
+</html>

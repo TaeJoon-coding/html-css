@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+
+            let flag = Boolean(1);
+            console.log("flag：", flag)
+            //flag： true
+            let flag2 = Boolean(0);
+            console.log("flag2：", flag2)
+            //flag2： false
+            let flag3 = Boolean(-1);
+            console.log("flag3：", flag3)
+            //flag3： true
+            let flag4 = Boolean(0.5);
+            console.log("flag4：", flag4)
+            //flag4： true
+            let flag5 = Boolean("ABC");
+            console.log("flag5：", flag5)
+            //flag5： true
+            let flag6 = Boolean(NaN);
+            console.log("flag6：", flag6)
+            //flag6： false
+
+            //0以外のすべての数字を「true」判定
+        }
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
