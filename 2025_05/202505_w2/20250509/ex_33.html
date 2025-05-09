@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        //let j = 1;          //初期値、for文の外でも使いたいならこのように外で定義
+        let end = 10;       //最後の値
+        let sum = 0;       //定義をしないと、undefinedになる。ゆえに、合計 = 0を初期値として定義。
+        
+        for (let i = 1; ; i = i + 1) {
+            if (i <= end) {
+                console.log("sum 合計", sum += i);
+            } else {
+                break;
+            }
+        }// for 終わり
+        //これと、
+        sum2 = 0;
+        for (let j = 1; ; j = j + 1) {
+            if (j > end) {
+                break;
+            } else {
+                console.log("合計値：", sum2 += j);
+            }
+        }// for 終わり
+        //これは結果だけ見れば、完璧に同じ。
+        
+        sum3 = 0;
+        for (let k = 1; ; k = k + 1) {
+            //if (!k <= end) {    //何も出ないタイプのエラー、正確に言えば文法的には間違ってない。
+            if (!(k <= end)) {
+                break;
+            } else {
+                console.log("sum：", sum3 += k);
+            }
+        }// for 終わり
+
+        sum4 = 0;
+        for (let l = 1; ; l = l + 1) {
+            if (l === 11) break;
+            console.log("test_it：", sum4 += l);
+        }// for 終わり
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

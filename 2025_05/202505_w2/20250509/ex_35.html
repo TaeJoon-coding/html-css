@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        //whileと do while
+
+        //while：条件が先。まず条件を確認して条件にTrueになった時、オーダーを実行する。falseの場合実行しない。{}の増設で複数のオーダーを繰り返すことも可能
+        //do while：先ず、オーダーを実行してから条件をチェックする。
+
+        let i = 1;
+        let sum = 0;
+
+        //for ( ; i <= 10; ) {
+        while (i <= 10){    
+        //while ( ; i <= 10; ) {    //このようにはダメ。
+        //while (true){     //無限ループ
+        //while (1){        //無限ループ
+        //while (0){        //falseと同じ
+        //while (NaN){      //falseと同じ
+        //while (-1){       //無限ループ
+            sum += i;
+            console.log("sum = ", sum);
+            i++;
+            document.write(`${i - 1}までの合計=${sum}<br>`)
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

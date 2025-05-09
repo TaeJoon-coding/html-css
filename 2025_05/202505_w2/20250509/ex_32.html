@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        //繰り返し文なしで、「5までの合計」を作ってみた。
+        let sum = 0;
+        sum += 1;
+        sum += 2;
+        sum += 3;
+        sum += 4;
+        sum += 5;
+        document.write(`5までの合計=${sum}<br>`);
+
+        //「for」繰り返し文を入れて
+        let sum2 = 0;
+        for (let i = 1; i <= 5; i = i + 1){
+            sum2 += i
+        }
+        document.write(`5までの合計=${sum2}<br><br>`);
+        
+
+        //試しに10までの合計(sequence)を作ってみる
+        //count=>数えること=>counter変数
+        //命名 => sumなど
+
+        //let j = 1;          //初期値、for文の外でも使いたいならこのように外で定義
+        let end = 10;       //最後の値
+        let sum3 = 0;       //定義をしないと、undefinedになる。ゆえに、合計 = 0を初期値として定義。
+
+        for (let j = 1; j <= end; j = j + 1) {
+
+            //中間テスト：
+            //console.log("10までの合計 = ", j);
+            //これだけは各変数のタイトルが表記される。必要なのはn!の構造
+            sum3 = sum3 + j;
+            //最適化すれば「sum3 += j;」になる。
+            //jが1づつ増えるので、毎回前回からの増加量が1づつ増える。
+            //sum3(従来の合計) + jを又sum3に受容
+
+            document.write(`1から${j}までの合計 = ${sum3}<br>`);
+            //途中のまで全部出力する場合、このようにfor文の中に入れる。
+            //document.write('1から' + j + 'までの合計 = ' + sum3 + '<br>');
+            //「``」を利用した用法より旧式。
+        }
+
+        let result = `<br>つまり、1から10までの合計は 「${sum3}」である。<br>`;
+        document.write(result);
+
+        //ちなみに、「for (let j = 1; j <= end; j = j + 1) 」から、「 j <= end」部分を省略して
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

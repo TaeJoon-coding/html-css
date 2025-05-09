@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+body {
+   margin: 0;
+}
+
+details {
+   margin: 10px;
+   width: 400px;
+}
+
+details summary {
+   display:flex;
+   /* flexボックス */
+   justify-content: space-between;
+   /* 均一間隔、両端揃え */
+   align-items: center;
+   /* 中央揃え */
+   padding: 15px 30px;
+   /* 内部間隔：上下15px、左右30px */
+   background-color: #FFC000;
+   /* 背景色：#FFC000 */
+   border-radius: 10px;
+   /* 角の丸み：10px */
+   cursor: grab;
+   /* 
+   https://developer.mozilla.org/en-US/docs/Web/CSS/cursor 
+   ここを参考にしてカーソルを選択
+   */
+}
+
+/* メインメニューにロールオーバー（rollover）およびサブメニュー展開時の効果 */
+summary:hover, details[open] summary { 
+   color:ghostwhite;
+   /* 文字色：ghostwhite */
+   font-weight: 700;
+   /* 文字の太さ */
+   background-color: #FF7F27;
+   /* 背景色：#FF7F27 */
+}
+/* メインメニューの右（after）に「+」アイコン */
+summary::after { 
+   content: '+';
+   /*「details summary」の「justify-content: space-between;」により、メニュー名と「+」が両端揃えになり、左右の両極に配置される。 */
+   margin-left: 40px;
+   /* 外部間隔-左：40px */
+   font-size: 30px;
+   /* フォントサイズ：30px */
+   color: ghostwhite;
+   /*文字色：ghostwhite*/
+   
+   transition: transform .7s; 
+   /*
+   アニメーション効果。
+   transition-property: ;
+   transition-duration: ;
+   transition-timing-function: ;
+   transition-delay: ;
+   を利用する必要のないタイプのアニメーション。
+   */
+}
+
+/* サブメニューの展開時、右のアイコンのアニメーション効果 */
+details[open] summary::after { 
+   transform: rotate(135deg);
+   /* 回転アニメーション */
+}
+
+/* サブメニューパネル */
+.dish-menu {
+   padding: 5px;
+   /* 内部間隔：5px */
+   line-height: 1em;
+   /* 行間隔：1em */
+   background:ivory;
+   /* 背景色：ivory */
+   text-indent: 30px;
+   /* 字下げ：30px */
+   
+}
+
+/* サブメニューボタンリンク */
+.dish-menu a {
+   text-decoration: none;
+   /* ハイパーリンクによるテキストの変化を除去 */
+   color: darkred;
+   /* 文字色：darkred */
+}
+
+
+/* サブメニューボタンのリンクロールオーバー（rollover） */
+.dish-menu a:hover {
+   text-decoration: none;
+   color: #ED1C24;
+   font-weight: bolder;
+
+}

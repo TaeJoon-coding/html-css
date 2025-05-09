@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        let i = 1;          //初期値、for文の外でも使いたいならこのように外で定義
+        let end = 10;       //最後の値
+        let sum = 0;       //定義をしないと、undefinedになる。ゆえに、合計 = 0を初期値として定義。
+        
+        for (; ;) {
+            if (i <= end) {
+                
+                console.log("sum 合計", sum += i);
+                i++     //この場合、これを入れないと無限ループ
+                
+                //console.log("合計(2)", sum += i++); //圧縮
+                //テストする時は、テストするやつだけをのこしてからやらないとまともな確認が難しい。
+            } else {
+                break;
+            }
+        }// for 終わり
+
+        //最適化も現場では重要。それだけに着目した教材も存在する。
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
