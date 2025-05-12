@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+/* 掲示板パネル */
+.board-pnl {
+    min-width: 1000px;
+    width: 60vw;
+    justify-content: center;
+    font-size: 1em;
+}
+
+.board-row {
+
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: left;
+    border: 1px dotted #AAAAAA;
+    border-width: 1px 0 0 0;    
+}
+
+/* 最後のスレッド目録：最下部のボーダーライン */
+div.board-row:last-child {
+    
+    border: 1px dotted #AAAAAA;
+    border-width: 1px 0;
+
+}
+
+/* スレッド目録（タイトル：ヘッダー） */
+.board-header-row {
+
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: left;
+    background-color: #F2F2F2;
+    border: 1px dotted #AAAAAA;
+    border-width: 1px 0 0 0;
+    
+}
+
+/* スレッド目録内のパネル（共通） */
+div.board-row div[class^=board] {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    border: 1px dotted #595959;
+}
+
+/* チェックボックス */
+.board-check {
+    width: 5%;
+}
+
+/* スレッド番号 */
+.board-num {
+    width: 15%;
+}
+
+/* スレッドタイトル */
+.board-title {
+    width: 40%;
+}
+
+/* 投稿主 */
+.board-writer {
+    width: 15%;
+}
+
+/* 投稿日 */
+.board-write-date {
+    width: 10%;
+}
+
+/* 既読 */
+.board-read-count {
+    width: 10%;
+}
+
+/* いいね！ */
+.board-recomm-count {
+    width: 10%;
+}
+
+/* ページネーションパネル */
+nav.board-pagination {
+    min-width: 1000px;
+    width: 60vw;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+/* ページネーション */
+.board-pagination ul {
+    width: 300px;
+    display: flex;
+    align-self: center;
+    list-style: none;
+}
+
+/* ページネーション：ページリンク */
+.board-pagination ul li {
+    
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+}
+
+/* ページネーション：ページリンクボタン */    
+.board-pagination ul a {
+    color: #595959;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+/* ページネーション：現在ページリンク */
+.board-pagination ul li a.curr-page {
+    color: #000F1F;
+    font-weight: bolder;
+}
+
+/* ページネーション：初・前・後・終 */
+.board-pagination ul a span.icon-size {
+    font-size: 1.5em;
+}

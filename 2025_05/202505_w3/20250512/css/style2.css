@@ -1,0 +1,66 @@
+body {
+	margin:0;
+}
+
+ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	background-color:#333;
+	width:1000px;
+}
+
+li {
+	float:left;
+	width:150px;
+}
+
+li a {
+	display:block;
+	color:white;
+	text-align:center;
+	padding:15px 30px;
+	text-decoration:none;
+}
+
+li a:hover {
+	background-color:white;
+	color:black;
+	font-weight:bold;
+}
+
+/* サブメニュー */
+div[id$=_sub] {
+	position:absolute;
+	top:51px;
+	height:0px;
+}
+
+#mobile_sub {
+	left:150px;
+	width:300px;
+	height:200px;
+	background-color:#94D8F6;
+}
+
+#tv_sub {
+	left:300px;
+	width:300px;
+	height:200px;
+	background-color:#D3D5F5;	
+}
+
+#homeAppliances_sub {
+	left:450px;
+	width:300px;
+	height:200px;
+	background-color:#98E0AD;	
+}
+
+#it_sub {
+	left:600px;
+	width:300px;
+	height:200px;
+	background-color:#F8A1A4;	
+}

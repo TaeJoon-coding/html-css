@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">   
+    <!-- アイコン、Outlinedタイプ -->
+    <link rel="stylesheet" href="css/popup_style.css">
+
+    <style>
+        
+        /* 
+        初期状態の指定、ここですべての制御も可能だが、この文献ではscriptで制御することにする。/
+        #popup {
+            visibility:visible;
+        }
+        */
+    </style>
+
+    <script>
+        // windowsオブジェクト(ブラウザーオブジェクト)の原型
+        // MDN => Web APIs： https://developer.mozilla.org/ja/docs/Web/API/Window
+        // windowオブジェクト所属（メンバー）loadイベント
+        // onload : https://developer.mozilla.org/ja/docs/Web/API/Window/load_event
+
+        // let window = new window();
+        // 本来はこのようにオブジェクトを作る必要があるが、内装オブジェクトなのでいらない。
+        window.onload = function() {
+            // window.addEventListener("load", function(){})
+
+            //ポップアップウィンドウの制御
+            
+            //１．初期状態：隠し
+            // id="popup" / class="modal"
+            // ポップアップ要素認識（登録）
+            // document：https://developer.mozilla.org/ja/docs/Web/API/Document
+
+            //document.getElementById("popup");
+
+            /*
+            document.getElementById("popup").onclick = function() {
+                console.log("ボタン")
+            }
+            */
+
+            // div隠し=> visibility CSS
+            // https://developer.mozilla.org/ja/docs/Web/CSS/visibility
+            // を参考
+
+            //document.getElementById("popup")
+            // 「getElementById」の原型は「HTMLElement」： https://developer.mozilla.org/ja/docs/Web/API/HTMLElement
+
+            // CSS => style：HTMLElement所属のstyle属性（メンバー変数）
+            // https://developer.mozilla.org/ja/docs/Web/API/HTMLElement/style
+            
+            //従来のCSS情報
+            //let vis = document.getElementById("popup").style.visibility = 'hidden';
+            // CSSの「#popup {visibility: hidden;}」と同じ。
+            // console.log("隠し状態：", vis)
+
+            document.getElementById("popup").style.visibility = 'hidden';
+            //
+
+            //ポップアップ解放用のボタンの生成を要する。
+            //２．イベントの処理。
+            //ボタンの追加
+            document.body.innerHTML += `<button id="btn" type="button">ボタン</button>`;
+            // このようにscriptでも追加が可能
+            
+            //전역변수
+            let btn = document.getElementById("btn")
+            let popup = document.getElementById("popup")
+            
+            btn.addEventListener("click", () => {
+                //.addEventListener("click", function(){})
+                console.log("ボタンをクリック");
+                popup.style.visibility = 'visible';
+            })
+
+            //クリック：ポップアップウィンドウ
+            // ３．ポップアップウイークを閉じる
+            //「×」ボタン => ポップアップウイークを閉じる
+            // id = "modal_close_btn"
+            let closeBtn = document.getElementById("modal_close_btn");
+
+            closeBtn.onclick = () => {
+                console.log("閉");
+                //ポップアップウィンドウ隠し
+                popup.style.visibility = 'hidden';
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <!--  
+    <button id="btn" type="button">
+        ボタン
+    </button>
+    -->
+
+    <!-- modal -->
+    <div id="popup" class="modal">
+        
+        <!-- modal header -->
+        <div class="modal_header">
+            <!-- bullet icon -->
+            <div class="modal_header_icon">
+                <span class="material-icons-outlined">
+                    web_asset
+                </span>   
+            </div>
+            <!--// bullet icon -->
+            
+            <!-- title -->
+             <div class="modal_header_title">
+                タイトル
+             </div>
+            
+            <!--// title -->
+            
+            <!-- closing button icon -->
+            <div class="modal_header_close">
+                <a href="#" id="modal_close_btn">
+                    <span class="material-icons-outlined ">
+                        close
+                    </span>
+                </a>
+            </div>
+            <!--// closing button icon -->
+
+        </div>
+        <!--// modal header -->
+        
+        <!-- modal body -->
+        <div class="modal_body">
+            本文です。
+        </div>
+        <!--// modal body -->
+        
+        <!-- modal footer -->
+        <div class="modal_footer">
+            <!-- 後でmodal_footerを利用してカスタマイズ -->
+        </div>
+        <!--// modal footer -->
+        
+    </div>
+    <!--// modal -->
+            
+</body>
+</html>

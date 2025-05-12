@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+        var sum = 0;
+        function addNumber() {
+            var result; 
+            sum = 10 + 20;
+            result = 10 * 20;
+        }
+        addNumber();
+        console.log(sum);
+        console.log(result);
+        */
+        //30は出力されるが200は出力されない。
+        
+        /*
+        var sum = 0;
+        function addNumber() {
+            sum = 10 + 20;
+            result = 10 * 20;
+        }
+        addNumber();
+        console.log(sum);
+        console.log(result);
+        */
+        //30も200も出力される。しかし、よくないやり方。「function」の外に「var result = 0;」などを宣言することか吉。
+        
+        //リサイクル可能な関数
+        function addNumber(num1, num2) {
+        //関数の宣言
+            let sum = num1 + num2;
+            return sum;
+            //明確性ではこれが定番
+        }
+        let result = addNumber(2, 3);
+        document.write(`足算： ${result}<br>`);
+        //「足算： 5」と出力される。
+        let result2 = addNumber(4, 96);
+        document.write(`足算2： ${result2}<br>`);
+        //「足算2： 100」と出力される。
+        
+        
+
+
+
+    </script>
+</body>
+</html>

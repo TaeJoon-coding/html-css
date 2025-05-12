@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+}    
+
+/* modalポップアップ(popup window)パネル */
+.modal {
+    position: fixed;
+    /* modalの位置を指定する。 */
+    left: calc(100vw / 2 - 150px);
+    /* 100vw / 2で、modalの原点を中央に、横幅の300の半分の150px分を左に移動させる「- 150px」で中央が中央に来るように。 */
+    top: calc(100vh / 2 - 200px);
+    /* 100vh / 2で、modalの原点を中央に、高さの400の半分の200px分を上に移動させる「- 120px」で中央が中央に来るように。 */
+
+
+    width: 300px;
+    height: 400px;
+    /* 横縦：300px * 400px */
+    background-color: wheat;
+    /* 背景色：wheat */
+    font-size: 1em;
+    /* フォントサイズ：1em */
+    color: #333333;
+    /* 文字色：#333333 */
+    text-align: center;
+    /* 文字の中央揃え */
+    padding: 10px;
+    /* 内部間隔：10px */
+    border: 1px solid #EBEEEF;
+    /* ボーダーライン：1px、実線、#EBEEEF */
+    border-radius: 10px;
+    /* ボーダーラインの角の丸み：10px */
+}
+
+/* modalヘダー */
+.modal_header {
+    
+    height: 50px;
+    /* 高さ：50px */
+    display:flex;
+    justify-content: left;
+    align-items: center;
+    /* flexボックス、横軸左揃え、縦軸中央揃え */
+    background-color: rgb(240, 240, 240, 0.5);
+    /* 背景色：R240, G240, B240に、透明度0.5 */
+    border-radius: 10px;
+    /* 角の丸み：10px */
+
+}
+
+.modal_header_icon {
+    width: 50px;
+    /* アイコンを配置する領域の横幅：50px */
+}
+
+/* modalヘダー左アイコン */
+span.material-symbols-outlined {
+    color: #333333;
+    font-size: 1.5em;
+    /* アイコンフォントなので、文字として扱う。 */
+}
+
+/* modalヘダータイトル */
+.modal_header_title {
+    width: calc(100% - 100px);    
+    /*横幅100%*/    
+    padding-bottom: 7px;
+    /* 内部間隔下：7px */    
+    text-align: left;
+    /* 内容の左揃え */
+    font-weight: bold;
+    /* 太文字 */
+}
+ 
+/*modalヘダー右の×アイコン*/
+.modal_header_close {
+    width: 50px;
+    /* ボタンの配置領域の横幅：50px */
+    font-size: 1em;
+    /* ボタンのフォントサイズ：1em */
+    font-weight: bold;
+    /* 太文字 */
+}
+
+#modal_close_btn {
+    text-decoration: none;
+    /* ボタンの色などの要素が「<a href="url">」二より変化するのを防止 */
+    color:brown;
+    /* ボタンの色が「<a href="url">」に影響されるかを確認 */
+}
+
+/* modalの本文*/
+.modal_body {
+    margin-top: 10px;
+    /* 外部間隔上：10px */
+    padding: 10px;
+    /* 内部間隔：10px */
+    color: #333333;
+    /* 文字色：#333333 */
+    display: flex;
+    /* flexボックス */
+    height: 290px;
+    /* 高さ：290px */
+    overflow: hidden;
+    /* オーバーフロー対策：隠す */
+}
