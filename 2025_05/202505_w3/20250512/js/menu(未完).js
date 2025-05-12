@@ -37,19 +37,29 @@ window.onload = function() {
 	 * セレクターの適用：idが_btnで終わるliタグ
 	 */
 	let main_menus = document.querySelectorAll("li[id$=_btn]");	
+	main_menus.forEach((main_menu) => {
 
-	// 메인 메뉴들의 각각의 이벤트 처리 코드를 축소하기 위해 for문 활용.
+	//メインメニューの各メニューの各イベント処理コードを短縮するためにfor文を活用
 	for (const main_menu_one of main_menus) {
 		
-		// 각 개별 메인 메뉴에 마우스를 올렸을 때(rollover) 이벤트 처리 
+		// 各個別メインメニューにマウスを置いた時（rollover）のイベント処理
 		main_menu_one.onmouseover = function(e) {
-			
-			// this.id = e.currentTarget.id 여기서는 같은 의미로써
-			// 마우스 롤오버한 대상(target) 태그(li)의 아이디 
-			
-			const rollover_menu = this.id.split("_")[0]; // 참고 코드-1
-			
-			// 홈(home) 메뉴는 롤오버 적용 제외
+			// this.id = e.currentTarget.id 
+			// ここでは同じ意味としてマウスを置いた対象（target）タグ（li）のid
+
+			// 参考）Event.target / Event.currentTarget 
+            // : https://developer.mozilla.org/ja/docs/Web/API/Event/target
+            // : https://developer.mozilla.org/ja/docs/Web/API/Event/currentTarget
+
+            // 参考）イベントのバブリング
+            // : https://developer.mozilla.org/ja/docs/Learn_web_development/Core/Scripting/Event_bubbling
+
+			// const rollover_menu = this.id.split("_")[0]; // 参考用のコード－１
+			const rollover_menu = e.currentTarget.id.split("_")[0];
+			console.log("rollover_menu : ", rollover_menu);
+			//確認用
+
+			//ホーム（home）メニューはロールオーバー適用から除外
 			if (rollover_menu != "home") {
 			
 				// 메인 메뉴 버튼의 아이디 추출을 통해서 서브 메뉴 아이디를 선택
@@ -88,7 +98,7 @@ window.onload = function() {
 		} // onmouseover
 	
 	} // for
-	
+	})//foreach
 	// 서브 메뉴 롤아웃 할 경우 이벤트 핸들러
 	// for ~ of 문을 활용하여 서브 메뉴(sub_menus) 변수의 개별 서브메뉴(sub_menu_one)의 이벤트 처리
 	for (const sub_menu_one of sub_menus) {
