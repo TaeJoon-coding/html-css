@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //インスタンス（オブジェクト）生成
+        //広い意味でのオブジェクト：インスタンス（実質オブジェクト）
+        //狭い意味でのオブジェクト：クラス（形式オブジェクト）
+        //date：インスタンス（オブジェクト変数）：instance（実質オブジェクト）
+        //new：これも立派なオペレーター
+        //Date()：大文字、各戸も含めて構築子（constructor）：オブジェクト生成する特集目的関数
+        //クラスと同名で使用
+
+        //new Date()：匿名インスタンス（オブジェクト）
+        //匿名インスタンス.メンバー（属性（フィールド・変数）・メソッド）
+        //==>使い捨て
+        //要注意）匿名クラスとは違うもの
+        let date = new Date();
+
+        document.write(`date : ${date} <br>`);
+        document.write(`date : ${date.toString()}<br>`);
+        //参考）Intl, I18N => 国際化
+        document.write(`date(locale)-1 : ${new Intl.DateTimeFormat(navigator.language).format(date)}<br>`);
+
+        document.write(`date(locale)-2 : ${new Intl.DateTimeFormat("ko-kr").format(date)}<br>`);
+
+        document.write(`date(locale)-3 : ${date.toLocaleDateString()}<br>`);
+
+        document.write(`date(locale)-4 : ${new Date().toLocaleDateString()}<br>`);
+
+        //property（attribute）とmethod
+        //
+    </script>
+</body>
+</html>
