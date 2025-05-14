@@ -150,7 +150,9 @@ window.onload = function() {
                                         <!-- 言うまでもなく、改行 -->
                                     
                                         ${cookies[i].content}
-                                    
+
+                                            <!-- クッキーの説明文句 -->
+
                                     <br><br>
 
                                     <b>${cookies[i].price}JPY</b>
