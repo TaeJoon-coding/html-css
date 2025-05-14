@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        /*
+         * オブジェクト
+         * 
+         * 広い意味：オブジェクト > クラス
+         * 
+         * 狭い意味：クラス > オブジェクト（インスタンス：変数）
+         * 
+         * オブジェクト：メンバー（所属：has-A）
+         * = メンバーフィールド（変数）：属性（attribute, property） + メソッド（method：オブジェクト関数）：行為（action, behavior）
+         * 
+         * HTML(XML)
+         * ：タグ => 要素（element） => オブジェクト
+         * 
+         * 例え、div タグ => HTMLDivElement
+         * ：属性（イベントを含めて）、メソッド（停的、原型（prototype）、インスタンス）：自分のもの + 相続されたもの（is-A）
+         * 
+         * 相続関係）is-A
+         * EventTarget <- Node（タグ、コメント、内容（text）等々） <- Element（XMLタグ） <- HTMLElement（HTMLタグ） <- HTMLDivElement
+         * 
+         * XML（tree）の制御には「DOM（w3c）」、「SAX」が利用される。
+         * 普通はDOMしか使われていない。
+         * 
+         * DOM API（設計）=> 具現：Javascript、Java等々
+         * 例え）
+         * JS div 作成 + テキスト + 属性 + イベント（「属性」を変更）
+         * 
+         * document.createElement：タグの作成
+         * document.createTextNode：Nodeの作成
+         * document.appendChild：タグにテキストを入れる。
+         * document.appendChild：タグ（body）にタグ（div）を入れる。
+         * 
+         * ツリー操作（tree manipulation）：性能低下！！！！ => ので、現場では愛されない。
+         * => document.body(タグ).innerHTML(innerText, textContent) 代用 => 性能の向上 => ので現場で愛される。
+         * 
+         * JS内装（built-in）オブジェクト
+         * ：Date、Intl、Math、RegExp、JSON等々
+         * 
+         * ブラウザー関連オブジェクト
+         * 親：window
+         * 子：document, navigator, history, location, screen
+         * documentの子：area, image, form, anchor等々
+         * formの子：textarea, button, text, checkbox, fileUpload, radio等々
+         * 
+         * キャッシュ）
+         * 
+        */
+
+    </script>
+    </body>
+</html>

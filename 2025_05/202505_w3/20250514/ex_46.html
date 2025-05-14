@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button type="button" id="btn" name="btn-name" class="btn-class">ボタン</button>
+
+    <button type="button" id="btn2" name="btn-name" class="btn-class">ボタン2</button>
+    
+    <script>
+
+        //記名関数
+        function action() {
+            console.log("action");
+        }
+
+
+        //ボタンの登録
+
+        //let btn = document.getElementById("btn");
+        //Idで制御
+        //let btn = document.getElementsByClassName("btn-class")[0];
+        //Classで制御
+        //let btn = document.getElementsByName("btn-name");
+        //Nameで制御
+
+        //セレクター
+        //let btn = document.querySelector("#btn");
+        //let btn = document.querySelector("[id='btn']");
+        //let btn = document.querySelector("[name='btn-name']");
+        //let btn = document.querySelector("[class='btn-class']");
+        //let btn = document.querySelector(".btn-class");
+        
+        //let btn = document.querySelectorAll("[class = 'btn-class']")[1];
+        //btn :  <button type=​"button" id=​"btn2" name=​"btn-name" class=​"btn-class">​ボタン2​</button>​
+
+        let btn = document.querySelectorAll("button[type='button']")[0];
+
+        //let btn = document.all['btn'];
+        //非推奨、old DOM style
+
+        //document.write("btn : ", btn);
+        console.log("btn : ", btn);
+
+        //btn.onclick = function() {};
+        //btn.addEventListener('click', () => {});
+        //btn.onclick = action;
+
+        //callback関数 => 인자부から呼び出される・定義される関数。
+        //btn.addEventListener('click', action);
+        //btn.addEventListener('click', action());    //クリックをしてないのにも表記される
+
+        btn.addEventListener('click', () => {
+            action();   //これはまともに機能する
+            //action;         //クリックしても機能しない。
+        });
+
+    </script>
+    
+</body>
+</html>
