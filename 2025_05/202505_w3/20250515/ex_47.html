@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /**
+         * 実務性例題の難度・総合性 => 繰り返して復習すべき
+         * 
+        */
+
+    </script>
+</head>
+<body>
+    <div>
+        <img src="../img/wp10025284.png" id="poke">
+    </div>
+
+    <script>
+        /*
+        let poke = document.querySelector("#poke");
+        poke.onclick = changePic;
+
+        function changePic() {
+            poke.src = "../img/salmon_dish.jpg";
+            poke.style.width = "480px";
+        }
+        */
+        let poke = document.querySelector("#poke");
+            poke.src = "../img/salmon_dish.jpg";
+            poke.style.width = "480px";
+        poke.addEventListener("mouseover", () => {
+            poke.src = "../img/wp10025284.png";
+        });
+        poke.addEventListener("mouseout", () => {
+            poke.src = "../img/salmon_dish.jpg";
+            poke.style.width = "480px";
+        })
+
+    </script>
+</body>
+</html>

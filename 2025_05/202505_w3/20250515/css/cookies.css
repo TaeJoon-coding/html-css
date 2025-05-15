@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+/* Slider main container */
+.swiper {
+    width: calc(400px * 3 + 400px);
+    height: 500px;
+    /*background-color: blue;*/
+}
+
+/* slide panel */
+.cookie-image-pnl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*background-color: burlywood ;*/
+    margin: 0 5px 0 0;
+}
+
+/* cookie image */
+.cookie-image {
+    width: 400px;
+    height: 400px;
+}
