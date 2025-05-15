@@ -29,7 +29,7 @@ window.onload = () => {
     //空っぽの変数にし、「for文」を作成する。
 
     //スライドコンテナ <- スライド
-    for (let cookieImageFiles of cookieImageFiles) {
+    for (let cookieImageFile of cookieImageFiles) {
         /**
          * for(let 変数1 of 変数2)
          * let 変数1：
@@ -45,7 +45,7 @@ window.onload = () => {
         
                     <!-- htmlのスライド部分のdivの製作、直接ここの内容をいちいち作成するのもありだが、こうすると一気に複数のスライドを作成できる -->
                     
-                    <img src = "./img/pic/${cookieImageFiles}" class = "cookie-image" />
+                    <img src = "../img/pic/${cookieImageFile}" class = "cookie-image" />
                     <!-- 配列が割り当てられた変数「cookieImageFiles」で作った反復文により、複数の「slide」を生成 -->
 
                 </div>`
