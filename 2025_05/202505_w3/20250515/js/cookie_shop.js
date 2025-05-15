@@ -118,7 +118,18 @@ window.onload = function() {
     //四問）クッキー캐러셀スライドギャラリーを構成する個別スライドパネルをJavascriptで構成する。
     //個別スライドパネル構成
     //参考：https://swiperjs.com/get-started#add-swiper-html-layout
-    
+    /*
+         <div class="swiper-wrapper">
+
+            <!-- Slides -->
+            <div class="swiper-slide">Slide 1</div> <!-- 個別スライド -->
+            <div class="swiper-slide">Slide 2</div> <!-- 個別スライド -->
+            <div class="swiper-slide">Slide 3</div> <!-- 個別スライド -->
+            
+            ...
+
+        </div>
+    */
     for (let i = 0; i < cookie_image_files.length; i++) {
         //配列はやはり「for」を利用するべき。
         cookie_image =  `<div class="swiper-slide">      <!-- 内容が長いのでこのように複行にする。色は違るが、ちゃんとコメントとして判定されている。 -->
@@ -198,9 +209,36 @@ window.onload = function() {
         // And if we need scrollbar
         //scrollbar: {el: '.swiper-scrollbar',},
         // スクロールバーの設定は削除（排除）
-
-        for (var i = 0; i < cookies.length; i++) {
-            let oder_content
-        }
       });
+
+      
+      for (var i=0; i<cookies.length; i++) {
+        let order_content 
+            = `<tr>
+                <!-- 行の作成 -->
+                <td>
+                    <input type='text' id='name${i}' class="form-control" name='name${i}' readonly value='${cookies[i].name}'>
+                </td>
+                <!-- 一列目：配列、for文二より「name」、クッキーの名（イメージファイル名）の出力 -->
+                
+                <td>
+                    <input type='number' id='price${i}' class="form-control" name='price${i}' pattern='(d{3})' readonly min='0' value='${cookies[i].price}'>
+                </td>
+                <!-- クッキーの金額 -->
+
+                <td>
+                    <input type='number' class="form-control" min='0' id='quantity${i}' name='quantity${i}' value='0'>
+                </td>
+
+                <!-- 数量 -->
+
+                <td>
+                    <input type='number' class="form-control" min='0' id='sum${i}' name='sum${i}' value='0' readonly>
+                </td>
+
+
+            </tr>`; 
+
+        document.querySelector("table#order_board").innerHTML += order_content;
+      }
 } // window.onload 
