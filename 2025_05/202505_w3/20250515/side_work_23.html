@@ -4,7 +4,7 @@
   	<meta charset="UTF-8">
   	<title>cookie shop</title>
  
-	<link href="css/cookie_shop_swiper.css" rel="stylesheet" />
+	<link href="css/cookie_shop.css" rel="stylesheet" />
 
 	<!-- 一問）swiper CSS/JS CDN linkを登録 -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -12,14 +12,11 @@
 	<!-- 参考：https://swiperjs.com/get-started#use-swiper-from-cdn -->
 	<!-- swiper : https://swiperjs.com/ -->
 
+	<script src="js/cookie_shop.js" charset="UTF-8"></script>
 
-	<!-- 追加課題一） -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap@5.3.6/dist/css/bootstrap.min.css">
-	<script src="https://cdn.jsdelivr.net/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-		<!-- bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 
-	<script src="js/cookie_shop_swiper.js" charset="UTF-8"></script>
-	<!--// 追加課題一） -->
 
 </head>
 
@@ -34,15 +31,20 @@
 			（Slidesレイヤー、スクロールバー）は削除・省略する。
 			参考：https://swiperjs.com/get-started#add-swiper-html-layout
 		-->
-		<!-- Slider main container -->		 
-		<!-- クッキーギャラリー -->
-		
+
+		<!-- クッキーギャラリー -->	
 		<!-- Slider main container -->
 	<div class="swiper">
 		<!-- Additional required wrapper -->
 		<div class="swiper-wrapper" id="slider_panel">
-
+			<!-- Slides 
+				<div class="swiper-slide">Slide 1</div>
+				<div class="swiper-slide">Slide 2</div>
+				<div class="swiper-slide">Slide 3</div>
+			-->
+				<!-- このプロジェクトでは動的要素を利用するので -->
 		</div>
+
 		<!-- If we need pagination -->
 		<div class="swiper-pagination"></div>
 	
@@ -60,43 +62,44 @@
 		<!--// Slider main container -->
 		<!--// クッキーギャラリー -->
 
-		<!-- 追加課題二） -->
-			<!-- クッキーカート -->
+		<!-- クッキーカート -->
 		<div class="cookie_cart_section">
-			<!-- カートのクラス -->
-			
-			<table class="table" id="order_board" style="width: 700px;">
-				<!-- 票の作成を宣言 -->
-				<!-- 
-				クラス名がそのまま「table」ということはcssから作成された「table」のスタイルをより確実に適用されるように。
-				-->
 
-				<!-- 票のタイトル -->
+			<table class="table" id="order_board" style="width:700px;">
+			<!-- 表の生成を宣言、横幅700px -->
+
+				<!-- タイトル -->
 				<tr>
-				<!-- 票の行を宣言 -->
-					<!-- 行内の各列 -->
-					<td style="width: 200px;">品名</td>
-					<td style="width: 100px;">単価</td>
-					<td style="width: 100px;">注文量</td>
-					<td style="width: 100px;">品別</td>
-					<!--// 行内の各列 -->
-				</tr>
+				<!-- 表の行の生成 -->
 
-				
+					<td style="width:200px">商品名</td>
+					<td style="width:100px">単価</td>
+					<td style="width:100px">注文数量</td>
+					<td style="width:100px">商品ごと</td>
+					<!-- 行の各列の生成 -->
+
+				</tr>
+				<!--// タイトル -->
+
+				<!-- 注文現状 -->
 				<tr>
 					<td colspan="4">
+						<!-- 当行の4列を結合して一列にする。 -->
 						<div class="input-group">
-							<span class="input-group-text">計：</span>
+							<span class="input-group-text">計</span>
 							<input class="form-control" type="number" id="total_price" min="0" readonly />
-						</div>
+							<!-- 「readonly」 -->
+						</div>	   
 					</td>
 				</tr>
 
+				<!--// 注文現状 -->
 
 			</table>
-
+			
 		</div>
 		<!--// クッキーカート -->
+
 	</div>
 	<!--// 全体のレイアウト -->
 </body>
