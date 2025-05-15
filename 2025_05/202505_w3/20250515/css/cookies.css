@@ -2,9 +2,10 @@
 
 /* Slider main container */
 .swiper {
-    width: calc(400px * 3 + 400px);
+    width: calc(300px * 3 + 300px);
     height: 500px;
     /*background-color: blue;*/
+    margin-top: 7.5%;
 }
 
 /* slide panel */
@@ -19,6 +20,13 @@
 
 /* cookie image */
 .cookie-image {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
+}
+
+/* 壁紙 */
+.wall_paper {
+    background-image: url(../../img/wp10025284.png);
+    background-repeat:repeat;
+	background-size: 250px;
 }
