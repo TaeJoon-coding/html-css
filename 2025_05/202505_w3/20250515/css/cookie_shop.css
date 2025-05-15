@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+body { 
+    margin: 0px; 
+    padding: 0px; 
+}
+
+/* Cookie Gallery */
+/* swiper */
+.swiper {
+    width: 600px;
+    height: 500px;
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    /* background : yellow; */
+    margin-top: 7.5%;
+    /* スライドギャラリーの縦軸座標を下す */
+}
+
+/* スライドパネル */
+.slider_panel { 
+    width: calc(600px * 14); 
+    /* 左右margin込み（50px + 50px） */
+    display: flex;
+    justify-content: center;
+    background-color:bisque;
+}
+
+/* クッキーの画像 */
+.cookie_image {
+    width: 450px; 
+    height: 450px; 
+    margin: 0 50px;    
+}
+
+/* クッキーの詳細 */
+.slider_text { 
+    position:absolute;
+    left:150px;
+    top:150px;
+    width:300px; 
+    height:200px; 
+    text-shadow: #000 1px 0 10px;
+}
+
+/* クッキーカート */
+div.cookie_cart_section {
+    width: calc(100vw - 700px);
+    /* 横幅：ビューポートより700px短い */
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    /* 中央揃えにする */
+}
+
+/* Cookie Gallery (Wrap) */
+div#wrap_section {
+    
+    display : flex;
+    justify-content: flex-start;
+
+    width: 100vw; 
+    height: 100vh;       
+}
+
+.table {
+    margin-top: 7.5%;
+    /* ビューポートによってはクッキーカートの最上段が見えなくなる現象を防止 */
+}
