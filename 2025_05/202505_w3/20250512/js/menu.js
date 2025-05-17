@@ -61,73 +61,107 @@ window.onload = function() {
 
 			//ホーム（home）メニューはロールオーバー適用から除外
 			if (rollover_menu != "home") {
+				/**
+				 * !=は不等号。
+				 * つまり、「if (rollover_menu != "home")」は、変数「rollover_menu」が「home」でない場合の条件。
+				 */
 			
-				// 메인 메뉴 버튼의 아이디 추출을 통해서 서브 메뉴 아이디를 선택
+				//メインメニューボタンのID抽出を通じてサブメニューIDを選択
 				var sub_menu_id = this.id.split("_")[0] + "_sub";
-				// 메인 메뉴 계열(자신)의 서브 메뉴
+				/**
+				 * 「this」でイベントが発生する要素（マウスが乗った <li> 要素、main_menu_one）を参照
+				 * 「id.split("_")[0]」部分はid属性の最初の部分を習得、
+				 * 習得した部分に「_sub」という文字列を追加。
+				 * たとえると、マウスが乗ったメニューのidが「item1_main」なら、「sub_menu_id」は「item1_sub」になるような物。
+				 */
+
+				//メインメニューごとのサブメニュー
 				var this_sub_menu = document.getElementById(sub_menu_id);
+				//変数「this_sub_menu」に「sub_menu_id」を持つHTML要素（サブメニューのdiv、ulなど）を習得して代入。
 				
-				// 참고 코드-2
-				// 다른 서브 메뉴들을 은닉(감추기)
-				// for ~ of 문을 활용합니다. 
-				// 전체 서브 메뉴 변수 : sub_menus
-				// 단, 반복문 내에서 조건식을 사용하여 서브 메뉴 아이디(id)가 자신의 서브 메뉴 아이디(this_sub_menu)
-				// 가 아닌 것만 선택적으로 은닉(hidden)하도록 조치합니다.
+				//参考コード２
+				//ほかのサブメニューを隠す
+				//for ~ of文を利用する
+				//サブメニュー全体の変数：sub_menus
+				//ただし、反復文内で条件式を利用してサブメニューidが自身のサブメニューid（this_sub_menu）
+				// でないものだけが選ばれるように隠す（hidden）ように措置する
+
 				for (const sub_menu_one of sub_menus) {
+					//配列「sub_menus」の各要素順番通り「sub_menu_one」に代入する。
+					//for...of ループ
 					
 					if (sub_menu_one.id != this_sub_menu.id) {
+						//「sub_menu_one」（現在ループ処理しているサブメニュー）のidが
+						//「this_sub_menu」（マウスを乗せたメインメニューのサブメニュー）のidと異なる場合、
+
 						sub_menu_one.style.visibility = "hidden";
+						//そのサブメニューの「visibility」スタイルを「hidden」にする。（隠す）
+						//つまり、マウスを乗せてないメインメニューのサブメニューを隠す。
 					} 
 					
 				} // for
-				
-				// 자신의 서브 메뉴(this_sub_menu)를 보이도록 조치
 				this_sub_menu.style.visibility = "visible";
-				
-			} // 홈(home) 버튼 롤오버 할 경우 모든 서브 메뉴(sub_menus) 은닉 
-			else if (rollover_menu == "home") {
+				//マウスが乗ったメインメニューのサブメニュー(this_sub_menu)の「visibility」スタイルを「visible」にする。
+				//つまり見せる。
 
-				// 위의 구문(참고 코드-2)과 유사하게 for ~ of 문을 활용합니다.
-				// 단, 모든 서브 메뉴를 은닉 조치하기 때문에 조건식은 없습니다.  
+
+				
+			} //ホームボタンをロールオーバーする場合、すべてのサブメニュー（sub_menus）を隠す
+
+			else if (rollover_menu == "home") {
+				//上の「rollover_menu != "home"」以外の場合、
+				//「rollover_menu == "home"」であると、
+
+				//上記の参考コード2と類似するように「for ~ of」文を活用
+				//ただし、すべてのサブメニューを隠すため、条件式は無い。
 				for (const sub_menu_one of sub_menus) {
+					//「home」メニューにマウスを乗せた場合、「sub_menus」配列のすべてのサブメニュー要素に対して、
+					// その「visibility」スタイルを「hidden」に設定し、すべて隠す。
+
 					sub_menu_one.style.visibility = "hidden";
 				} // for
 				
-			} //
+			} //else if
 			
 		} // onmouseover
 	
 	} // for
 	})//foreach
-	// 서브 메뉴 롤아웃 할 경우 이벤트 핸들러
-	// for ~ of 문을 활용하여 서브 메뉴(sub_menus) 변수의 개별 서브메뉴(sub_menu_one)의 이벤트 처리
+
+
+	//サブメニューロールアウトの場合のイベントハンドラー
 	for (const sub_menu_one of sub_menus) {
-	
-		// 개별 서브메뉴(sub_menu_one)에 마우스 롤아웃(mouseout) 하였을 때 이벤트 핸들(처리)
+	//for ~ of文を活用してサブメニュー（sub_menus）変数の個別サブメニュー（sub_menu_one）のイベント処理
+
 		sub_menu_one.onmouseout = function(e) {
-			
-			// 서브 메뉴 자신의 아이디에서 "_"를 제거한 첫번째 토큰을 rollover_nemu라는 변수로 할당 
-			// 참고 코드-1의 방식을 참조합니다.
+		//個別サブメニュー（sub_menu_one）にマウスロールアウト（mouseout）した時イベント処理
+
 			const rollover_menu = this.id.split("_")[0];
+			//サブメニュー自身のidから「_」を除去した初めてのトークンを「rollover_nemu」という変数として割り当て
+			//参考コード1の方式を参照
 			
-			// 홈 메뉴(home)는 롤오버 적용 제외 : 조건식(if)
 			if (rollover_menu != "home") {
+			//ホームメニュー（home）はロールオーバー適用除外：条件式（if）
 			
-				// 메인 메뉴 버튼의 아이디(this.id) 추출을 통해서 서브 메뉴 아이디를 선택
-				// 참고 코드-1의 방식을 참조하며 추가적으로 "_sub" 첨가하여
-				// 아이디(sub_menu_id) 변수에 할당(대입)합니다.
 				var sub_menu_id = this.id.split("_")[0] + "_sub";
+				/**
+				 * 変数「sub_menu_id」を宣言。
+				 * メインメニューのボタンのid（this.id）の抽出を通じてサブメニューidを選択
+				 * 参考コード1の方式を参照して、テキスト「_sub」を追加
+				 * 以上を変数に割り当て
+				 */
 				
-				// 위에서 추출한 아이디(sub_menu_id)를 가진 객체(태그)를 this_sub_menu 변수로 할당합니다.
 				var this_sub_menu = document.getElementById(sub_menu_id);
+				//変数「this_sub_menu」を宣言
+				//抽出したid（sub_menu_id）を持つオブジェクト（タグ）を割り当て
 				
-				// this_sub_menu 보이기(visibility) 속성을 은닉(hidden)으로 설정합니다. 
 				this_sub_menu.style.visibility = "hidden";	
+				//「this_sub_menu」の「visibility」属性を「hidden」にする。
 				
 			} // if	
 			
-		}  // 개별 서브메뉴(sub_menu_one)에 마우스 롤아웃(mouseout) 하였을 때 이벤트 핸들(처리) "끝"
+		}  // 
 		
-	} // for ~ of 문을 활용하여 서브 메뉴(sub_menus) 변수의 개별 서브메뉴(sub_menu_one)의 이벤트 처리 "끝" 
+	} // 
 	
 } //
