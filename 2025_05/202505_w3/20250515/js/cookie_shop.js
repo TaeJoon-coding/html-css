@@ -115,7 +115,7 @@ window.onload = function() {
 
     ////////////////////////////////////////////////////////////////////////////////////////
 
-    //四問）クッキー캐러셀スライドギャラリーを構成する個別スライドパネルをJavascriptで構成する。
+    //四問）クッキーキャロセルスライドギャラリーを構成する個別スライドパネルをJavascriptで構成する。
     //個別スライドパネル構成
     //参考：https://swiperjs.com/get-started#add-swiper-html-layout
     /*
@@ -212,6 +212,7 @@ window.onload = function() {
       });
 
       
+
       for (var i=0; i<cookies.length; i++) {
         let order_content 
             = `<tr>
@@ -221,7 +222,7 @@ window.onload = function() {
                 </td>
                 <!-- 一列目：配列、for文二より「name」、クッキーの名（イメージファイル名）の出力 -->
                 
-                <td>
+                <td style="background-color:orange">
                     <input type='number' id='price${i}' class="form-control" name='price${i}' pattern='(d{3})' readonly min='0' value='${cookies[i].price}'>
                 </td>
                 <!-- クッキーの金額 -->
@@ -241,4 +242,120 @@ window.onload = function() {
 
         document.querySelector("table#order_board").innerHTML += order_content;
       }
+
+//////////////////////////  カート機能追加  /////////////////////////////////
+
+    let cookie_images = document.querySelectorAll("img[id^=cookie_image]");
+    //クッキーのイベントハンドリング（処理）適用：クッキーをクリックすると、購入現状に追加される。
+
+    for (let cookie_image of cookie_images) {
+
+        cookie_image.onclick = function(e) {
+            //クッキーイメージをクリックした時、注文数量及び合計の数値の変動
+
+            // id="cookie_image0" => 0
+            let name = this.getAttribute("id");
+            /**
+             * 変数「name」を宣言
+             * 「this」：このコードが実行されるとき、「getAttribute("id")」を参照
+             * 「getAttribute("id")」：「this」が参照するid要素を習得
+             * 「name」に代入
+             */
+            let i = parseInt(replaceAll(name,"cookie_image",""));	
+            /**
+             * 変数「i」を宣言
+             * 「replaceAll」は文字列「name」内のすべての「cookie_image」の部分を「""」と記入したことで空の文字列に置換する。
+             * 略すると、「cookie_image」を削除
+             * parseInt()で引数として与えられた文字列を解釈して、整数に変換する。
+             * もし文字列の初頭が数字化できない場合、「NaN」と出力される。
+             * 以上を「i」に代入
+             */
+
+            let quantity = document.getElementById("quantity"+i).value;
+            //変数「quantity」を宣言。
+            //「getElementById()」：「()」内のidを持つHTML要素を習得
+            //「quantity」＋「i」の文字列のid
+            //「value」：検索されたHTML要素の「値」を習得、「quantity」に代入
+            
+            document.getElementById("quantity"+i).value = ++quantity; 
+            
+            let price = 0; // 単価
+            let number = 0; // 数量
+            let sum = 0; // 商品ごと
+            let total_price = 0; // 計
+
+
+            for (let i = 0; i < cookies.length; i++) {
+                //従来のほかのクッキーの商品ごと合計と計算 => 計
+
+                price = document.getElementById("price"+i).value; // 単価
+
+                quantity_fld = document.getElementById("quantity"+i).value; // 注文数量
+
+                old_quantity = parseInt(quantity_fld); // 従来の注文数量
+                sum = price * old_quantity; // 単価 * 注文数量 => 商品ごと
+
+                document.getElementById("sum"+i).value = sum; // 商品ごと出力
+
+                total_price += price * old_quantity;
+
+                
+            } // 
+
+            console.log("-");
+
+            document.getElementById("total_price").value = total_price; // 計
+        } // onclick
+
+    } // for
+
+    let quantities = document.querySelectorAll("[id^=quantity]");
+    //注文数調節 => 計の変化
+
+    for (let quantity of quantities) {
+
+        /**
+         * マイナス数の入力に対するregexの点検
+         * regex => プラスの整数だけを入力するように点検 => エラー時、メッセージ => 従来の値を復元、初期化
+         * https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/RegExp
+         * https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test
+         */
+
+        quantity.onclick = function(event) {
+
+            let quantity = this.getAttribute("id");
+            let i = parseInt(replaceAll(quantity,"quantity",""));
+
+            let price_fld = document.getElementById("price"+i).value;
+
+            let price = parseInt(price_fld); 
+
+            let old_quantity = parseInt(this.value); 
+
+            let sum = 0; 
+            let total_price = 0; 
+
+            for (let i=0; i<cookies.length; i++)
+            {
+                price_fld = document.getElementById("price"+i).value;
+
+                price = parseInt(price_fld); 
+
+                quantity_fld = document.getElementById("quantity"+i).value;
+                old_quantity = parseInt(quantity_fld);
+                sum = price * old_quantity;
+                
+                document.getElementById("sum"+i).value = sum; 
+
+                total_price += sum;
+
+            } // for
+
+            document.getElementById("total_price").value = total_price; 
+            
+        } // onclick 
+            
+    } // for	
+    
+
 } // window.onload 
