@@ -1,0 +1,156 @@
+1. 지난주 금요일(5/16) 마지막 예제 복사 신규 프로젝트 구성
+: html, css, pic(이미지 파일)
+
+2. 금일 작업할 파일을 기존의 html, css 파일을 복사하여 구성
+
+html : wear.gallery3.html (기존) ->  wear.gallery4.html (신규 작업용)
+css : wear.gallery3.css (기존) ->  wear.gallery4.css (신규 작업용)
+
+3. 추가 이미지(큰 사이즈) 다운로드
+
+https://images.kolonmall.com/Prod_Img/KS/2025/LZ1/6MTCM25461NAY_LZ1.jpg
+https://images.kolonmall.com/Prod_Img/KS/2025/LZ1/6MTCM25461LGY_LZ1.jpg
+https://images.kolonmall.com/Prod_Img/KS/2025/LZ1/JWTCM25311OKH_LZ1.jpg
+https://images.kolonmall.com/Prod_Img/KS/2025/LZ1/JWTCM25311LGI_LZ1.jpg
+https://images.kolonmall.com/Prod_Img/KS/2025/LZ1/JWTCM25311DGY_LZ1.jpg
+https://images.kolonmall.com/Prod_Img/KS/2025/LZ1/6MJGX25151DGR_LZ1.jpg
+https://images.kolonmall.com/Prod_Img/KS/2025/LZ1/6MTCM25451LGY_LZ1.jpg
+https://images.kolonmall.com/Prod_Img/KS/2025/LZ1/6MJGX25151BLK_LZ1.jpg
+
+https://images.kolonmall.com/Prod_Img/KS/2025/LZ2/6MTCM25461NAY_LZ2.jpg
+https://images.kolonmall.com/Prod_Img/KS/2025/LZ2/6MTCM25461LGY_LZ2.jpg
+https://images.kolonmall.com/Prod_Img/KS/2025/LZ2/JWTCM25311OKH_LZ2.jpg
+https://images.kolonmall.com/Prod_Img/KS/2025/LZ2/JWTCM25311LGI_LZ2.jpg
+https://images.kolonmall.com/Prod_Img/KS/2025/LZ2/JWTCM25311DGY_LZ2.jpg
+https://images.kolonmall.com/Prod_Img/KS/2025/LZ2/6MJGX25151DGR_LZ2.jpg
+https://images.kolonmall.com/Prod_Img/KS/2025/LZ2/6MTCM25451LGY_LZ2.jpg
+https://images.kolonmall.com/Prod_Img/KS/2025/LZ2/6MJGX25151BLK_LZ2.jpg
+
+총 파일 갯수 48개 확인 : 상품당 4개 * 12 = 48개
+
+
+4. 상품정보_추가상품 엑셀(오픈오피스) 파일구성 및 다운로드
+
+상품정보_추가상품 엑셀.ods
+
+5. 상품정보_추가상품 엑셀(오픈 오피스) 파일 CSV 변환 
+: 인코딩 방식(UTF-8) 필히 확인 저장, notepad++에서 열어보고 encoding 확인
+
+6. CSV 읽어오는 샘플 테스트
+: https://medium.com/@ryan_forrester_/read-csv-files-in-javascript-how-to-guide-8d0ac6df082a
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+7. CSV 읽어오는 샘플 테스트-2
+: HTML 문서 읽자마자 CSV 읽어오기
+
+8. CSV 읽어오는 샘플 테스트-3
+: CSV -> JSON 변환 테스트
+// CSV -> JSON
+// https://www.papaparse.com/
+// https://www.papaparse.com/docs#csv-to-json
+
+<head> 태그 부분에 CDN 링크 부착 
+
+<!-- CSV 파일 로드 라이브러리 : https://www.papaparse.com/ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+9. JSON 정보 확인 : 로그(log) 출력
+
+10. 개별 상품 템플릿 적용 
+: panel_code_template_grid응용.txt
+
+11. CSS 로딩 및 CSS 변경
+
+<link rel="stylesheet" href="../css/wear_gallery4.css" />
+
+
+/* 의류 갤러리 패널 */
+.wrap {
+
+	margin: auto;
+    /* width: 870px;
+    height: 460px; */
+
+    /* 3 * 4 그리드(grid) 갤러리 */
+    width: calc(220px * 4);
+    height : calc(460px * 3);
+        
+    display: flex;
+    /* 3 * 4 그리드(grid) 갤러리 -> 플렉스 박스(줄바꿈) */
+    flex-wrap: wrap;
+	
+	...(후략)...
+	
+12. 개별 상품 템플릿 내 관련 템플릿 변수 적용  	
+
+ex) <div class="wear-gallery-pic">
+		<img class="img1" src="../pic/${product[0]}_LM1.jpg" />
+		<img class="img2" src="../pic/${product[0]}_LM2.jpg" />
+	</div>
+	
+13. 단가 천단위 "," 포맷 처리	
+
+// 단가 천단위 "," 포맷 처리
+function numberWithCommas(x) {
+	x = x.toString();
+	var pattern = /(-?\d+)(\d{3})/;
+	while (pattern.test(x))
+		x = x.replace(pattern, "$1,$2");
+	return x;
+}
+
+...(중략)....
+
+<!-- 상품 단가 -->
+<div class="wear-price">
+	${numberWithCommas(product[4])} 원                                
+</div>
+<!--// 상품 단가 -->
+
+///////////////////////////////////////////////////////////////
+
+14. 상품 추천 별점 및 상품평 & 신상품 여부 아이콘 조건적 첨부
+
+<div class="wear-recomm-review">
+                            
+	${product[5] == 'O' ? '' : 
+		`<div class="wear-recomm-review-icon-wrap">
+			<span class="material-symbols-outlined">
+				star
+			</span>
+			<span class="wear-recomm-review-num">${product[6]}</span>    
+			<span class="material-symbols-outlined">
+				reviews
+			</span>
+			<span class="wear-recomm-review-num">${product[7]}</span>
+		</div>`}
+
+</div>
+<!--// 상품 추천 별점 및 상품평 -->
+
+<!-- 신상품 여부 -->
+<div class="new-wear">
+	${product[5] == 'O' ? 
+		`<span class="new-wear-icon">신상품</span>` : ''}	
+</div> 
+
+15. 구글 아이콘 CSS 링크 추가 및 wrap 컨테이너에 개별 상품 템플릿 추가
+
+<!-- google icons :  https://fonts.google.com/icons -->
+<!-- 
+	구글 아이콘 CDN(Content Delivery Network) 링크 
+	- Guide : https://developers.google.com/fonts/docs/material_symbols?hl=ko 
+--> 
+<!-- google symbols --> 
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" 
+	  rel="stylesheet" />
+
+
+	let wrap = document.querySelector(".wrap");
+	wrap.innerHTML += product_content;
+
+} // for
+
+
+16. 

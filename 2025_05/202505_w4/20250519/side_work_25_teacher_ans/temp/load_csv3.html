@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch CSV File</title>
+
+    <!-- CSV 파일 로드 라이브러리 : https://www.papaparse.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</head>
+<body>
+    <pre id="output"></pre>
+
+    <script>
+        async function fetchCSV(url) {
+            try {
+                const response = await fetch(url);
+                const data = await response.text();
+                
+                // document.getElementById('output').innerText = data;
+
+                // CSV -> JSON
+                // https://www.papaparse.com/
+                // https://www.papaparse.com/docs#csv-to-json
+
+                // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/trim
+                let json = Papa.parse(data.trim()); // 공백 제거
+                // console.log("json : ", json);
+                console.log("json : ", json.data);
+                // console.log("json 컬럼 : ", json.data[0]); // 컬럼
+                // console.log("json 첫째 상품 정보 : ", json.data[1]); // 첫번째 상품 정보
+                // console.log("json 첫째 상품 정보의 상품명 : ", json.data[1][1]); 
+                // 첫번째 상품 정보의 상품명
+
+                let products = json.data; // 첫줄(컬럼), 마지막(공백)
+                // 공백 제거 : let json = Papa.parse(data.trim()); // 공백 제거
+                // products.shift() 이후의 index : 0 ~ 11 번째     
+                
+                products.shift(); // 배열의 첫줄(첫 요소:컬럼) 제거
+                console.log("상품 정보들 :", products);
+                console.log("상품 수 :", products.length); // 상품수
+
+                // for ... of : 전체 상품들 출력
+                for (let product of products) {
+
+                    // console.log("product :", product);
+                    // 포맷터(형식자) 출력 %s (string) : 문자열
+                    /*
+                    [
+                        "TLSCM25611NAY",
+                        "남성 시어서커 깅엄체크 반팔셔츠",
+                        "TLSCM25611NAY_XXX.jpg",
+                        "KOLON SPORT",
+                        "138000",
+                        "O",
+                        "0",
+                        "0"
+                    ] */
+                    console.log("상품 이미지 : %s", product[0]+"_LM1.jpg")                    
+                    console.log("상품명 : %s", product[1]);
+                    console.log("상품 브랜드 : %s", product[3]);
+                    console.log("상품 단가 : %s", product[4]);
+                    console.log("상품 신상품 여부 : %s", 
+                                (product[5] == 'O' ? "신상품" : "기존상품"));
+                    console.log("상품 추천평 : %d", product[6]);
+
+                    console.log("-------------------");
+
+                } // for
+
+            } catch (error) {
+                console.error('Error fetching CSV:', error);
+            }
+        }
+
+        fetchCSV('../csv/상품정보-추가상품.csv');
+    </script>
+</body>
+</html>
