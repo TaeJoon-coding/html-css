@@ -1,0 +1,66 @@
+<!-- 의류 갤러리 -->
+<div id="wrap">
+
+    <!-- 의류 갤러리 -->
+    <div class="wrap">
+
+        <!-- 의류 단품 패널 -->
+        <div class="wear-pnl">
+
+            <!-- 의류 관심 상품(좋아요) 등록 -->
+            <div class="wear-preferred-item">
+                <span class="material-symbols-outlined preferred-item-icon">
+                    favorite
+                </span>              
+            </div>
+            <!--// 의류 관심 상품(좋아요) 등록 -->
+
+            <!-- 의류 썸네일 사진 패널 --> 
+            <div class="wear-gallery-pic">
+                <img src="pic/이미지 파일" />
+            </div>
+            <!--// 의류 썸네일 사진 패널 -->
+
+            <!-- 원단 스타일 -->
+            <div class="wear-fabric">
+                <div class="wear-fabric-icon">             
+                    <img src="pic/이미지 파일" />
+                </div>
+            </div>
+            <!--// 원단 스타일 -->
+
+            <!-- 브랜드 -->
+            <div class="brand-name">
+                
+            </div>
+            <!--// 브랜드 -->
+
+            <!-- 상품명-->
+            <div class="wear-name">
+                
+            </div>
+            <!--// 상품명-->
+
+            <!-- 상품 단가 -->
+            <div class="wear-price">
+                
+            </div>
+            <!--// 상품 단가 -->
+
+            <!-- 상품 추천 별점 및 상품평 -->
+            <div class="wear-recomm-review">
+
+            </div>
+            <!--// 상품 추천 별점 및 상품평 -->
+
+            <!-- 신상품 여부 -->
+            <div class="new-wear">
+                <span class="new-wear-icon">신상품</span>
+            </div> 
+            <!--// 신상품 여부 -->
+
+        </div>
+        <!--// 의류 단품 패널 -->
+
+</div>
+<!--// 의류 갤러리 -->
