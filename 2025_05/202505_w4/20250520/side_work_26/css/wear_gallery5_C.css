@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+/* C案専用のスタイル */
 /* button {
     background-color:aqua ;
 } */
@@ -99,7 +99,6 @@ span.preferred-item-icon {
 }
 
 /* イメージトランジション */
-
 div.wear-gallery-pic > img.img1
 { 
     opacity: 1;
@@ -127,19 +126,6 @@ div.wear-gallery-pic:hover > img.img2
     z-index: 2;
 }
 
-
-/* 拡大イメージ */
-div#magnified_image_content img {     
-
-    /* トランジション効果 */
-    position: absolute; 
-    /* ここで「position: absolute;」を利用しないとロールオーバーイメージが離脱する */
-
-    /* transitions */
-    transition: all .6s ease;
-    /*  */
-}
-
 /* 生地：210px * 35px + padding-bottom(8px) */
 .wear-fabric {
 
@@ -156,7 +142,6 @@ div#magnified_image_content img {
     /* テスト用背景 */
 }
 
-
 /* 生地イメージ： wrapper */
 .wear-fabric .wear-fabric-icon {
 
@@ -164,7 +149,6 @@ div#magnified_image_content img {
     height: 25px;    
     overflow: hidden;
 }
-
 
 /* 生地イメージ：商品からクリップ */
 .wear-fabric .wear-fabric-icon img {
@@ -239,13 +223,13 @@ div#magnified_image_content img {
 
     padding-top: 0px;
     font-size: 12px;
-    height: 20px;
+    height: 30px;
     /* background : yellow; */
 }
 
 /* 新規商品かどうか：210px * 35px */
 .new-wear {
-    display: flex;    
+    display: flex;
     justify-content: flex-start;
     align-items: center;
 
@@ -303,4 +287,4 @@ div#magnified_image_content img {
     /* background-color: cyan; */
     /* ちゃんと囲んでいる。 */
 }
-/*// B案専用のスタイル */
+/*// C案専用のスタイル */
