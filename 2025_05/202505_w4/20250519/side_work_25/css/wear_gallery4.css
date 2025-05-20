@@ -81,15 +81,15 @@ span.preferred-item-icon {
     height: 290px;
     object-position: 0 -40px;
 
-    /* トランジション効果 */
+    /* トランジション効果の追加 */
     position: absolute; 
-    /* ここでposition: absolute;を使わないと、ロールオーバーイメージがその場を離脱する。 */
+    /* ここで「position: absolute;」を利用しないと、ロールオーバーイメージが離脱する。 */
 
     /* transitions */
     transition: all 1s ease; 
 }
 
-/* イメージトランジション */
+/* イメージのトランジション */
 div.wear-gallery-pic > img.img1
 { 
     opacity: 1;
