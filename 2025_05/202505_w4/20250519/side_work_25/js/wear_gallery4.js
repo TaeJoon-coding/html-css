@@ -8,36 +8,36 @@ window.onload = () => {
         return x;
     }
 
-   async function fetchCSV(url) {
-       try {
-           const response = await fetch(url);
-           const data = await response.text();
-           
-           //document.getElementById('output').innerText = data;
-           //ここにギャラリー機能を入れるべきなのでは？
+    async function fetchCSV(url) {
+        try {
+            const response = await fetch(url);
+            const data = await response.text();
+            
+            //document.getElementById('output').innerText = data;
+            //ここにギャラリー機能を入れるべきなのでは？
 
-           //CSV -> JSON化が必要
-           // https://www.papaparse.com/
-           // https://www.papaparse.com/docs#csv-to-json
-           
-           let json = Papa.parse(data.trim());
-           //https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/trim
-           console.log("json : ", json.data);
-           
-           let products = json.data;       //一行はカラム、最後の行は空白
-           products.shift();                                   //最初の一行（カラム）を除去
-           console.log("商品数：", products.length); 
-           
-           let cnt = 1;
-           for (let product of products) {
+            //CSV -> JSON化が必要
+            // https://www.papaparse.com/
+            // https://www.papaparse.com/docs#csv-to-json
+            
+            let json = Papa.parse(data.trim());
+            //https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/trim
+            console.log("json : ", json.data);
+            
+            let products = json.data;       //一行はカラム、最後の行は空白
+            products.shift();                                   //最初の一行（カラム）を除去
+            console.log("商品数：", products.length); 
+            
+            //let cnt = 1;
+            for (let product of products) {
                /*
-               console.log("商品イメージ： %s", product[0]+"_LM1.jpg")                    
-               console.log("商品名: %s", product[1]);
-               console.log("商品ブランド： %s", product[3]);
-               console.log("商品単価： %s", product[4]);
-               console.log("新商品なのか： %s", 
-                           (product[5] == 'O' ? "新商品" : "従来商品"));
-               console.log("商品レビュー： %d", product[6]);
+               console.log("商品イメージ：%s", product[0]+"_LM1.jpg")                    
+               console.log("商品名：%s", product[1]);
+               console.log("商品ブランド：%s", product[3]);
+               console.log("商品単価：%s", product[4]);
+               console.log("新商品なのか : %s", 
+                           (product[5] == 'O' ? "新商品" : "従来の商品"));
+               console.log("商品レビュー : %d", product[6]);
 
                console.log("-------------------");
                */
@@ -113,10 +113,10 @@ window.onload = () => {
                                         <!--// 衣服単品パネル -->`;
 
                                            
-                                    console.log("個別商品陳列、終：", cnt)
-                                   let wrap = document.querySelector(".wrap");
-                                   wrap.innerHTML += product_content;
-                                   cnt++;
+                                    //console.log("개별상품 진열 끝 : ", cnt)
+                                    let wrap = document.querySelector(".wrap");
+                                    wrap.innerHTML += product_content;
+                                    //cnt++;
                            
             }//for
            
