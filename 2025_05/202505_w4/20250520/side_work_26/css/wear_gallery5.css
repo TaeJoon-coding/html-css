@@ -1,0 +1,350 @@
+@charset "UTF-8";
+
+
+/* 衣服ギャラリーパネル */
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+	margin: auto;
+    /* padding: 10px; */
+    /* 
+    flexボックス、グリッド代用なので「flex-wrap: wrap」を利用する。
+    「flex-wrap:」：要素の配置方法。各要素が、親要素の領域の限界に達した時、次の要素を配置する方法を語る
+    「wrap;」要素を改行して配置する。
+    「margin: auto;」：「外部間隔：自動」という意味で、揃える方式によって配置が変わる。
+    */
+
+    /* justify-content: center; */
+    /*横中央揃え*/
+    width: calc(220px * 4);
+    height : calc(460px * 3);
+    /* 横幅（横要素の数）を固定し、縦スクロールにするため、「height」を数式にして、後で修正が簡単になるように */
+
+    font-size: 12px;
+    font-weight: 700;
+
+    /* background-color:brown; */
+    /* テスト用背景 */
+}
+
+/* 衣服パネル */
+.wear-pnl {
+    width: 210px;
+    height: 455px;
+    overflow: hidden;       
+
+    display: flex;
+    flex-direction: column;
+    /* flexbox、横方向展開 */
+    
+    margin : 0 10px 0 0;
+
+    /* background: yellow; */
+    /* テスト用背景 */
+}
+
+/* 後で買う（いいね）：210px(190px + 20px(padding)) * 30px */
+.wear-preferred-item {
+    display: flex;
+    justify-content: right;
+
+    padding: 10px;
+    width: 190px;
+
+    background-color: #f1f1f1;
+}
+
+/* 後で買う（いいね）アイコン */
+span.preferred-item-icon {
+    color: #ccc;
+}
+
+.material-symbols-outlined:hover {
+    cursor: pointer;
+    color: #CCCCCC;
+	/* マウスカーソル：ポインター、フォント色：#CCCCCC */
+}
+
+/* 衣服サムネパネル：210px * 250px */
+.wear-gallery-pic {
+
+    width: 210px;
+    height: 250px;
+    /* background : red; */
+    /* テスト用背景 */
+}
+
+/* 衣服サムネ：210px * 290px */
+.wear-gallery-pic img {
+
+    width: 210px;
+    height: 290px;
+    object-position: 0 -40px;
+
+    /* トランジション効果 */
+    position: absolute; 
+    /* ここでposition: absolute;を使わないと、ロールオーバーイメージがその場を離脱する。 */
+
+    /* transitions */
+    transition: all 1s ease; 
+}
+
+/* イメージトランジション */
+/*
+div.wear-gallery-pic > img.img1
+{ 
+    opacity: 1;
+    z-index: 2;
+}
+*/
+/*
+div.wear-gallery-pic > img.img2
+{
+    opacity: 0;
+    z-index: 1;
+}
+*/
+/* hover 
+div.wear-gallery-pic:hover > img.img1
+{ 
+    opacity: 0;
+    z-index: 1;
+}
+*/
+/*
+div.wear-gallery-pic:hover > img.img2
+{ 
+    opacity: 1;
+    z-index: 2;
+}
+*/
+
+/* 拡大イメージ */
+div#magnified_image_content img {     
+
+    /* トランジション効果 */
+    position: absolute; 
+    /* ここで「position: absolute;」を利用しないとロールオーバーイメージが離脱する */
+
+    /* transitions */
+    transition: all .6s ease;
+    /*  */
+}
+
+
+div.wear-gallery-pic img.img1, div#magnified_image_content img.img1{ 
+    opacity: 1;
+    z-index: 2;
+}
+
+/* 
+    ">" => " " 선택자 변경 
+
+    추가) 확대 이미지 팝업 이미지 부분 트랜지션 효과
+*/
+div.wear-gallery-pic img.img2, div#magnified_image_content img.img2{
+    opacity: 0;
+    z-index: 1;
+}
+
+/* hover */
+/* 
+    ">" => " " 선택자 변경 
+
+    추가) 확대 이미지 팝업 이미지 부분 트랜지션 효과
+*/
+div.wear-gallery-pic:hover img.img1, div#magnified_image_content:hover img.img1{ 
+    opacity: 0;
+    z-index: 1;
+}
+
+/* 
+    ">" => " " 선택자 변경 
+
+    추가) 확대 이미지 팝업 이미지 부분 트랜지션 효과
+*/
+div.wear-gallery-pic:hover img.img2,  div#magnified_image_content:hover img.img2{ 
+    opacity: 1;
+    z-index: 2;
+}
+
+/* 상품 이미지 확대 팝업 */
+#magnified_image_view {
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+}
+
+/* 상품 이미지 확대 팝업 : 창닫기 패널 */
+#img_popup_close_pnl {
+
+    display: flex;
+    justify-content: flex-end;
+    width: calc(100% - 20px);
+
+    padding: 10px;
+    /* background-color : orange; */
+    /* テスト用背景 */
+}
+
+
+/* 生地：210px * 35px + padding-bottom(8px) */
+.wear-fabric {
+
+    width: 210px;
+    height: 35px;    
+
+    padding-bottom: 8px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    /* background: cyan; */
+    /* テスト用背景 */
+}
+
+
+/* 生地イメージ： wrapper */
+.wear-fabric .wear-fabric-icon {
+
+    width: 25px;
+    height: 25px;    
+    overflow: hidden;
+}
+
+
+/* 生地イメージ：商品からクリップ */
+.wear-fabric .wear-fabric-icon img {
+
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path */
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape/rect */
+    position: relative;
+    left: -210px;
+    top: -210px;
+    
+    clip-path: rect(220px 240px 240px 220px);
+    /* イメージクリップ：「clip-path : rect()」を利用：220px 240px 240px 220px */
+
+}
+
+
+/* ブランド：15px */
+.brand-name {
+
+    width: 205px;
+    padding: 5px 0 5px 5px;
+    /* background: orange; */
+    /* テスト用背景 */
+}
+
+/* 品名：210px */
+.wear-name {
+
+    width: 205px;
+    padding: 5px 0 5px 5px;
+    /* background: lightskyblue; */
+    /* テスト用背景 */
+}
+
+/* 商品の単価：210px * 15px */
+.wear-price {
+
+    width: 205px;
+    padding: 5px 0 5px 5px;
+    /* background: lightgreen; */
+    /* テスト用背景 */
+}
+
+/* おすすめ商品、評点、レビュー、アイコン：210px * 15px */
+.wear-recomm-review {
+
+    width: 210px;
+    /* background: lightcyan; */
+    /* テスト用背景 */
+}    
+
+.wear-recomm-review-icon-wrap {  
+
+    width: 70px;
+    height: 30px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background: #F1F1F1; */
+    /* テスト用背景 */
+}
+
+.wear-recomm-review span.material-symbols-outlined {
+
+    margin-top: 10px;
+    font-size: 15px;
+    height: 25px;
+}
+
+.wear-recomm-review span.wear-recomm-review-num {
+
+    padding-top: 0px;
+    font-size: 12px;
+    height: 20px;
+    /* background : yellow; */
+}
+
+/* 新規商品かどうか：210px * 35px */
+.new-wear {
+    display: flex;    
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 5px 0 5px 5px;
+
+    /* background: lightcyan; */
+}
+
+/* 新規商品アイコン */
+.new-wear-icon {
+
+    font-size: 12px;
+    padding: 5px 8px;
+    border: 1px solid #ccc;
+}
+
+/*//////////////////////////////////////////////////////////////*/
+/* 
+    ">" => " " 선택자 변경 
+
+    변경 사유) 기존의 갤러리 이미지들이 아래와 같이 변경되어 제어하기 위한 선택자 변경
+
+    - 변경전)
+
+    <!-- 衣服サムネパネル -->              
+    <div class="wear-gallery-pic">
+        <img class="img1" src="./pic/${product[0]}_LM1.jpg" />
+        <img class="img2" src="./pic/${product[0]}_LM2.jpg" />
+    </div>
+    <!--// 衣服サムネパネル -->
+
+    - 변경후)
+
+    <!-- 衣服サムネパネル -->              
+    <div class="wear-gallery-pic">
+
+        <!-- 큰 그림 확대 버튼 추가 -->
+        <a href="#" id="magnified_btn_${product[0]}" class="magnified_btn" title="${product[0]}">
+            <!--  -->
+            <img class="img1" src="./pic/${product[0]}_LM1.jpg" title="${product[0]}" />
+            <img class="img2" src="./pic/${product[0]}_LM2.jpg" title="${product[0]}" />
+        </a>
+
+    </div>
+    <!--// 衣服サムネパネル -->
+*/
+/*//////////////////////////////////////////////////////////////*/
+

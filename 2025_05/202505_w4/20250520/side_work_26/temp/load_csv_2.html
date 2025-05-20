@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch CSV File</title>
+    <!-- CSV 파일 로드 라이브러리 : https://www.papaparse.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+</head>
+<body>
+    <pre id="output"></pre>
+
+    <script>
+        async function fetchCSV(url) {
+            try {
+                const response = await fetch(url);
+                const data = await response.text();
+                
+                //document.getElementById('output').innerText = data;
+                //ここにギャラリー機能を入れるべきなのでは？
+
+                //CSV -> JSON化が必要
+                // https://www.papaparse.com/
+                // https://www.papaparse.com/docs#csv-to-json
+                
+                let json = Papa.parse(data.trim());
+                //https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/trim
+                console.log("json : ", json);
+                //表記されるのは下の「fetchCSV」で指定したcsvファイル
+                //console.log("json : ", data);
+                //console.log("json : ", json.data);
+                //console.log("json カラム : ", json.data[0]);       //カラム
+                //console.log("json 一番商品の情報 : ", json.data[1]);           //一番商品の情報
+                //console.log("json 一番商品の情報の商品名 : ", json.data[1][1]);     //一番商品の情報の商品名
+                
+                let products = json.data;       //一行はカラム、最後の行は空白
+                //index（有効）：1~12番（0：カラム、13：空白）
+                //を防ぐため、「Papa.parse(data);」の「data」に「.trim()」を続いて記入する。
+                //「trim()」：ホワイトスペースを除去する。
+
+                //products.shift()の後のindex：0~11番
+
+                //products = products.shift();                      //行の列数になってします。
+                products.shift();                                   //最初の一行（カラム）を除去
+                //console.log("商品情報：", products);                //
+                //console.log("商品情報２：", products.length);       //商品数
+
+                //console.log("商品数：", products.length);       //商品数（正確にはカラムが追加されt、商品数+1）
+                
+                // for ... of : 全体商品を出力
+
+                for (let product of products) {
+
+                    console.log("商品イメージ : %s", product[0]);
+                    //フォーマッター出力「%s」string：文字列
+                    console.log("商品名 : %s", product[1]);
+                    console.log("ブランド : %s", product[2]);
+                    console.log("単価 : %s", product[3]);
+                    console.log("新商品 : %s", product[4]);
+                    console.log("いいね！ : %s", product[5]);
+                    console.log("レビュー : %s", product[6]);
+                    console.log("---------------------------------------");
+
+                }
+                
+
+            } catch (error) {
+                console.error('Error fetching CSV:', error);
+            }
+        }
+
+        //fetchCSV('https://example.com/data.csv');
+        fetchCSV('../csv/상품정보-추가상품_grid용.csv');
+    </script>
+</body>
+</html>
