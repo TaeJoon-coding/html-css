@@ -31,34 +31,34 @@ window.onload = () => {
            let cnt = 1;
            for (let product of products) {
                /*
-               console.log("상품 이미지 : %s", product[0]+"_LM1.jpg")                    
-               console.log("상품명 : %s", product[1]);
-               console.log("상품 브랜드 : %s", product[3]);
-               console.log("상품 단가 : %s", product[4]);
-               console.log("상품 신상품 여부 : %s", 
-                           (product[5] == 'O' ? "신상품" : "기존상품"));
-               console.log("상품 추천평 : %d", product[6]);
+               console.log("商品イメージ： %s", product[0]+"_LM1.jpg")                    
+               console.log("商品名: %s", product[1]);
+               console.log("商品ブランド： %s", product[3]);
+               console.log("商品単価： %s", product[4]);
+               console.log("新商品なのか： %s", 
+                           (product[5] == 'O' ? "新商品" : "従来商品"));
+               console.log("商品レビュー： %d", product[6]);
 
                console.log("-------------------");
                */
 
-               let product_content = ` <!-- 의류 단품 패널 -->
+               let product_content = ` <!-- 衣服単品パネル -->
                                         <div class="wear-pnl">
 
-                                            <!-- 의류 관심 상품(좋아요) 등록 -->
+                                            <!-- 商品のいいね！登録 -->
                                             <div class="wear-preferred-item">
                                                 <span class="material-symbols-outlined preferred-item-icon">
                                                     favorite
                                                 </span>              
                                             </div>
-                                            <!--// 의류 관심 상품(좋아요) 등록 -->
+                                            <!--// 商品のいいね！登録 -->
 
-                                            <!-- 의류 썸네일 사진 패널 --> 
+                                            <!-- 衣服サムネパネル --> 
                                             <div class="wear-gallery-pic">
                                                 <img class="img1" src="../../img/pic/${product[0]}_LM1.jpg" />
                                                 <img class="img2" src="../../img/pic/${product[0]}_LM2.jpg" />
                                             </div>
-                                            <!--// 의류 썸네일 사진 패널 -->
+                                            <!--// 衣服サムネパネル -->
 
                                             <!-- 生地スタイル -->
                                             <div class="wear-fabric">
@@ -68,25 +68,25 @@ window.onload = () => {
                                             </div>
                                             <!--// 生地スタイル -->
 
-                                            <!-- 브랜드 -->
+                                            <!-- ブランド -->
                                             <div class="brand-name">
                                                 ${product[3]}
                                             </div>
-                                            <!--// 브랜드 -->
+                                            <!--// ブランド -->
 
-                                            <!-- 상품명-->
+                                            <!-- 商品名-->
                                             <div class="wear-name">
                                                 ${product[1]}
                                             </div>
-                                            <!--// 상품명-->
+                                            <!--// 商品名-->
 
-                                            <!-- 상품 단가 -->
+                                            <!-- 商品単価 -->
                                             <div class="wear-price">
                                                 ${numberWithCommas(product[4])}KRW
                                             </div>
-                                            <!--// 상품 단가 -->
+                                            <!--// 商品単価 -->
 
-                                            <!-- 상품 추천 별점 및 상품평 -->
+                                            <!-- おすすめ、評点およびレビュー -->
                                             <div class="wear-recomm-review">
                                                 ${product[5] == 'O' ? '' :
                                                     `<div class="wear-recomm-review-icon-wrap">
@@ -100,7 +100,7 @@ window.onload = () => {
                                                         <span class="wear-recomm-review-num">${product[7]}</span>
                                                     </div>`}
                                             </div>
-                                            <!--// 상품 추천 별점 및 상품평 -->
+                                            <!--// おすすめ、評点およびレビュー -->
 
                                             <!-- 新商品 -->
                                             <div class="new-wear">
@@ -110,10 +110,10 @@ window.onload = () => {
                                             <!--// 新商品 -->
 
                                         </div>
-                                        <!--// 의류 단품 패널 -->`;
+                                        <!--// 衣服単品パネル -->`;
 
                                            
-                                    console.log("개별상품 진열 끝 : ", cnt)
+                                    console.log("個別商品陳列、終：", cnt)
                                    let wrap = document.querySelector(".wrap");
                                    wrap.innerHTML += product_content;
                                    cnt++;
@@ -127,6 +127,6 @@ window.onload = () => {
    }
 
    //fetchCSV('https://example.com/data.csv');
-   fetchCSV('./csv/상품정보-추가상품_grid용.csv');
+   fetchCSV('./csv/商品情報ー追加商品.csv');
     
 }//window
