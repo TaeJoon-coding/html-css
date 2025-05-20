@@ -9,40 +9,40 @@ window.onload = () => {
     }
 
     async function fetchCSV(url) {
-       try {
-           const response = await fetch(url);
-           const data = await response.text();
+        try {
+            const response = await fetch(url);
+            const data = await response.text();
            
-           //document.getElementById('output').innerText = data;
-           //ここにギャラリー機能を入れるべきなのでは？
+            //document.getElementById('output').innerText = data;
+            //ここにギャラリー機能を入れるべきなのでは？
 
-           //CSV -> JSON化が必要
-           // https://www.papaparse.com/
-           // https://www.papaparse.com/docs#csv-to-json
+            //CSV -> JSON化が必要
+            // https://www.papaparse.com/
+            // https://www.papaparse.com/docs#csv-to-json
            
-           let json = Papa.parse(data.trim());
-           //https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/trim
-           console.log("json : ", json.data);
+            let json = Papa.parse(data.trim());
+            //https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/trim
+            console.log("json : ", json.data);
            
-           let products = json.data;       //一行はカラム、最後の行は空白
-           products.shift();                                   //最初の一行（カラム）を除去
-           console.log("商品数：", products.length); 
+            let products = json.data;       //一行はカラム、最後の行は空白
+            products.shift();                                   //最初の一行（カラム）を除去
+            console.log("商品数：", products.length); 
            
-           //let cnt = 1;
-           for (let product of products) {
-               /*
-               console.log("商品イメージ： %s", product[0]+"_LM1.jpg")                    
-               console.log("商品名: %s", product[1]);
-               console.log("商品ブランド： %s", product[3]);
-               console.log("商品単価： %s", product[4]);
-               console.log("新商品なのか： %s", 
+            //let cnt = 1;
+            for (let product of products) {
+                /*
+                console.log("商品イメージ： %s", product[0]+"_LM1.jpg")                    
+                console.log("商品名: %s", product[1]);
+                console.log("商品ブランド： %s", product[3]);
+                console.log("商品単価： %s", product[4]);
+                console.log("新商品なのか： %s", 
                            (product[5] == 'O' ? "新商品" : "従来商品"));
-               console.log("商品レビュー： %d", product[6]);
+                console.log("商品レビュー： %d", product[6]);
 
-               console.log("-------------------");
-               */
+                console.log("-------------------");
+                */
 
-               let product_content = ` <!-- 衣服単品パネル -->
+                let product_content = ` <!-- 衣服単品パネル -->
                                         <div class="wear-pnl">
 
                                             <!-- 商品のいいね！登録 -->
@@ -131,62 +131,61 @@ window.onload = () => {
            console.error('Error fetching CSV:', error);
         }
     
-            let magnified_btns = document.querySelectorAll(".magnified_btn");
-            /**
-             * 上に、id="magnified_btn_${product[0]}"と作成してidを生成したので、
-             * このようにその複数のidを一気に制御する。
-             * 
-             */
+       //////////////////////////////////////////////////////
 
-            console.log("magnified_btns 数 : ", magnified_btns.length)
+        //ギャラリーイメージイベントハンドラー：クリック時 => 拡大イメージポップアップ出力
 
-            let magnified_image_view = document.getElementById("magnified_image_view");
-            let magnified_image_content = document.getElementById("magnified_image_content");
+        let wear_gallery_pics 
+            = document.querySelectorAll(".wear-gallery-pic");
 
-            let img_popup_close_btn = document.getElementById("img_popup_close_btn");
+        wear_gallery_pics.forEach((element) => {
 
-            img_popup_close_btn.addEventListener('click', (e) => {
+            element.addEventListener('click', (event) => {
+                
+                // イベントバブリング：https://developer.mozilla.org/ko/docs/Learn_web_development/Core/Scripting/Event_bubbling
+                // イベントバブリング防止：イベントが下位タグに伝播（propagation）
+                // preventDefault : https://developer.mozilla.org/ko/docs/Web/API/Event/preventDefault
+            //event.stopPropagation();
+            //event.preventDefault();
+            //console.log("event target : ", event.target.title);
+            //選択（クリック）した衣服サムネパネルの「title」を出力する。(title="${product[0]}"の記入を要する。)
 
-                console.log("e :", e.target);
-                magnified_image_view.style.visibility = 'hidden';
-                magnified_image_content.innerHTML = '';
+            //console.log("event target : ", event.target);
+            //イベントバブリング => div(target), img(target) => ターゲットに一貫性がない！
+
+            console.log("current target : ", event.currentTarget);
+            //イベントバブリング(X) => div(currentTarget)
+            let product_id = event.currentTarget.title;
+
+            //ポップアップウィンドウに拡大イメージを挿入
+            let img_popup_body = document.getElementById("img_popup_body");
+            console.log("img_popup_ body : ", img_popup_body);
+
+            img_popup_body.innerHTML = `<img class="img1" src="../../img/pic/${product_id}_LM1.jpg" />`;
+            console.log("img_popup_ body : ", img_popup_body);
+
+            let img_popup = document.getElementById("img_popup");
+            img_popup.style.visibility = "visible"; 
 
             });
+        }); // forEach
+        
+        //ウインドウクローズハンドラー
+        let close_btn = document.getElementById("close_btn");
+        close_btn.addEventListener('click', () =>{
 
+            console.log("閉じる");
+            //ウインドウを隠す
+            img_popup.style.visibility = "hidden";
+            // img_popup.style.width = 0;
+            // img_popup.style.height = 0;
+            // img_popup.style.innerHTML = '';     //イメージ拡大を削除（初期化）
 
-            console.log("ボタン :", magnified_btns);
-
-            for (let magnified_btn of magnified_btns) {
-
-                magnified_btn.addEventListener('click', (e) => {
-
-                    console.log("クリックイベント処理の開始-1 : ", e.target);
-                    console.log("クリックイベント処理の開始-2 : ", e.target.title);
-
-                    let img_id = e.target.title;
-                    
-                    // 拡大イメージポップアップの活性化
-                    magnified_image_view.style.left = 'calc(50vw - 305px)';
-                    magnified_image_view.style.top = '10px';
-                    magnified_image_view.style.width = '610px';
-                    magnified_image_view.style.height = 'calc(915px + 20px)';
-                    magnified_image_view.style.backgroundColor = '#B3B3B3';
-                    magnified_image_view.style.visibility = 'visible';
-                    /* これらはポップアップの外見要素を調整・宣言 */
-
-                    magnified_image_content.innerHTML 
-                        += `<img class="img1" src="../../img/pic/${img_id}_LM1.jpg" />
-                            <img class="img2" src="../../img/pic/${img_id}_LM2.jpg" />`;
-
-                    console.log("クリックイベント処理、終");
-                });
-
-            } // for
+        });
 
     } // async function
 
     //fetchCSV('https://example.com/data.csv');
     fetchCSV('./csv/商品情報ー追加商品.csv');
-   
-}//window
 
+} // window
