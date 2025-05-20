@@ -81,15 +81,15 @@ span.preferred-item-icon {
     height: 290px;
     object-position: 0 -40px;
 
-    /* 트랜지션 효과 추가 */
+    /* トランジション効果 */
     position: absolute; 
-    /* 이 부분에서 position: absolute;(절대좌표)를 사용하지 않으면 롤오버 이미지가 자리에서 이탈되어 표현됩니다. */
+    /* ここでposition: absolute;を使わないと、ロールオーバーイメージがその場を離脱する。 */
 
     /* transitions */
     transition: all 1s ease; 
 }
 
-/* 이미지 트랜지션 효과 */
+/* イメージトランジション */
 div.wear-gallery-pic > img.img1
 { 
     opacity: 1;
