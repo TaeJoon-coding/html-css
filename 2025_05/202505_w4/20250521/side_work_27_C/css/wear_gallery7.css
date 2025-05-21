@@ -11,8 +11,8 @@ body {
     height: 520px;
 
     display: flex;
-    /* flex-wrap: wrap;
-    margin: auto; */
+    /* flex-wrap: wrap;*/
+    margin: auto;
     /* padding: 10px; */
 
     /* 
@@ -39,8 +39,8 @@ body {
     width: calc(220px * 4);
     height: 520px;
 
-    background-color: cyan;
-    border: 1px solid gray;
+    /* background-color: cyan; */
+    /* border: 1px solid gray; */
     /* テスト用背景 */
 
     /* --swiper-navigation-size: 44px;
@@ -80,7 +80,7 @@ body {
     --swiper-pagination-bottom: 8px;
     /* --swiper-pagination-top: auto; */
     
-    --swiper-pagination-top: 480px; 
+    --swiper-pagination-top: 510px; 
     /* Swiper Paginationの上下位置を調整する部分 */ 
 
     /* --swiper-pagination-fraction-color: inherit;
@@ -122,7 +122,7 @@ body {
     font-size: 50px;
     width: 40px;    
     background-color: #94D8F6;
-    border-radius: 20px;
+    border-radius: 7.5px;
     opacity: 0.5;
 }
 
@@ -145,7 +145,7 @@ body {
     overflow: hidden;       
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     /* flexbox、縦方向展開(column) */
     
     margin : 0 10px 0 0;
@@ -172,7 +172,7 @@ span.preferred-item-icon {
 
 .material-symbols-outlined:hover {
     cursor: pointer;
-    color: #CCCCCC;
+    color: #444444;
 	/* マウスカーソル：ポインター、フォント色：#CCCCCC */
 }
 
@@ -201,34 +201,70 @@ span.preferred-item-icon {
 }
 
 /* イメージトランジション */
-div.wear-gallery-pic > img.img1
-{ 
+
+/* 拡大イメージ */
+div#magnified_image_content img {     
+
+    position: absolute; 
+    /* ここでposition: absolute;を使わないと、ロールオーバーイメージがその場を離脱する。 */
+    transition: all .3s ease;
+    /* トランジション */
+}
+
+/* 
+    ">" => " " セレクターの変更
+
+    変更の理由）従来のギャラリーのイメージが以下のように変更され、制御のため、セレクターを変更
+
+    変更前）
+
+    <!-- 衣服サムネ写真パネル -->              
+    <div class="wear-gallery-pic">
+        <img class="img1" src="../../img/pic/${product[0]}_LM1.jpg" />
+        <img class="img2" src="../../img/pic/${product[0]}_LM2.jpg" />
+    </div>
+    <!--// 衣服サムネ写真パネル -->
+
+    変更後）
+
+    <!-- 衣服サムネ写真パネル -->              
+    <div class="wear-gallery-pic">
+
+        <!-- 大きい絵拡大ボタンの追加 -->
+        <a href="#" id="magnified_btn_${product[0]}" class="magnified_btn" title="${product[0]}">
+            <img class="img1" src="../../img/pic/${product[0]}_LM1.jpg" title="${product[0]}" />
+            <img class="img2" src="../../img/pic/${product[0]}_LM2.jpg" title="${product[0]}" />
+        </a>
+
+    </div>
+    <!--// 衣服サムネ写真パネル -->
+*/
+
+
+div.wear-gallery-pic img.img1, div#magnified_image_content img.img1 { 
     opacity: 1;
     z-index: 2;
 }
 
 
-div.wear-gallery-pic > img.img2
-{
+div.wear-gallery-pic img.img2, div#magnified_image_content img.img2 {
     opacity: 0;
     z-index: 1;
 }
 
 /* hover */
-div.wear-gallery-pic:hover > img.img1
-{ 
+div.wear-gallery-pic:hover img.img1, div#magnified_image_content:hover img.img1 { 
     opacity: 0;
     z-index: 1;
 }
 
 
-div.wear-gallery-pic:hover > img.img2
-{ 
+div.wear-gallery-pic:hover img.img2,  div#magnified_image_content:hover img.img2 { 
     opacity: 1;
     z-index: 2;
 }
 
-/* 生地：210px * 35px + padding-bottom(8px) */
+/* 生地スタイル：210px * 35px + padding-bottom(8px) */
 .wear-fabric {
 
     width: 210px;
@@ -310,7 +346,7 @@ div.wear-gallery-pic:hover > img.img2
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: #F1F1F1;
+    /* background: #F1F1F1; */
     /* テスト用背景 */
 }
 
@@ -319,13 +355,15 @@ div.wear-gallery-pic:hover > img.img2
     margin-top: 10px;
     font-size: 15px;
     height: 25px;
+
 }
 
 .wear-recomm-review span.wear-recomm-review-num {
 
     padding-top: 0px;
     font-size: 12px;
-    height: 30px;
+    /* height: 30px; */
+    /* この「height」を除去すると、いいね！とレビューマークと数値が上下中央揃えになり、見栄えが良くなる。 */
     /* background : yellow; */
 }
 
@@ -349,43 +387,26 @@ div.wear-gallery-pic:hover > img.img2
 }
 
 
-/* イメージポップアップ : 610px * 965px */
-#img_popup {
+/* 商品イメージ拡大ポップアップ */
+#magnified_image_view {
 
     position: absolute;
     left: 0;
-    top: 0; 
-    width: 610px;
-    height: 965px;
-    /* background-color: yellow; */
-    /* テスト用背景 */
-    /* 以上のだけの場合、ギャラリーと混ざってします */
+    top: 0;
     z-index: 10;
-    /* 「z-index」の値を大きく入力することで、ちゃんとギャラリーより上に表示される。 */
 
+    width: 0px;
+    height: 0px;
     visibility: hidden;
-    /* 初期状態：隠し */
 }
 
-/* イメージポップアップ : header : 610 * 50px */
-#img_popup_header {
-
-    width: 600px;
-    height: 50px;
-    background-color: #858585;
-    /* 以上だけでも、ヘダー自体は問題なく作れる。 */
+/* 商品イメージ拡大ポップアップ：ウインドウを閉じる */
+#img_popup_close_pnl {
 
     display: flex;
     justify-content: flex-end;
-    align-items: center;
-    padding-right: 10px;
-    /* closeボタンをヘダーの右に配置する。 */
-}
+    width: calc(100% - 20px);
 
-/* イメージポップアップ : body : 610 * 915 */
-#img_popup_body {
-    width: 610px;
-    height: 915px;
-    /* background-color: cyan; */
-    /* ちゃんと囲んでいる。 */
+    padding: 10px;
+    /* background-color : orange; */
 }
