@@ -54,22 +54,16 @@ window.onload = () => {
                                             <!--// 商品のいいね！登録 -->
 
                                             <!-- 衣服サムネパネル --> 
-                                            <div class="wear-gallery-pic">
-                                            <a href="#" id="magnified_btn_${product[0]}" class="magnified_btn" title="${product[0]}">
-                                                <!-- 
-                                                サムネの画像に各idが生じる(例: id="magnified_btn_TLSCM25621BLK") 
-                                                idは被らないものなので、パネルごと違うものを指定。(自動生成)
-                                                -->
-                                                <img class="img1" src="../../img/pic/${product[0]}_LM1.jpg" title="${product[0]}" />
-                                                <img class="img2" src="../../img/pic/${product[0]}_LM2.jpg" title="${product[0]}" />
-                                            </a>
+                                            <div class="wear-gallery-pic" title="${product[0]}">
+                                                <img class="img1" src="./pic/${product[0]}_LM1.jpg" />
+                                                <img class="img2" src="./pic/${product[0]}_LM2.jpg" />
                                             </div>
                                             <!--// 衣服サムネパネル -->
 
                                             <!-- 生地スタイル -->
                                             <div class="wear-fabric">
                                                 <div class="wear-fabric-icon">             
-                                                    <img class="img1" src="../../img/pic/${product[0]}_LM1.jpg" />
+                                                    <img src="../../img/pic/${product[0]}_LM1.jpg" />
                                                 </div>
                                             </div>
                                             <!--// 生地スタイル -->
@@ -179,7 +173,7 @@ window.onload = () => {
             img_popup.style.visibility = "hidden";
             // img_popup.style.width = 0;
             // img_popup.style.height = 0;
-            // img_popup.style.innerHTML = '';     //イメージ拡大を削除（初期化）
+            img_popup.style.innerHTML = '';     //イメージ拡大を削除（初期化）
 
         });
 
