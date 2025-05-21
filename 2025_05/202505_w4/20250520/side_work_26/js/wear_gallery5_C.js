@@ -55,8 +55,8 @@ window.onload = () => {
 
                                             <!-- 衣服サムネパネル --> 
                                             <div class="wear-gallery-pic" title="${product[0]}">
-                                                <img class="img1" src="./pic/${product[0]}_LM1.jpg" />
-                                                <img class="img2" src="./pic/${product[0]}_LM2.jpg" />
+                                                <img class="img1" src="../../img/pic/${product[0]}_LM1.jpg" />
+                                                <img class="img2" src="../../img/pic/${product[0]}_LM2.jpg" />
                                             </div>
                                             <!--// 衣服サムネパネル -->
 
