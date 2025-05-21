@@ -1,14 +1,4 @@
 @charset "UTF-8";
-/* C案専用のスタイル */
-/* button {
-    background-color:aqua ;
-} */
-
-body {
-    margin: 0;
-    padding: 0;
-    /* background-color: burlywood; */
-}
 
 /* 衣服ギャラリーパネル */
 .wrap {
@@ -165,7 +155,7 @@ div.wear-gallery-pic:hover > img.img2
 }
 
 
-/* ブランド：15px */
+/* ブランド：12px + padding(5px + 5px) */
 .brand-name {
 
     width: 205px;
@@ -183,7 +173,7 @@ div.wear-gallery-pic:hover > img.img2
     /* テスト用背景 */
 }
 
-/* 商品の単価：210px * 15px */
+/* 商品の単価：210px * 12px */
 .wear-price {
 
     width: 205px;
@@ -192,7 +182,7 @@ div.wear-gallery-pic:hover > img.img2
     /* テスト用背景 */
 }
 
-/* おすすめ商品、評点、レビュー、アイコン：210px * 15px */
+/* おすすめ商品、評点、レビュー、アイコン：210px * 12px */
 .wear-recomm-review {
 
     width: 210px;
