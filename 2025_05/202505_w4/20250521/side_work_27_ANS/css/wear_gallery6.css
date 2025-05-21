@@ -1,0 +1,408 @@
+@charset "UTF-8";
+
+body { 
+    margin: 0; 
+    padding: 0; 
+}
+
+/* 衣服ギャラリーパネル */
+.wrap {
+    /* justify-content: center; */
+    /*横中央揃え*/
+    width: 1000px;
+    height : 520px;
+
+    margin: auto;
+    /* padding: 10px; */
+
+    display: flex;
+    /* 
+    flexボックス、グリッド代用なので「flex-wrap: wrap」を利用する。
+    「flex-wrap:」：要素の配置方法。各要素が、親要素の領域の限界に達した時、次の要素を配置する方法を語る
+    「wrap;」要素を改行して配置する。
+    「margin: auto;」：「外部間隔：自動」という意味で、揃える方式によって配置が変わる。
+    */
+    font-size: 12px;
+    font-weight: 700;
+    /* background-color:brown; */
+    /* テスト用背景 */
+}
+
+/* swiper */
+.swiper {
+
+    width: calc(220px * 3);
+    height: 520px;
+    /* background: cyan;   */
+    
+    /* 
+        Swiper Navigation Custom CSS 
+        : https://swiperjs.com/swiper-api#navigation-css-custom-properties
+
+    */
+
+    /* 
+    --swiper-theme-color: #00B0F0;
+    --swiper-navigation-size: 80px;
+    --swiper-navigation-top-offset: 50%;
+    --swiper-navigation-sides-offset: 0px;
+    --swiper-navigation-color: var(--swiper-theme-color);
+    */    
+}
+
+/* swiper Navigation */
+/* 
+    Swiper Navigation Custom CSS 
+    : https://swiperjs.com/swiper-api#navigation-css-custom-properties 
+*/
+/* swiper スライド内部 Navigation */
+/*
+.swiper-button-next, .swiper-button-prev {
+
+    --swiper-theme-color: #00B0F0;
+    --swiper-navigation-size: 80px;
+    --swiper-navigation-top-offset: 50%;
+    --swiper-navigation-sides-offset: 0px;
+    --swiper-navigation-color: var(--swiper-theme-color);
+}
+*/
+
+/* swiper スライドの外側 Navigation */
+/* .wrap > .swiper-button-next, .wrap > .swiper-button-prev { */
+.swiper-button-next, .swiper-button-prev {
+
+    width: 25px;
+    background-color: #00B0F0;
+    background-size: 50% auto;
+    background-position: center;
+    padding: 20px;    
+    border-radius: 15px;
+    opacity: 0.7;
+
+    --swiper-theme-color: #fff;
+    --swiper-navigation-size: 50px;
+    /* --swiper-navigation-top-offset: 50%; */
+    --swiper-navigation-top-offset: 250px; 
+    --swiper-navigation-sides-offset: 5%; 
+    /* この部分を調節してスライドとの間隔が調節される */
+    --swiper-navigation-color: var(--swiper-theme-color);
+}
+
+/* Swiper Pagination */
+/*
+    Swiper Pagination Custom CSS 
+    : https://swiperjs.com/swiper-api#pagination-css-custom-properties
+*/
+.swiper-pagination {
+
+    --swiper-pagination-color: var(--swiper-theme-color);
+    --swiper-pagination-left: auto;
+    --swiper-pagination-right: 8px;
+    --swiper-pagination-bottom: 8px;
+    /* --swiper-pagination-top: auto; */
+    
+    --swiper-pagination-top: 480px; 
+    /* ここを調整してSwiper Paginationの上下位置を調整できる */ 
+
+    --swiper-pagination-fraction-color: inherit;
+    --swiper-pagination-progressbar-bg-color: rgba(0, 0, 0, 0.25);
+    --swiper-pagination-progressbar-size: 4px;
+    --swiper-pagination-bullet-size: 8px;
+    --swiper-pagination-bullet-width: 8px;
+    --swiper-pagination-bullet-height: 8px;
+    --swiper-pagination-bullet-inactive-color: #000;
+    --swiper-pagination-bullet-inactive-opacity: 0.2;
+    --swiper-pagination-bullet-opacity: 1;
+    --swiper-pagination-bullet-horizontal-gap: 4px;
+    --swiper-pagination-bullet-vertical-gap: 6px;
+
+}
+
+.swiper-wrapper {
+
+    width: calc(220px * 3);
+    height: 520px;
+    padding: 0 50px;
+}
+
+/* スライドパネル */
+/* #slider_panel 
+{ 
+    width: calc(220px * 12);
+} */
+
+/* 衣服パネル */
+.wear-pnl {
+
+    width: 210px;
+    height: 455px;
+    overflow: hidden;       
+    
+    display: flex;
+    flex-direction: column;
+
+    margin : 0 10px 0 0;
+    /* background: yellow;     */
+}
+
+/* 의류 관심상품(좋아요) 등록 : 210px(190px + 20px(padding)) * 30px */
+.wear-preferred-item {
+
+    display: flex;
+    justify-content: right;
+    padding: 10px;
+    width: 190px;
+    background: #F1F1F1;
+}
+
+/*  관심 상품(좋아요) 아이콘 */
+span.preferred-item-icon {
+
+    color: #ccc;
+}
+
+.material-symbols-outlined:hover {
+
+    cursor: pointer;
+    color: #333;
+}
+
+/* 의류 썸네일 패널 : 210px * 250px */
+.wear-gallery-pic {
+
+    width: 210px;
+    height: 250px;
+    /* background : red; */
+}
+
+/* 의류 썸네일 : 210px * 290px */
+.wear-gallery-pic img 
+{
+    width: 210px;
+    height: 290px;
+    object-position: 0 -40px;
+
+    /* 트랜지션 효과 추가 */
+    position: absolute; 
+    /* 이 부분에서 position: absolute;(절대좌표)를 사용하지 않으면 롤오버 이미지가 자리에서 이탈되어 표현됩니다. */
+
+    /* transitions */
+    transition: all 1s ease;
+}
+
+/* 이미지 트랜지션 효과 */
+
+/* 확대 이미지 */
+div#magnified_image_content img {     
+
+    /* 트랜지션 효과 추가 */
+    position: absolute; 
+    /* 이 부분에서 position: absolute;(절대좌표)를 사용하지 않으면 롤오버 이미지가 자리에서 이탈되어 표현됩니다. */
+ 
+    /* transitions */
+    /* transition: all 1s ease; */
+    transition: all .3s ease;
+}
+
+/* 
+    ">" => " " 선택자 변경 
+
+    변경 사유) 기존의 갤러리 이미지들이 아래와 같이 변경되어 제어하기 위한 선택자 변경
+
+    - 변경전)
+
+    <!-- 의류 썸네일 사진 패널 -->              
+    <div class="wear-gallery-pic">
+        <img class="img1" src="./pic/${product[0]}_LM1.jpg" />
+        <img class="img2" src="./pic/${product[0]}_LM2.jpg" />
+    </div>
+    <!--// 의류 썸네일 사진 패널 -->
+
+    - 변경후)
+
+    <!-- 의류 썸네일 사진 패널 -->              
+    <div class="wear-gallery-pic">
+
+        <!-- 큰 그림 확대 버튼 추가 -->
+        <a href="#" id="magnified_btn_${product[0]}" class="magnified_btn" title="${product[0]}">
+            <img class="img1" src="./pic/${product[0]}_LM1.jpg" title="${product[0]}" />
+            <img class="img2" src="./pic/${product[0]}_LM2.jpg" title="${product[0]}" />
+        </a>
+
+    </div>
+    <!--// 의류 썸네일 사진 패널 -->
+*/
+div.wear-gallery-pic img.img1, div#magnified_image_content img.img1
+{ 
+    opacity: 1;
+    z-index: 2;
+}
+
+/* 
+    ">" => " " 선택자 변경 
+
+    추가) 확대 이미지 팝업 이미지 부분 트랜지션 효과
+*/
+div.wear-gallery-pic img.img2, div#magnified_image_content img.img2
+{
+    opacity: 0;
+    z-index: 1;
+}
+
+/* hover */
+/* 
+    ">" => " " 선택자 변경 
+
+    추가) 확대 이미지 팝업 이미지 부분 트랜지션 효과
+*/
+div.wear-gallery-pic:hover img.img1, div#magnified_image_content:hover img.img1
+{ 
+    opacity: 0;
+    z-index: 1;
+}
+
+/* 
+    ">" => " " 선택자 변경 
+
+    추가) 확대 이미지 팝업 이미지 부분 트랜지션 효과
+*/
+div.wear-gallery-pic:hover img.img2,  div#magnified_image_content:hover img.img2
+{ 
+    opacity: 1;
+    z-index: 2;
+}
+
+
+/* 원단 스타일 : 210px * 35px + padding-bottom(8px) */
+.wear-fabric {
+
+    width: 210px;
+    height: 35px;    
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* background: cyan; */
+}
+
+/* 원단 이미지 wrapper */
+.wear-fabric .wear-fabric-icon {
+
+    width: 25px;
+    height: 25px;    
+    overflow: hidden;
+}
+
+/* 
+    원단 이미지 : 상품이미지에서 클립핑 
+    클립핑시에는 "픽픽"의 십자선을 활용하여 클립핑(clipping)할 좌표를 측정합니다.
+*/
+.wear-fabric .wear-fabric-icon img {
+
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path */
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape/rect */
+    position: relative;
+    left: -210px;
+    top: -210px;
+    
+    clip-path: rect(220px 240px 240px 220px);
+}
+
+/* 브랜드 : 12px(폰트 크기) + padding(5px + 5px) */
+.brand-name {
+
+    width: 205px;
+    padding: 5px 0 5px 5px;
+    /* background: orange; */
+}
+
+/* 상품명 : 210px */
+.wear-name {
+
+    width: 205px;
+    padding: 5px 0 5px 5px;
+    /* background: lightskyblue; */
+}
+
+/* 상품 단가 : 210px * 12px(폰트 크기) + padding(5px + 5px) */
+.wear-price {
+
+    width: 205px;
+    padding: 5px 0 5px 5px;
+    /* background: lightgreen; */
+}
+
+/* 상품 추천 별점 및 상품평 아이콘 : 210px * 12px(폰트 크기) */
+.wear-recomm-review {
+
+    width: 210px;
+    /* background: lightcyan; */
+}    
+
+.wear-recomm-review-icon-wrap {  
+
+    width: 70px;
+    height: 30px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background: #F1F1F1;  */
+}
+
+.wear-recomm-review span.material-symbols-outlined {
+
+    margin-top: 10px;
+    font-size: 15px;
+    height: 25px;
+}
+
+.wear-recomm-review span.wear-recomm-review-num {
+
+    padding-top: 0px;
+    font-size: 12px;
+    height: 30x;
+    /* background : yellow; */
+}
+
+/* 신상품 여부 : 210px * 35px + padding(5px + 5px)*/
+.new-wear {
+    
+    display: flex;
+    padding: 5px 0 5px 5px;
+    justify-content: flex-start;
+    align-items: center;
+    /* background: lightcyan; */
+}
+
+/* 신상품 아이콘 */
+.new-wear-icon {
+
+    font-size: 12px;
+    padding: 5px 8px;
+    border: 1px solid #ccc;
+}
+
+/* 상품 이미지 확대 팝업 */
+#magnified_image_view {
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+}
+
+/* 상품 이미지 확대 팝업 : 창닫기 패널 */
+#img_popup_close_pnl {
+
+    display: flex;
+    justify-content: flex-end;
+    width: calc(100% - 20px);
+
+    padding: 10px;
+    /* background-color : orange; */
+}

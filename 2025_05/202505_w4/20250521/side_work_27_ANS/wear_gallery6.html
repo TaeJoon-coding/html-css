@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メンズ衣服</title>
+
+    <!-- google symbolアイコン（アウトライン） --> 
+    <!-- google icons :  https://fonts.google.com/icons -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&icon_names=favorite,home,search,settings" rel="stylesheet" /> -->
+
+    <!-- swiper : https://swiperjs.com/
+	            : https://swiperjs.com/get-started#use-swiper-from-cdn
+	--> 
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- CSV ファイルロードライブラリー : https://www.papaparse.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+    <link rel="stylesheet" href="css/wear_gallery6.css" />
+
+    <script src="js/wear_gallery6.js" charset="UTF-8"></script>
+
+    <!-- 作成目標: https://www.kolonsport.com/Category/List/105010080000?productGenders=MALE&srsltid=AfmBOoqn_f8Vhq3xdKF5nR6IBbYBEojZRcG5rFUIzTxvrjkGyyJ3ekw0 -->
+
+</head>
+<body>
+
+    <!-- 拡大画面ポップアップ -->
+    <div id="magnified_image_view">
+        
+        <div id="img_popup_close_pnl">
+            <a href="#" id="img_popup_close_btn">
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+            </a>
+        </div>
+
+        <!-- 商品拡大イメージパネル -->
+        <div id="magnified_image_content">
+
+        </div>
+        <!--// 商品拡大イメージパネル -->
+
+    </div> 
+    <!--// 拡大画面ポップアップ -->
+
+    <!-- 衣服ギャラリー -->
+    <div class="wrap">
+        
+        <!-- swiper-->
+        <div class="swiper">
+
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper" id="slider_panel">
+            </div>    
+
+            <!-- If we need pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+
+            <!-- If we need navigation buttons -->
+            <!-- <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
+
+        </div>
+        <!--// swiper-->
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <!-- スライドの前後ボタン -->
+
+    </div>
+    <!--// wrap -->
+    <!--// 衣服ギャラリー -->
+    
+</body>
+</html>

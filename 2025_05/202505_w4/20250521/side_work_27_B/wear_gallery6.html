@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- google symbolアイコン（アウトライン） --> 
+    <!-- google icons :  https://fonts.google.com/icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    
+    <!-- 作成目標: https://www.kolonsport.com/Category/List/105010080000?productGenders=MALE&srsltid=AfmBOoqn_f8Vhq3xdKF5nR6IBbYBEojZRcG5rFUIzTxvrjkGyyJ3ekw0 -->
+
+    <link rel="stylesheet" href="css/wear_gallery6.css">
+    <script src="js/wear_gallery6.js" charset="UTF-8"></script>
+    <!-- CSV ファイルロードライブラリー : https://www.papaparse.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+    <!-- Swiper : https://swiperjs.com/get-started#use-swiper-from-cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</head>
+<body>
+        <!--イメージポップアップ: 
+            header : 610 * 50px(close)
+            body(イメージ)610 * 915() (~ LM1/LM2.jpg) -->
+        <div id="img_popup">
+            <!-- headrer : closeボタン -->
+            <div id="img_popup_header">
+                <span id="close_btn" class="material-symbols-outlined">
+                    close
+                </span>
+            </div>
+            <!--// headre : closeボタン -->
+            <!-- body : 拡大イメージ-->
+            <div id="img_popup_body">
+            </div>
+            <!--// body : 拡大イメージ-->
+        </div>
+        <!--イメージポップアップ: -->
+
+    <!-- 衣服ギャラリー -->
+    <!-- wrap -->
+    <div class="wrap">
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <!-- <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                -->
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <!-- If we need scrollbar -->
+            <!-- <div class="swiper-scrollbar"></div> -->
+        </div>
+    </div>
+    <!--// wrap -->
+    <!--// 衣服ギャラリー -->
+
+</body>
+</html>

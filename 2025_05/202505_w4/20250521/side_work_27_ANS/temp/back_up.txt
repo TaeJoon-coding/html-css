@@ -1,0 +1,287 @@
+        <!-- JWPOM25231DGY##################################################################### -->
+        <!-- 衣服単品パネル -->
+        <div class="wear-pnl">
+
+            <!-- 後で買う（いいね）登録 -->
+            <div class="wear-preferred-item">
+                <span class="material-symbols-outlined preferred-item-icon">
+                    favorite
+                </span>              
+            </div>
+            <!--// 後で買う（いいね）登録 -->
+
+            <!-- サムネ・写真パネル --> 
+            <div class="wear-gallery-pic">
+                <img src="../../img/pic/JWPOM25231DGY_LM1.jpg" />
+            </div>
+            <!--// サムネ・写真パネル -->
+
+            <!-- 生地スタイル -->
+            <div class="wear-fabric">
+                <div class="wear-fabric-icon">             
+                    <img src="../../img/pic/JWPOM25231DGY_LM2.jpg" />
+                </div>
+            </div>
+            <!--// 生地スタイル -->
+
+            <!-- ブランド -->
+            <div class="brand-name">
+                kolonsport
+            </div>
+            <!--// ブランド -->
+
+            <!-- 商品名-->
+            <div class="wear-name">
+                男性用ズボン
+            </div>
+            <!--// 商品名-->
+
+            <!-- 商品単価 -->
+            <div class="wear-price">
+                15,000 JPY
+            </div>
+            <!--// 商品単価 -->
+
+            <!-- おすすめ商品、評点、レビュー-->
+            <div class="wear-recomm-review">
+	
+                <div class="wear-recomm-review-icon-wrap">
+                    <span class="material-symbols-outlined">
+                        star
+                    </span>
+                    <span class="wear-recomm-review-num">5</span>    
+        
+                    <span class="material-symbols-outlined">
+                        reviews
+                    </span>
+                    <span class="wear-recomm-review-num">1</span>
+                </div>
+        
+            </div>
+            <!--// おすすめ商品、評点、レビュー-->
+
+            <!-- 新規商品かどうか -->
+            <div class="new-wear">
+                <span class="new-wear-icon">新商品</span>
+            </div> 
+            <!--// 新規商品かどうか -->
+
+        </div>    
+        <!--// 衣服単品パネル -->
+        <!--// JWPOM25231DGY##################################################################### -->
+
+        <!-- JWPOM25231GBE##################################################################### -->
+        <!-- 衣服単品パネル -->
+        <div class="wear-pnl">
+
+            <!-- 後で買う（いいね）登録 -->
+            <div class="wear-preferred-item">
+                <span class="material-symbols-outlined preferred-item-icon">
+                    favorite
+                </span>              
+            </div>
+            <!--// 後で買う（いいね）登録 -->
+
+            <!-- サムネ・写真パネル --> 
+            <div class="wear-gallery-pic">
+                <img src="../../img/pic/JWPOM25231GBE_LM1.jpg" />
+            </div>
+            <!--// サムネ・写真パネル -->
+
+            <!-- 生地スタイル -->
+            <div class="wear-fabric">
+                <div class="wear-fabric-icon">             
+                    <img src="../../img/pic/JWPOM25231GBE_LM2.jpg" />
+                </div>
+            </div>
+            <!--// 生地スタイル -->
+
+            <!-- ブランド -->
+            <div class="brand-name">
+                kolonsport
+            </div>
+            <!--// ブランド -->
+
+            <!-- 商品名-->
+            <div class="wear-name">
+                男性用ズボン
+            </div>
+            <!--// 商品名-->
+
+            <!-- 商品単価 -->
+            <div class="wear-price">
+                15,000 JPY
+            </div>
+            <!--// 商品単価 -->
+
+            <!-- おすすめ商品、評点、レビュー-->
+            <div class="wear-recomm-review">
+	
+                <div class="wear-recomm-review-icon-wrap">
+                    <span class="material-symbols-outlined">
+                        star
+                    </span>
+                    <span class="wear-recomm-review-num">5</span>    
+        
+                    <span class="material-symbols-outlined">
+                        reviews
+                    </span>
+                    <span class="wear-recomm-review-num">1</span>
+                </div>
+        
+            </div>
+            <!--// おすすめ商品、評点、レビュー-->
+
+            <!-- 新規商品かどうか -->
+            <div class="new-wear">
+                <span class="new-wear-icon">新商品</span>
+            </div> 
+            <!--// 新規商品かどうか -->
+
+        </div>    
+        <!--// 衣服単品パネル -->
+        <!--// JWPOM25231GBE##################################################################### -->
+
+        <!-- TLSCM25611NAY##################################################################### -->
+        <!-- 衣服単品パネル -->
+        <div class="wear-pnl">
+
+            <!-- 後で買う（いいね）登録 -->
+            <div class="wear-preferred-item">
+                <span class="material-symbols-outlined preferred-item-icon">
+                    favorite
+                </span>              
+            </div>
+            <!--// 後で買う（いいね）登録 -->
+
+            <!-- サムネ・写真パネル --> 
+            <div class="wear-gallery-pic">
+                <img src="../../img/pic/TLSCM25611NAY_LM1.jpg" />
+            </div>
+            <!--// サムネ・写真パネル -->
+
+            <!-- 生地スタイル -->
+            <div class="wear-fabric">
+                <div class="wear-fabric-icon">             
+                    <img src="../../img/pic/TLSCM25611NAY_LM1.jpg" />
+                </div>
+            </div>
+            <!--// 生地スタイル -->
+
+            <!-- ブランド -->
+            <div class="brand-name">
+                kolonsport
+            </div>
+            <!--// ブランド -->
+
+            <!-- 商品名-->
+            <div class="wear-name">
+                男性用上衣
+            </div>
+            <!--// 商品名-->
+
+            <!-- 商品単価 -->
+            <div class="wear-price">
+                14,000 JPY
+            </div>
+            <!--// 商品単価 -->
+
+            <!-- おすすめ商品、評点、レビュー-->
+            <div class="wear-recomm-review">
+	
+                <div class="wear-recomm-review-icon-wrap">
+                    <span class="material-symbols-outlined">
+                        star
+                    </span>
+                    <span class="wear-recomm-review-num">5</span>    
+        
+                    <span class="material-symbols-outlined">
+                        reviews
+                    </span>
+                    <span class="wear-recomm-review-num">1</span>
+                </div>
+        
+            </div>
+            <!--// おすすめ商品、評点、レビュー-->
+
+            <!-- 新規商品かどうか -->
+            <div class="new-wear">
+                <span class="new-wear-icon">新商品</span>
+            </div> 
+            <!--// 新規商品かどうか -->
+
+        </div>    
+        <!--// 衣服単品パネル -->
+        <!--// TLSCM25611NAY##################################################################### -->
+
+        <!-- TLSCM25621BLK##################################################################### -->
+        <!-- 衣服単品パネル -->
+        <div class="wear-pnl">
+
+            <!-- 後で買う（いいね）登録 -->
+            <div class="wear-preferred-item">
+                <span class="material-symbols-outlined preferred-item-icon">
+                    favorite
+                </span>              
+            </div>
+            <!--// 後で買う（いいね）登録 -->
+
+            <!-- サムネ・写真パネル --> 
+            <div class="wear-gallery-pic">
+                <img src="../../img/pic/TLSCM25621BLK_LM1.jpg" />
+            </div>
+            <!--// サムネ・写真パネル -->
+
+            <!-- 生地スタイル -->
+            <div class="wear-fabric">
+                <div class="wear-fabric-icon">             
+                    <img src="../../img/pic/TLSCM25621BLK_LM1.jpg" />
+                </div>
+            </div>
+            <!--// 生地スタイル -->
+
+            <!-- ブランド -->
+            <div class="brand-name">
+                kolonsport
+            </div>
+            <!--// ブランド -->
+
+            <!-- 商品名-->
+            <div class="wear-name">
+                男性用上衣
+            </div>
+            <!--// 商品名-->
+
+            <!-- 商品単価 -->
+            <div class="wear-price">
+                14,000 JPY
+            </div>
+            <!--// 商品単価 -->
+
+            <!-- おすすめ商品、評点、レビュー-->
+            <div class="wear-recomm-review">
+	
+                <div class="wear-recomm-review-icon-wrap">
+                    <span class="material-symbols-outlined">
+                        star
+                    </span>
+                    <span class="wear-recomm-review-num">5</span>    
+        
+                    <span class="material-symbols-outlined">
+                        reviews
+                    </span>
+                    <span class="wear-recomm-review-num">1</span>
+                </div>
+        
+            </div>
+            <!--// おすすめ商品、評点、レビュー-->
+
+            <!-- 新規商品かどうか -->
+            <div class="new-wear">
+                <span class="new-wear-icon">新商品</span>
+            </div> 
+            <!--// 新規商品かどうか -->
+
+        </div>    
+        <!--// 衣服単品パネル -->
+        <!--// TLSCM25621BLK##################################################################### -->

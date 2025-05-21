@@ -1,0 +1,391 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* 衣服ギャラリーパネル */
+.wrap {
+    width: 1100px;
+    height: 520px;
+
+    display: flex;
+    /* flex-wrap: wrap;
+    margin: auto; */
+    /* padding: 10px; */
+
+    /* 
+    flexボックス、グリッド代用なので「flex-wrap: wrap」を利用する。
+    「flex-wrap:」：要素の配置方法。各要素が、親要素の領域の限界に達した時、次の要素を配置する方法を語る
+    「wrap;」要素を改行して配置する。
+    「margin: auto;」：「外部間隔：自動」という意味で、揃える方式によって配置が変わる。
+    */
+
+    justify-content:space-around;
+
+    /* width: calc(220px * 4); */
+    /* height : calc(460px * 3); */
+
+    font-size: 12px;
+    font-weight: 700;
+
+    /* background-color:brown; */
+    /* テスト用背景 */
+}
+
+/* swiper */
+.swiper {
+    width: calc(220px * 4);
+    height: 520px;
+
+    background-color: cyan;
+    border: 1px solid gray;
+    /* テスト用背景 */
+
+    /* --swiper-navigation-size: 44px;
+    --swiper-navigation-top-offset: 50%;
+    --swiper-navigation-sides-offset: 10px;
+    --swiper-navigation-color: var(--swiper-theme-color);
+    --swiper-theme-color: orange; */
+    /* ここでやると、ナビゲーションだけでなく、スクロールバーも変わる */
+}
+
+/* swiper Navigation */
+/* .swiper-button-prev, .swiper-button-next {
+
+    width: 50px;
+    background-color: #A0A0A0;
+    background-size: 50% auto;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0.5;
+
+
+    --swiper-navigation-size: 30px;
+    --swiper-navigation-top-offset: 50%;
+    --swiper-navigation-sides-offset: 10px;
+    --swiper-navigation-color: var(--swiper-theme-color);
+    --swiper-theme-color: black;
+} */
+
+/* Swiper Pagination */
+/* Swiper Pagination Custom CSS : https://swiperjs.com/swiper-api#pagination-css-custom-properties */
+.swiper-pagination {
+
+    --swiper-pagination-color: var(--swiper-theme-color);
+    --swiper-pagination-left: auto;
+    --swiper-pagination-right: 8px;
+    --swiper-pagination-bottom: 8px;
+    /* --swiper-pagination-top: auto; */
+    
+    --swiper-pagination-top: 480px; 
+    /* Swiper Paginationの上下位置を調整する部分 */ 
+
+    /* --swiper-pagination-fraction-color: inherit;
+    --swiper-pagination-progressbar-bg-color: rgba(0, 0, 0, 0.25);
+    --swiper-pagination-progressbar-size: 4px;
+    --swiper-pagination-bullet-size: 8px;
+    --swiper-pagination-bullet-width: 8px;
+    --swiper-pagination-bullet-height: 8px;
+    --swiper-pagination-bullet-inactive-color: #000;
+    --swiper-pagination-bullet-inactive-opacity: 0.2;
+    --swiper-pagination-bullet-opacity: 1;
+    --swiper-pagination-bullet-horizontal-gap: 4px;
+    --swiper-pagination-bullet-vertical-gap: 6px; */
+}
+
+.swiper-wrapper {
+
+    width: calc(220px * 3);
+    height: 520px;
+    padding: 0 40px;
+    /* スライドの左右の余白を調整。 */
+}
+
+/* Custom Navigation */
+.custom-navigation {
+    width: 100px;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    /* 縦軸中央揃え */
+    align-items: center;
+    /* 横軸中央揃え */
+}
+
+/* 左・右Navigation共通 */
+.custom-navigation .material-symbols-outlined {
+    color: #fff;
+    font-size: 50px;
+    width: 40px;    
+    background-color: #94D8F6;
+    border-radius: 20px;
+    opacity: 0.5;
+}
+
+/* 左Navigation */
+.custom-prev-navigation {
+    padding: 10px 0 10px 10px;
+    /* 上、下、左の内部間隔：10px */
+} 
+
+/* 右Navigation */
+.custom-next-navigation {
+    padding: 10px 10px 10px 0;
+    /* 上、右、下の内部間隔：10px */
+}
+
+/* 衣服パネル */
+.wear-pnl {
+    width: 210px;
+    height: 455px;
+    overflow: hidden;       
+
+    display: flex;
+    flex-direction: row;
+    /* flexbox、縦方向展開(column) */
+    
+    margin : 0 10px 0 0;
+
+    /* background: yellow; */
+    /* テスト用背景 */
+}
+
+/* 後で買う（いいね）：210px(190px + 20px(padding)) * 30px */
+.wear-preferred-item {
+    display: flex;
+    justify-content: right;
+
+    padding: 10px;
+    width: 190px;
+
+    background-color: #f1f1f1;
+}
+
+/* 後で買う（いいね）アイコン */
+span.preferred-item-icon {
+    color: #ccc;
+}
+
+.material-symbols-outlined:hover {
+    cursor: pointer;
+    color: #CCCCCC;
+	/* マウスカーソル：ポインター、フォント色：#CCCCCC */
+}
+
+/* 衣服サムネパネル：210px * 250px */
+.wear-gallery-pic {
+
+    width: 210px;
+    height: 250px;
+    /* background : red; */
+    /* テスト用背景 */
+}
+
+/* 衣服サムネ：210px * 290px */
+.wear-gallery-pic img {
+
+    width: 210px;
+    height: 290px;
+    object-position: 0 -40px;
+
+    /* トランジション効果 */
+    position: absolute; 
+    /* ここでposition: absolute;を使わないと、ロールオーバーイメージがその場を離脱する。 */
+
+    /* transitions */
+    transition: all 0.7s ease; 
+}
+
+/* イメージトランジション */
+div.wear-gallery-pic > img.img1
+{ 
+    opacity: 1;
+    z-index: 2;
+}
+
+
+div.wear-gallery-pic > img.img2
+{
+    opacity: 0;
+    z-index: 1;
+}
+
+/* hover */
+div.wear-gallery-pic:hover > img.img1
+{ 
+    opacity: 0;
+    z-index: 1;
+}
+
+
+div.wear-gallery-pic:hover > img.img2
+{ 
+    opacity: 1;
+    z-index: 2;
+}
+
+/* 生地：210px * 35px + padding-bottom(8px) */
+.wear-fabric {
+
+    width: 210px;
+    height: 35px;    
+
+    padding-bottom: 8px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    /* background: cyan; */
+    /* テスト用背景 */
+}
+
+/* 生地イメージ： wrapper */
+.wear-fabric .wear-fabric-icon {
+
+    width: 25px;
+    height: 25px;    
+    overflow: hidden;
+}
+
+/* 生地イメージ：商品からクリップ */
+.wear-fabric .wear-fabric-icon img {
+
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path */
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape/rect */
+    position: relative;
+    left: -210px;
+    top: -210px;
+    
+    clip-path: rect(220px 240px 240px 220px);
+    /* イメージクリップ：「clip-path : rect()」を利用：220px 240px 240px 220px */
+
+}
+
+
+/* ブランド：12px + padding(5px + 5px) */
+.brand-name {
+
+    width: 205px;
+    padding: 5px 0 5px 5px;
+    /* background: orange; */
+    /* テスト用背景 */
+}
+
+/* 品名：210px */
+.wear-name {
+
+    width: 205px;
+    padding: 5px 0 5px 5px;
+    /* background: lightskyblue; */
+    /* テスト用背景 */
+}
+
+/* 商品の単価：210px * 12px */
+.wear-price {
+
+    width: 205px;
+    padding: 5px 0 5px 5px;
+    /* background: lightgreen; */
+    /* テスト用背景 */
+}
+
+/* おすすめ商品、評点、レビュー、アイコン：210px * 12px */
+.wear-recomm-review {
+
+    width: 210px;
+    /* background: lightcyan; */
+    /* テスト用背景 */
+}    
+
+.wear-recomm-review-icon-wrap {  
+
+    width: 70px;
+    height: 30px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #F1F1F1;
+    /* テスト用背景 */
+}
+
+.wear-recomm-review span.material-symbols-outlined {
+
+    margin-top: 10px;
+    font-size: 15px;
+    height: 25px;
+}
+
+.wear-recomm-review span.wear-recomm-review-num {
+
+    padding-top: 0px;
+    font-size: 12px;
+    height: 30px;
+    /* background : yellow; */
+}
+
+/* 新規商品かどうか：210px * 35px */
+.new-wear {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 5px 0 5px 5px;
+
+    /* background: lightcyan; */
+}
+
+/* 新規商品アイコン */
+.new-wear-icon {
+
+    font-size: 12px;
+    padding: 5px 8px;
+    border: 1px solid #ccc;
+}
+
+
+/* イメージポップアップ : 610px * 965px */
+#img_popup {
+
+    position: absolute;
+    left: 0;
+    top: 0; 
+    width: 610px;
+    height: 965px;
+    /* background-color: yellow; */
+    /* テスト用背景 */
+    /* 以上のだけの場合、ギャラリーと混ざってします */
+    z-index: 10;
+    /* 「z-index」の値を大きく入力することで、ちゃんとギャラリーより上に表示される。 */
+
+    visibility: hidden;
+    /* 初期状態：隠し */
+}
+
+/* イメージポップアップ : header : 610 * 50px */
+#img_popup_header {
+
+    width: 600px;
+    height: 50px;
+    background-color: #858585;
+    /* 以上だけでも、ヘダー自体は問題なく作れる。 */
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+    /* closeボタンをヘダーの右に配置する。 */
+}
+
+/* イメージポップアップ : body : 610 * 915 */
+#img_popup_body {
+    width: 610px;
+    height: 915px;
+    /* background-color: cyan; */
+    /* ちゃんと囲んでいる。 */
+}
