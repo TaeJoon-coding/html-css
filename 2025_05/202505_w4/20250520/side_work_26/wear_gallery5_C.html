@@ -12,7 +12,7 @@
     <!-- 作成目標: https://www.kolonsport.com/Category/List/105010080000?productGenders=MALE&srsltid=AfmBOoqn_f8Vhq3xdKF5nR6IBbYBEojZRcG5rFUIzTxvrjkGyyJ3ekw0 -->
 
     <link rel="stylesheet" href="css/wear_gallery5_C.css">
-    <script src="js/wear_gallery5_B.js"></script>
+    <script src="js/wear_gallery5_C.js" charset="UTF-8"></script>
     <!-- CSV ファイルロードライブラリー : https://www.papaparse.com/ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 
@@ -58,8 +58,8 @@
     /* ポップアップの初期状態を設定（隠し） */
     //let btn = document.getElementById("btn_TLSCM25621BLK");
 
-    //let btns = document.querySelectorAll("button[title]");
-    let btns = document.querySelectorAll("button[id^='btn_']");
+    let btns = document.querySelectorAll("button[title]");
+    //let btns = document.querySelectorAll("button[id^='btn_']");
     /*
     見れば分かるように複数の場合、「getElement」より「querySelector」のほうが吉。
     この場合、上記のボタンにセットアップされた「id」を読み込んで代入する。
@@ -92,6 +92,7 @@
         
         }//ウィンドウオープンハンドラー
 
+        /*
         //ウインドウクローズハンドラー
         let close_btn = document.getElementById("close_btn");
         close_btn.addEventListener('click', () => {
@@ -104,7 +105,7 @@
             img_popup.style.innerHTML = '';     //イメージ拡大を削除（初期化）
 
         })
-    
+        */
     }//for
 
 </script>
