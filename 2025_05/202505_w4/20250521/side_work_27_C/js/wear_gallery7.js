@@ -1,5 +1,5 @@
-window.onload = () => {
-
+// window.onload = () => {
+document.addEventListener('DOMContentLoaded', () => {
     function numberWithCommas(x) {
         x = x.toString();
         var pattern = /(-?\d+)(\d{3})/;
@@ -9,13 +9,15 @@ window.onload = () => {
     }
 
     async function fetchCSV(url) {
+
+        let slider_panel = document.querySelector("#slider_panel");
+
         try {
             const response = await fetch(url);
             const data = await response.text();
             
             //document.getElementById('output').innerText = data;
             //ここにギャラリー機能を入れるべきなのでは？
-
             //CSV -> JSON化が必要
             // https://www.papaparse.com/
             // https://www.papaparse.com/docs#csv-to-json
@@ -26,7 +28,7 @@ window.onload = () => {
             
             let products = json.data;       //一行はカラム、最後の行は空白
             products.shift();                                   //最初の一行（カラム）を除去
-            console.log("商品数：", products.length); 
+            // console.log("商品数：", products.length); 
             
             //let cnt = 1;
             for (let product of products) {
@@ -54,9 +56,13 @@ window.onload = () => {
                                             <!--// 商品のいいね！登録 -->
 
                                             <!-- 衣服サムネパネル --> 
-                                            <div class="wear-gallery-pic" title="${product[0]}">
-                                                <img class="img1" src="../../img/pic/${product[0]}_LM1.jpg" />
-                                                <img class="img2" src="../../img/pic/${product[0]}_LM2.jpg" />
+                                            <div class="wear-gallery-pic">
+
+                                                <!-- 大きい絵拡大ボタンの追加 -->
+                                                <a href="#"  class="magnified_btn" title="${product[0]}">
+                                                    <img class="img1" id="img_${product[0]}" src="../../img/pic/${product[0]}_LM1.jpg" title="${product[0]}" />
+                                                    <img class="img2" id="img_${product[0]}" src="../../img/pic/${product[0]}_LM2.jpg" title="${product[0]}" />
+                                                </a>
                                             </div>
                                             <!--// 衣服サムネパネル -->
 
@@ -88,36 +94,40 @@ window.onload = () => {
 
                                             <!-- おすすめ、評点およびレビュー -->
                                             <div class="wear-recomm-review">
-                                                ${product[5] == 'O' ? '' :
+                        
+                                                ${product[5] == 'O' ? '' : 
                                                     `<div class="wear-recomm-review-icon-wrap">
                                                         <span class="material-symbols-outlined">
                                                             star
                                                         </span>
-                                                        <span class="wear-recomm-review-num">${product[6]}</span> 
+                                                        <span class="wear-recomm-review-num">${product[6]}</span>    
                                                         <span class="material-symbols-outlined">
                                                             reviews
                                                         </span>
                                                         <span class="wear-recomm-review-num">${product[7]}</span>
                                                     </div>`}
+
                                             </div>
                                             <!--// おすすめ、評点およびレビュー -->
 
                                             <!-- 新商品 -->
                                             <div class="new-wear">
-                                                ${product[5] == 'O' ?
-                                                    `<span class="new-wear-icon">新商品</span>`: ''}
+                                                ${product[5] == 'O' ? 
+                                                    `<span class="new-wear-icon">新商品</span>` : ''}
+                                                
                                             </div> 
                                             <!--// 新商品 -->
 
                                         </div>
                                         <!--// 衣服単品パネル -->`;
 
-                                    //console.log("個別商品陳列、終：", cnt)
-                                    //let wrap = document.querySelector(".wrap");
-                                    //wrap.innerHTML += product_content;
-                                    //cnt++;
-                            let swiper_wrap = document.querySelector(".swiper-wrapper");
-                            swiper_wrap.innerHTML += product_content;
+                            //console.log("個別商品陳列、終：", cnt)
+                            //let wrap = document.querySelector(".wrap");
+                            //wrap.innerHTML += product_content;
+                            //cnt++;
+                    // let swiper_wrap = document.querySelector(".swiper-wrapper");
+                    // swiper_wrap.innerHTML += product_content;
+                    slider_panel.innerHTML += product_content;
             }//for
         } 
         
@@ -127,42 +137,52 @@ window.onload = () => {
     
        //////////////////////////////////////////////////////
 
-        //ギャラリーイメージイベントハンドラー：クリック時 => 拡大イメージポップアップ出力
+        let magnified_btns = document.querySelectorAll(".magnified_btn");
 
-        let wear_gallery_pics 
-            = document.querySelectorAll(".wear-gallery-pic");
+        console.log("magnified_btns 数 : ", magnified_btns.length)
 
-        wear_gallery_pics.forEach((element) => {
+        let magnified_image_view = document.getElementById("magnified_image_view");
+        let magnified_image_content = document.getElementById("magnified_image_content");
 
-            element.addEventListener('click', (event) => {
+        let img_popup_close_btn = document.getElementById("img_popup_close_btn");
+
+        img_popup_close_btn.addEventListener('click', (e) => {
+
+            console.log("e :", e.currentTarget);
+            magnified_image_view.style.visibility = 'hidden';
+            magnified_image_content.innerHTML = '';
+
+        });
+
+
+        console.log("ボタン :", magnified_btns);
+
+        for (let magnified_btn of magnified_btns) {
+
+            magnified_btn.addEventListener('click', (e) => {
+
+                console.log("クリックイベント処理開始-1 : ", e.target);
+                console.log("クリックイベント処理開始-2 : ", e.target.title);
+                console.log("クリックイベント処理開始-3 : ", e.target.id);
+
+                let img_id = e.target.title;
                 
-                // イベントバブリング：https://developer.mozilla.org/ko/docs/Learn_web_development/Core/Scripting/Event_bubbling
-                // イベントバブリング防止：イベントが下位タグに伝播（propagation）
-                // preventDefault : https://developer.mozilla.org/ko/docs/Web/API/Event/preventDefault
-            //event.stopPropagation();
-            //event.preventDefault();
-            //console.log("event target : ", event.target.title);
-            //選択（クリック）した衣服サムネパネルの「title」を出力する。(title="${product[0]}"の記入を要する。)
+                // 拡大イメージポップアップ活性化
+                magnified_image_view.style.left = 'calc(50vw - 305px)';
+                magnified_image_view.style.top = '10px';
+                magnified_image_view.style.width = '610px';
+                magnified_image_view.style.height = 'calc(915px + 20px)';
+                magnified_image_view.style.backgroundColor = '#B3B3B3';
+                magnified_image_view.style.visibility = 'visible';
 
-            //console.log("event target : ", event.target);
-            //イベントバブリング => div(target), img(target) => ターゲットに一貫性がない！
+                magnified_image_content.innerHTML 
+                    += `<img class="img1" src="../../img/pic/${img_id}_LM1.jpg" />
+                        <img class="img2" src="../../img/pic/${img_id}_LM2.jpg" />`;
 
-            console.log("current target : ", event.currentTarget);
-            //イベントバブリング(X) => div(currentTarget)
-            let product_id = event.currentTarget.title;
-
-            //ポップアップウィンドウに拡大イメージを挿入
-            let img_popup_body = document.getElementById("img_popup_body");
-            console.log("img_popup_ body : ", img_popup_body);
-
-            img_popup_body.innerHTML = `<img class="img1" src="../../img/pic/${product_id}_LM1.jpg" />`;
-            console.log("img_popup_ body : ", img_popup_body);
-
-            let img_popup = document.getElementById("img_popup");
-            img_popup.style.visibility = "visible"; 
-
+                console.log("クリックイベント処理終わり");
             });
-        }); // forEach
+
+        } // for
         
         /////////////////////////////////////////////////////////
 
@@ -172,17 +192,6 @@ window.onload = () => {
             direction: 'horizontal',
             //Direction属性：https://swiperjs.com/swiper-api#param-direction
             loop: true,
-
-            // If we need pagination
-            pagination: {
-                el: '.swiper-pagination',
-            },
-
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
 
             slidesPerView : 3,
             // 同時に表示するスライドの数 : 3
@@ -219,26 +228,13 @@ window.onload = () => {
             // scrollbar: {
             //     el: '.swiper-scrollbar',
             // },
-        });
+        });// swiper end
 
-        //////////////////////////////////////////////////////
-
-        //ウインドウクローズハンドラー
-        let close_btn = document.getElementById("close_btn");
-        close_btn.addEventListener('click', () =>{
-
-            console.log("閉じる");
-            //ウインドウを隠す
-            img_popup.style.visibility = "hidden";
-            // img_popup.style.width = 0;
-            // img_popup.style.height = 0;
-            img_popup.style.innerHTML = '';     //イメージ拡大を削除（初期化）
-
-        });
 
     } // async function
 
     //fetchCSV('https://example.com/data.csv');
     fetchCSV('./csv/商品情報ー追加商品.csv');
 
-} // window
+// } // window
+}); // document.addEventListener('DOMContentLoaded'
